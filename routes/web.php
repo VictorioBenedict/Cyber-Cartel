@@ -58,3 +58,11 @@ Route::get('/market', function(){
 Route::get('/product_demo', function(){
     return  view('Product_demo');
 });
+
+Route::get('/verify', function(){
+    return  view('Verify_Page');
+});
+
+Route::post('/verify', function(){
+    return  view('Verify_Page');
+});

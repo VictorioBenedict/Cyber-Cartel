@@ -12,6 +12,14 @@
         body {
             padding-top: 60px; /* Add padding to body for the fixed navbar */
         }
+        .black-button {
+        background-color: black;
+        color: white;
+        }
+        .black-link {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -22,49 +30,34 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="py-5 text-center">
+    <header class="py-5">
         <div class="container">
             <h1>Reset Password</h1>
         </div>
     </header>
 
     <!-- Login Content -->
-    <section style="margin-bottom: 20px;">
+    <section style="margin-top: 20px; margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10">
-                    <form id="loginForm" action="/login" method="post" style="border: 1px solid #000000; border-radius: 20px; padding:20%; margin:-10%"> <!-- Adjusted border-radius value -->
+                    <form id="loginForm" action="/conPass" method="post" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px; text-align: center; margin: auto;">
                         @csrf
-                        <h4 class="text-center">SET YOUR PASSWORD</h4>
-                        <p class="text-center">Create a new password for<br>User@email.com</p>
 
-                        <div class="form-group mb-3">
-                            <label for="username">New Password</label>
-                            <input type="password" class="form-control" id="username" name="newPass" placeholder="Enter your new password">
-                        </div>
+                        <h5 style="padding: 10px; margin-top:5vh; margin-bottom:5vh">A Verification email has been sent to this<br> email address user@email.com
+                            <br>Please verify it.</h5>
 
-                        <div class="form-group mb-3">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" id="password" name="conPass" placeholder="Confirm password">
-                        </div>
-                        <p class="text-muted small">* At least one lowercase character<br>
-                            * At least one upper case character<br>
-                            * 8-16 characters<br>
-                            * Only letters, numbers, and common punctuation can be used</p>
-                        <button type="submit" class="btn btn-primary btn-block mt-5">Reset</button>
-
+                        <button type="submit" class="btn btn-primary btn-block black-button">Okay</button>
                     </form>
+
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
     <!-- Footer Section -->
     <footer class="bg-dark text-light text-center py-2 fixed-bottom">
-        <p>&copy; 2023 Confirm Page. All rights reserved.</p>
+        <p>&copy; 2023 Login Page. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS and Popper.js scripts -->

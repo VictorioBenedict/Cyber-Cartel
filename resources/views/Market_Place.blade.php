@@ -70,11 +70,12 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/dashboard"><img  src="images/logo.png"  style="width:200px;"></a>
             <br>
-            <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 15vw;">
+            <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
                 <!-- Desktop Search Bar -->
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 40vw;">
                 <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
+            <a href="#"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 2vw;">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0"> <!-- mx-auto to center the content -->
                     <li class="nav-item" style="margin-right: 1.5vw;">
@@ -97,7 +98,7 @@
                         </div>
                     </li>
                     <li class="nav-item" style="margin-right: 1.5vw;">
-                        <a class="nav-link" aria-current="page" href="/market">Market Place</a>
+                        <a class="nav-link" aria-current="page" href="/market">Pc Builder</a>
                     </li>
                     <li class="nav-item" style="margin-right: 1.5vw;">
                         <div class="nav-item dropdown">
