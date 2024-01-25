@@ -116,269 +116,1216 @@
       </div>
   </div>
   <br>
-      <div class="container" id="contents">
-          <header class="d-flex justify-content-between" style="margin-top: 30px;">
-              <h2><i>System Units</i></h2>
-              <br>
-              <a href="#"><p style="margin-top:15px ">See all</p></a>
-          </header>
-      </div>
       <div class="container mt-4">
           <div class="row">
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>Pre-Built Units</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                      <div class="card border-dark" style="border-radius: 50px;">
-                          <!-- Added border-radius for the entire card -->
-                          <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: white; border-radius: 50px;">
-                              <!-- Added text-center class for centering content -->
-                              <img src="images/sysu 1.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                              <!-- Added border-white class, border-radius, and border for the image -->
-                              <!-- Removed mx-auto class, added display:block and margin for centering -->
-                              <h4 class="card-subtitle mb-2 mt-2"><i>Gaming Pc</i></h4>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 1.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
                               <p class="card-text">System Unit</p>
-                              <h5 class="card-subtitle mb-2 mt-2">₱12,500</h5>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
                           </div>
                       </div>
                   </a>
-              </article>
+              </div>
 
-
-
-
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 2.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>PC RYZEN 7</i></h4>
-                          <p class="card-text">System Unit</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱24,000</h5>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 2.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 3.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>Pc set</i></h4>
-                          <p class="card-text">System Unit / monitor.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱13,000 </h5>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 3.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 4.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>Gaming Desktop</i></h4>
-                          <p class="card-text">System Unit</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱12,000</h5>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 4.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 5.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>GAMING PC SET</i></h4>
-                          <p class="card-text">System Unit</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱12,000</h5>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 6.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>BUDGET GAMING PC</i></h4>
-                          <p class="card-text">Gaming PC set</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱9,800</h5>
+                      <div class="card border-dark">
+                          <img src="images/Pre-Built/sysu 6.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
-                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 7.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>Gaming Pc</i></h4>
-                          <p class="card-text">Gaming PC set</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱25,500</h5>
-                      </div>
-                  </div>
-                  </a>
-              </article>
-
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
-                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;"> <!-- Added border-radius for the entire card -->
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;">
-                          <!-- Added text-center class for centering content -->
-                          <img src="images/sysu 8.jpg" class="card-img-top border-white" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Added border-white class and border-radius for the image -->
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2"><i>Gaming Pc</i></h4>
-                          <p class="card-text">PC set</p>
-                          <h5 class="card-subtitle mb-2 mt-2">₱26,500</h5>
-                      </div>
-                  </div>
-                  </a>
-              </article>
 
 
 
 
               <div class="container" id="contents">
-                  <header class="d-flex justify-content-between" style="margin-top: 30px;">
-                      <h2><i>Central Processing Units</i></h2>
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>Processor</i></h4>
                       <br>
                       <a href="#"><p style="margin-top:15px ">See all</p></a>
                   </header>
               </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
-                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/amd 1.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h3 class="card-subtitle mb-2 mt-2">AMD Ryzen 5 7600</h3>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
-                      </div>
-                  </div>
-                  </a>
-              </article>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 2.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">Intel Core i5-12600K</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Amd/amd 1.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 3.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">AMD Ryzen 5 5500</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Intel/cpu 2.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 4.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">Intel Core i5-10400</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Amd/cpu 3.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 6.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">Intel Core i9-13900K</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Intel/cpu 4.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 5.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">AMD Ryzen 9 7950X</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Amd/cpu 5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 7.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h3 class="card-subtitle mb-2 mt-2">Intel Core i5-13600K</h3>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/CPU/Intel/cpu 6.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
 
-              <article class="col-lg-3 col-md-6 mb-4 mx-auto col-sm-6 col-12">
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                   <a href="/product_demo" style="text-decoration: none; color: inherit;">
-                  <div class="card border-dark" style="border-radius: 50px;">
-                      <div class="card-body text-center" style="background: linear-gradient(to top right, black, rgb(131, 131, 131)); color: rgb(255, 255, 255); border-radius: 50px;"> <!-- Added text-center class for centering content -->
-                          <img src="images/cpu 8.jpg" class="card-img-top" alt="Card Image 2" id="pics" style="border-radius: 25px; border: 2px solid white;">
-                          <!-- Removed mx-auto class, added display:block and margin for centering -->
-                          <h4 class="card-subtitle mb-2 mt-2">AMD Ryzen 7 5700X</h4>
-                          <p class="card-text">Full-stack developer.</p>
-                          <h5 class="card-subtitle mb-2 mt-2">Price</h5>
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
                       </div>
-                  </div>
                   </a>
-              </article>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>Graphics Card</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 1 AMD Radeon RX 7600.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 2 AMD Radeon RX 6600.png" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 3 Gigabyte NVIDIA GeForce RTX 3050.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 4 GeForce GTX 1660 SUPER TUF.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 5 Zotac Gaming GeForce RTX 3050 Twin Edge.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/GPU/GPU 6 MSI AMD Radeon RX 6600.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>Ram</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 1 G.Skill Trident Z5 Neo RGB DDR5-6000.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 2 Patriot Viper Steel DDR4-4400.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 3 Patriot Viper RGB DDR4-3600.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 4 Patriot Viper 4 DDR4-3400.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 5 Corsair Vengeance RGB Pro DDR4-3200.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/Ram/Ram 6 G.Skill Trident Z Neo DDR4-3600.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>Power Supply</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 1 Corsair RM750x.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 2 Seasonic Prime Titanium TX-1000.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 3 XPG Pylon 450.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 4 BeQuiet! Pure Power 11 FM 550W.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 5 Corsair AX1600i.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/PSU/PSU 6 silverstone sx1000 lpt 1000w 80 plus platinum.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+              <div class="container" id="contents">
+                  <header class="d-flex justify-content-between" style="margin-top: 50px;">
+                      <h4><i>MotherBoard</i></h4>
+                      <br>
+                      <a href="#"><p style="margin-top:15px ">See all</p></a>
+                  </header>
+              </div>
+
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 1 ASUS ROG Strix Z690-E Gaming Wi-Fi DDR5.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 2 ASUS TUF Gaming B550-PLUS.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 3 ASUS Prime X670-P.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 4 GIGABYTE TRX40 AORUS Master.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 5 ASUS ROG Strix Maximus Z790 Hero.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
+                  <a href="/product_demo" style="text-decoration: none; color: inherit;">
+                      <div class="card border-dark">
+                          <img src="images/MotherBoard/Mobo 6 Gigabyte B650 AORUS Elite AX.jpg" class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                          <div class="card-body text-center" style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                              <!-- Removed border-radius from the img element -->
+                              <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
+                              <p class="card-text">System Unit</p>
+                              <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                          </div>
+                      </div>
+                  </a>
+              </div>
+
 
           </div>
       </div>

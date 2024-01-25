@@ -32,7 +32,7 @@
     <!-- Header Section -->
     <header class="py-5 text-center">
         <div class="container">
-            <div class="row justify-content-end">
+            <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10">
                     <h1>Login</h1>
                     <p>Enter your credentials to access your account.</p>
@@ -45,7 +45,7 @@
     <section style="margin-top: 20px; margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col-sm-10 offset-lg-6">
+                <div class="col-lg-6 col-md-8 col-sm-10">
                     <form id="loginForm" action="/dashboard" method="post" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
                         @csrf
                         <div class="form-group" style="margin-bottom: 15px;">

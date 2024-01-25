@@ -286,22 +286,61 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img  src="images/logo.png"  style="width:200px;"></a>
-            <li style="margin-left: 5vw;">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 40vw;"> <!-- Adjust the width as needed -->
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-            </li>
+            <a class="navbar-brand" href="/dashboard"><img  src="images/logo.png"  style="width:200px;"></a>
+            <br>
+            <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
+                <!-- Desktop Search Bar -->
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 40vw;">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+            <a href="#"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 2vw;">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0"> <!-- mx-auto to center the content -->
-                    <li class="nav-item" style="margin-left: 7.5px; margin-right:10px">
-                        <a class="nav-link" aria-current="page" href="login">Login</a>
+                    <li class="nav-item" style="margin-right: 1.5vw;">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <!-- Dropdown content goes here -->
+                                <a class="dropdown-item" href="#">CPU</a>
+                                <a class="dropdown-item" href="#">GPU</a>
+                                <a class="dropdown-item" href="#">RAM</a>
+                                <a class="dropdown-item" href="#">CASE</a>
+                                <a class="dropdown-item" href="#">PSU</a>
+                                <a class="dropdown-item" href="#">MONITOR</a>
+                                <a class="dropdown-item" href="#">MOTHERBOARD</a>
+                                <a class="dropdown-item" href="#">KEYBOARD</a>
+                                <a class="dropdown-item" href="#">MOUSE</a>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item" style="margin-right: 30px;">
-                        <a class="nav-link" aria-current="page" href="signup">Sign-up</a>
+                    <li class="nav-item" style="margin-right: 1.5vw;">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pc Builder
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <!-- Dropdown content goes here -->
+                                <a class="dropdown-item" href="#">INTEL</a>
+                                <a class="dropdown-item" href="#">AMD</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item" style="margin-right: 1.5vw;">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Profile
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                                <!-- Dropdown content goes here -->
+                                <a class="dropdown-item" href="#">My account</a>
+                                <a class="dropdown-item" href="#">My Purchase</a>
+                                <a class="dropdown-item" href="login">Log out</a>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -319,7 +358,7 @@
         <div class="product-div">
           <div class="product-div-left">
             <div class="img-container">
-              <img src="images/Pre-Built/sysu 1.jpg" />
+              <img src="images/Pre-Built/sysu 2.jpg" />
             </div>
           </div>
           <div class="product-div-right">
@@ -335,16 +374,12 @@
             </div>
             <p class="product-description"></p>
             <div class="btn-groups">
-                <a href="/login">
-              <button type="button" class="add-cart-btn">
-                <i class="fas fa-shopping-cart"></i>add to cart
-              </button>
-            </a>
-              <a href="/login">
-              <button type="button" class="buy-now-btn">
+                <a href="#"><button type="button" class="add-cart-btn">
+                    <i class="fas fa-shopping-cart"></i>add to cart
+                  </button></a>
+              <a href="/checkOut"><button type="button" class="buy-now-btn">
                 <i class="fas fa-wallet"></i>buy now
-              </button>
-            </a>
+              </button></a>
             </div>
           </div>
         </div>
@@ -436,28 +471,7 @@
       </div>
     </div>
 
-    <script>
-      const allHoverImages = document.querySelectorAll(".hover-container div img");
-      const imgContainer = document.querySelector(".img-container");
 
-      window.addEventListener("DOMContentLoaded", () => {
-        allHoverImages[0].parentElement.classList.add("active");
-      });
-
-      allHoverImages.forEach((image) => {
-        image.addEventListener("mouseover", () => {
-          imgContainer.querySelector("img").src = image.src;
-          resetActiveImg();
-          image.parentElement.classList.add("active");
-        });
-      });
-
-      function resetActiveImg() {
-        allHoverImages.forEach((img) => {
-          img.parentElement.classList.remove("active");
-        });
-      }
-    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

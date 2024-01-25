@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -30,14 +30,10 @@
     </nav>
 
     <!-- Header Section -->
-    <header class="py-5 text-center">
+    <header class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col-sm-10">
-                    <h1>Sign-Up</h1>
-                    <p>Enter your credentials and create your account.</p>
-                </div>
-            </div>
+            <h1>Change Password</h1>
+            <p>Enter your password.</p>
         </div>
     </header>
 
@@ -46,32 +42,21 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10">
-                    <form id="signupForm" action="/login" method="POST" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+                    <form id="loginForm" action="/change_password" method="post" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
                         @csrf
+
                         <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username">
+                            <label for="resEmail">Enter your Password</label>
+                            <input type="password" class="form-control" id="enterEmail" name="enterEmail" placeholder="Input your Current Password">
                         </div>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="confirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block black-button">Sign-Up</button>
+
+                        <button type="submit" class="btn btn-primary btn-block black-button">Next</button>
+
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <br>
-    <br>
 
     <!-- Footer Section -->
     <footer class="bg-dark text-light text-center py-2 fixed-bottom">
