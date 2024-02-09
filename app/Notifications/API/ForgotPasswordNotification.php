@@ -5,7 +5,7 @@ namespace App\Notifications\API;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\API\Notification;
+use Illuminate\Notifications\Notification;
 
 class ForgotPasswordNotification extends Notification
 {
