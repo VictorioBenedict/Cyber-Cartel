@@ -2,9 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\ProfileController;
+use App\Http\Controllers\API\AddressController;
+use App\Http\Controllers\API\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +36,11 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'reset']);
 Route::post('/profile/update-profile', [ProfileController::class, 'update_profile'])->middleware('auth:sanctum');
 Route::post('/profile/change-password', [ProfileController::class, 'change_password'])->middleware('auth:sanctum');
 
+Route::get('/profile/address-index', [AddressController::class, 'index']);
+Route::post('/profile/address-create', [AddressController::class, 'create_address']);
+
 
 //PRODUCT FUNCTIONS
+Route::apiResource('users', UserController::class)->middleware('auth:sanctum');
+Route::apiResource('addresses', AddressController::class)->middleware('auth:sanctum');
+

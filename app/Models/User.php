@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -9,9 +10,22 @@ use App\Notifications\API\ForgotPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+
+    //RELATION TO CART
+    public function carts(){
+        return $this->hasOne(Cart::class);
+    }
+    
+    //RELATION TO ADDRESSES
+    public function addresses(){
+        return $this->hasMany(Address::class);
+    }
+
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +36,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'profile_photo',
+        'profile_photo'
     ];
 
     /**
