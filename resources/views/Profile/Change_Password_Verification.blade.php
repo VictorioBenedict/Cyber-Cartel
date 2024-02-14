@@ -25,7 +25,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/"><img  src="images/logo.png"  style="width:200px;"></a>
+        <a class="navbar-brand" href="/home"><img  src="images/logo.png"  style="width:200px;"></a>
         <!-- Add your navigation links if needed -->
     </nav>
 
@@ -42,7 +42,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10">
-                    <form id="loginForm" action="/change_password" method="post" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+                    <form id="loginForm" action="/change_password" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
                         @csrf
 
                         <div class="form-group" style="margin-bottom: 15px;">

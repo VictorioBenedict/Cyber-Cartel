@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10">
-                    <form id="loginForm" action="/dashboard" method="post" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+                    <form id="loginForm" action="/dashboard" method="GET" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
                         @csrf
                         <div class="form-group" style="margin-bottom: 15px;">
                             <label for="username">Username</label>

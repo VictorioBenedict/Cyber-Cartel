@@ -135,7 +135,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img src="images/logo.png" style="width: 200px;"></a>
+            <a class="navbar-brand" href="/home"><img src="images/logo.png" style="width: 200px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
@@ -151,8 +151,8 @@
                                 Profile
                             </a>
                             <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <a class="dropdown-item" href="#">My account</a>
-                                <a class="dropdown-item" href="#">My Purchase</a>
+                                <a class="dropdown-item" href="/my_account">My account</a>
+                                <a class="dropdown-item" href="/my_purchase">My Purchase</a>
                                 <a class="dropdown-item" href="login">Log out</a>
                             </div>
                         </div>

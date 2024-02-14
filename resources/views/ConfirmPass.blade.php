@@ -25,7 +25,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/"><img  src="images/logo.png"  style="width:200px;"></a>
+        <a class="navbar-brand" href="/home"><img  src="images/logo.png"  style="width:200px;"></a>
         <!-- Add your navigation links if needed -->
     </nav>
 

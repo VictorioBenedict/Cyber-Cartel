@@ -69,16 +69,15 @@
         .user_profile {
             width: 30%;
             overflow-y: hidden;
-            border-right: 1px solid #ccc;
             box-sizing: border-box;
-            margin-right: 0;
+            border: 1px solid rgb(255, 255, 255);
         }
 
         .contents {
             width: 100%;
             flex: 1;
             overflow-y: auto;
-            padding: 20px;
+            padding-left: 20px;
             overflow-x: hidden;
         }
 
@@ -86,7 +85,6 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid black;
-            margin-bottom: 20px;
         }
 
         .table_1 {
@@ -211,8 +209,7 @@
     <br>
     <br>
     <div class="container">
-        <div class="user_profile">
-            <table>
+            <table class="user_profile">
                 <tr>
                     <td>
                         <a href="/my_account"><img src="images/Pre-Built/sysu 1.jpg" class="profile_img"></a>
@@ -242,8 +239,7 @@
                         </div>
                     </td>
                 </tr>
-            </table>
-        </div>
+        </table>
         <!-- Table Section -->
         <div class="contents">
             <table class="table_2">
@@ -256,7 +252,6 @@
                         <hr style="margin: 0 auto; width: 100%;">
                     </td>
                 </tr>
-                    <div class="main_content">
                             <div class="profile_picture">
                                 <tr>
                                     <td style="display: flex; align-items: center; justify-content: flex-start;">
@@ -307,14 +302,12 @@
                                 <p style="margin-left: 10%;">Date of birth:</p><input type="date" style="margin-left: 2%; margin-bottom:2%;">
                             </td>
                         </tr>
-                    </div>
                     <tr style="display: flex; align-items: center; justify-content: flex-end;">
                         <td>
                             <button>Save</button>
                         </td>
                     </tr>
             </table>
-            <br>
         </div>
     </div>
     <br>

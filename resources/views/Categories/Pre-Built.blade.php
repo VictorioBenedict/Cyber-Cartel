@@ -74,7 +74,7 @@
     <!-- ... (Your existing HTML) -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img  src="images/logo.png"  style="width:200px;"></a>
+            <a class="navbar-brand" href="/home"><img  src="images/logo.png"  style="width:200px;"></a>
             <br>
             <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
                 <!-- Desktop Search Bar -->
