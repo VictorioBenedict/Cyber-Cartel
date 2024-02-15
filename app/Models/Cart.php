@@ -20,4 +20,9 @@ class Cart extends Model
     // public function products(){
     //     return $this->hasMany(Products::class);
     // }
+
+    //RELATION TO BOUGHT PRODUCTS
+    public function bought(){
+        return $this->hasOne(Bought::class);
+    }
 }
