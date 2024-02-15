@@ -8,6 +8,7 @@ use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\ProfileController;
 use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,8 @@ Route::post('/profile/address-create', [AddressController::class, 'create_addres
 
 
 //PRODUCT FUNCTIONS
+Route::post('/products/products-create', [ProductsController::class, 'store']);
+
 Route::apiResource('users', UserController::class)->middleware('auth:sanctum');
 Route::apiResource('addresses', AddressController::class)->middleware('auth:sanctum');
 
