@@ -16,4 +16,9 @@ class Products extends Model
         'details',
         'category'
       ];
+
+    public function cart(){
+      return $this->belongsTo(Cart::class);
+    }
+
 }

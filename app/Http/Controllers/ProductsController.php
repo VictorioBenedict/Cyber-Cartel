@@ -15,18 +15,54 @@ use Hash;
 
 class ProductsController extends Controller
 {
+    //STORES A PRODUCT
     public function store(Request $request){
-            $products = Products::all();
-            DB::table('products')->insert([
-                'name' => $request->name,
-                'photo' => $request->photo,
-                'price' => $request->price,
-                'details' => $request->details,
-                'category' => $request->category,
-                'created_at' => Carbon::now()->toDateTimeString(),
-                'updated_at' => Carbon::now()->toDateTimeString()
-            ]);
-        }
+        $products = Products::all();
+        DB::table('products')->insert([
+            'name' => $request->name,
+            'photo' => $request->photo,
+            'price' => $request->price,
+            'details' => $request->details,
+            'category' => $request->category,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+    }
+
+    //SHOWS ALL PRODUCTS
+    public function index(){
+        $products = Products::all();
+        return response()->json(['Products' => $products]);
+    }
+
+    //DELETES A PRODUCT
+    public function destroy($id){
+        $product = Products::find($id);
+        $product -> delete();
+        return response()->json(['message' => "succesfully deleted"]);
+    }
+
+    //SHOWS ALL CPU - NOT FIXED
+    public function index_cpu(){
+        $cpu = Products::with('CPU')->get();
+        return response()->json(['CPUs' => $cpu]);
+    }
+
+    //SHOWS ALL GPU - NOT FIXED
+    public function index_gpu(){
+        $gpu = DB::table('products')->where('category', 'GPU');
+        return response()->json(['GPU' => $gpu]);
+    }
+
+    //SHOWS ALL RAM
+    public function index_ram(){
+        //
+    }
+
+    //SHOWS ALL CPU
+    public function index_psu(){
+        //
+    }
     
         // ORIGINAL FUNCTION
     // public function store(Request $request)

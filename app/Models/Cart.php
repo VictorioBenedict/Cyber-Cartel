@@ -16,13 +16,9 @@ class Cart extends Model
         return $this->belongsTo(User::class);
     }
 
-    //RELATION TO PRODUCTS | WAIT MERGE
-    // public function products(){
-    //     return $this->hasMany(Products::class);
-    // }
-
-    //RELATION TO BOUGHT PRODUCTS
-    public function bought(){
-        return $this->hasOne(Bought::class);
+    //RELATION TO PRODUCTS
+    public function products(){
+        return $this->hasMany(Products::class);
     }
+
 }
