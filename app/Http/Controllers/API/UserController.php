@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     //SHOWS USERS AND INFORMATION
     public function index(){
-        return User::with('carts', 'addresses')->get();
+        return User::with('carts', 'addresses', 'bought_products', 'cancelled_products', 'refunded_products')->get();
     }
 
     //DELETES USER INFORMATION

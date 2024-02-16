@@ -5,15 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class RefundedProducts extends Model
 {
     use HasFactory;
     protected $fillable = ['products', 'user_id'];
-
-    //RELATION TO PRODUCTS
-    public function products(){
-        return $this->hasMany(Products::class);
-    }
 
     //RELATION TO USERS
     public function users(){
@@ -22,7 +17,6 @@ class Cart extends Model
 
     //RELATION TO BOUGHT PRODUCTS
     public function bought_products(){
-        return$this->belongsTo(BoughtProducts::class);
+        return $this->belongsTo(BoughtProducts::class);
     }
-
 }
