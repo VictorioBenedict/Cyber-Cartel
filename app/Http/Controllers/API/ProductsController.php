@@ -28,6 +28,7 @@ class ProductsController extends Controller
     public function search_category($category){
         return Products::where("category", $category)->get();   
 
+        
         // NEEDS RESPONSE IF NOT FOUND
         
     }
