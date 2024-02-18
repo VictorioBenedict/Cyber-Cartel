@@ -48,6 +48,8 @@ Route::get('cart/cart-show', [CartController::class, 'index']);
 Route::post('cart/cart-add', [CartController::class, 'addCart']);
 
 //PRODUCT FUNCTIONS
+Route::get('/products/products-search/{name}', [ProductsController::class, 'search_product']);
+Route::get('/products/category-search/{category}', [ProductsController::class, 'search_category']);
 Route::post('/products/products-create', [ProductsController::class, 'store']);
 Route::get('/products/products-show', [ProductsController::class, 'index']);
 Route::get('/products/show-cpu', [ProductsController::class, 'index_cpu']);

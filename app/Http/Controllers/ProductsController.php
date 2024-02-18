@@ -11,10 +11,26 @@ use Auth;
 use Hash;
 
 
-// FOR NOW LANG ITO NA CONTROLLER, AKAY MARCUSS YUNG GAGAMITIN TALAGA
+// API CONTROLLER 
 
 class ProductsController extends Controller
 {
+
+    //SEARCHES FOR A PRODUCT BY NAME
+    public function search_product($name){
+        return Products::where("name", $name)->get();   
+
+        // NEEDS RESPONSE IF NOT FOUND
+        
+    }
+
+    public function search_category($category){
+        return Products::where("category", $category)->get();   
+
+        // NEEDS RESPONSE IF NOT FOUND
+        
+    }
+
     //STORES A PRODUCT
     public function store(Request $request){
         $products = Products::all();
