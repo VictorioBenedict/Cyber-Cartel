@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,47 @@
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
+        rel="stylesheet">
     <style>
-        /* Additional styles for responsiveness */
+        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+
+        @font-face {
+            font-family: "Spoof Trial Thin";
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+        }
+
         body {
-            padding-top: 60px; /* Add padding to body for the fixed navbar */
+            font-family: "Spoof Trial Thin";
+            padding-top: 60px;
+            overflow-x: hidden;
+            /* Add padding to body for the fixed navbar */
         }
+
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
         .black-button {
-        background-color: black;
-        color: white;
+            background-color: black;
+            color: white;
         }
+
         .black-link {
             text-decoration: none;
             color: black;
         }
+
         .form-group {
             margin-bottom: 20px;
             text-align: center;
@@ -45,43 +74,48 @@
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/home"><img  src="images/logo.png"  style="width:200px;"></a>
-        <!-- Add your navigation links if needed -->
-    </nav>
 
     <!-- Login Content -->
     <section style="margin-top: 20px; margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
-                    <form id="signupForm" style="border: 1px solid #ccc; border-radius: 10px; padding: 20px;">
+                    <form id="signupForm" style="border: 1px solid #ccc; border-radius: 50px; padding: 60px;">
                         @csrf
                         <div class="form-group" style="margin-bottom: 15px;">
                             <h4>Add New Credit Card</h4>
                         </div>
                         <table style="border: 1px solid #ccc; border-radius: 10px; width:100%;">
                             <tr>
-                                <td style=" padding: 2%;"><p style="font-size: 15px; margin-bottom:-2.5px">Your credit card details are protected.</p></td>
+                                <td style=" padding: 2%;">
+                                    <p style="font-size: 15px; margin-bottom:-2.5px;">Your credit card details are
+                                        protected.</p>
+                                </td>
                             </tr>
                             <tr>
-                                <td style=" padding-left: 2%;"><p style="font-size: 12px">Cyber Cartel will not have access to your card info.</p></td>
+                                <td style=" padding-left: 2%;">
+                                    <p style="font-size: 12px">Cyber Cartel will not have access to your card info.</p>
+                                </td>
                             </tr>
                         </table>
                         <h5 style="margin-top:2.5%; margin-bottom:2.5%">Card Details</h5>
                         <div class="d-flex justify-content-between">
-                            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" style="width: 48%;">
-                            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" style="width: 48%;">
+                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                placeholder="Full Name" style="width: 48%;">
+                            <input type="number" class="form-control" id="phone_number" name="phone_number"
+                                placeholder="Phone Number" style="width: 48%;">
                         </div>
 
                         <br>
 
 
                         <div class="form-group">
-                            <label for="location"style="display: flex; align-items: center; justify-content: flex-start;">Location:</label>
-                            <input type="text" id="selectedLocation" readonly placeholder="Select Location" onclick="showDropdown()">
+                            <label for="location"
+                                style="display: flex; align-items: center; justify-content: flex-start;">Location:</label>
+                            <input type="text" id="selectedLocation" readonly placeholder="Select Location"
+                                onclick="showDropdown()">
                             <input type="hidden" id="region" value="">
                             <input type="hidden" id="province" value="">
                             <input type="hidden" id="city" value="">
@@ -117,16 +151,20 @@
 
 
                         <div class="form-group" style="margin-bottom: 5%;">
-                            <p style="display: flex; align-items: center; justify-content: flex-start; font-size: 15px"> House No, Building, Street Name,</p>
-                            <input type="text" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="House No, Building, Street Name,">
+                            <p style="display: flex; align-items: center; justify-content: flex-start; font-size: 15px">
+                                House No, Building, Street Name,</p>
+                            <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
+                                placeholder="House No, Building, Street Name,">
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-light" style="width: 48%; border: 1px solid #000000;">
-                                <a href="/address" style="text-decoration: none; color: #000000; width: 100%; display: block;">Cancel</a>
+                                <a href="/address"
+                                    style="text-decoration: none; color: #000000; width: 100%; display: block;">Cancel</a>
                             </button>
 
                             <button type="submit" class="btn btn-secondary primary black-button" style="width: 48%;">
-                                <a href="/user_address_details" style="text-decoration: none; color: #ccc; width: 100%; display: block;">Submit</a>
+                                <a href="/user_address_details"
+                                    style="text-decoration: none; color: #ccc; width: 100%; display: block;">Submit</a>
                             </button>
 
                         </div>
@@ -139,10 +177,19 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-light text-center py-2 fixed-bottom">
-        <p>&copy; 2023 Login Page. All rights reserved.</p>
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+        <div class="row">
+            <div class="col-md text-left ml-md-2">
+                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
+            </div>
+            <div class="col-md text-center">
+                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            </div>
+            <div class="col-md text-right mr-md-2">
+                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+            </div>
+        </div>
     </footer>
-
 
     <script>
         function showDropdown() {
@@ -175,5 +222,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 
+</html>

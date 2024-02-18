@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,153 +8,206 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
+        rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-        }
+    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-        main {
-            flex: 1;
-        }
+    @font-face {
+        font-family: "Spoof Trial Thin";
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+    }
 
-        footer {
-            background-color: #343a40;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            width: 100%;
-        }
+    body {
+        font-family: "Spoof Trial Thin";
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+        overflow-x: hidden;
+    }
 
-        .slider-frame {
-            overflow: hidden;
-            max-width: 100%;
-            margin-top: 20px;
-        }
+    main {
+        flex: 1;
+    }
 
-        .img-container {
-            width: 100%; /* Adjust the width as needed */
-            box-sizing: border-box;
-            text-align: center;
-        }
+    footer {
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
 
-        .img-container img {
-            max-width: 100%; /* Make images responsive */
-            height: auto;   /* Allow the height to adjust proportionally */
-            border: 1px solid #ddd;
-        }
+    .slider-frame {
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 20px;
+    }
 
-        .card:hover {
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Adjust the color and intensity as needed */
-        }
+    .img-container {
+        width: 100%;
+        /* Adjust the width as needed */
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 0 auto;
-            border: 1px solid black;
-        }
+    .img-container img {
+        max-width: 100%;
+        /* Make images responsive */
+        height: auto;
+        /* Allow the height to adjust proportionally */
+        border: 1px solid #ddd;
+    }
 
-        td {
-            padding: 15px;
-        }
+    .card:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        /* Adjust the color and intensity as needed */
+    }
 
-        .product {
-            display: flex;
-            align-items: center;
-            padding-top: 25px;
-            padding-bottom: 25px;
-        }
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+        border: 1px solid black;
+    }
 
-        .img {
-            max-width: 50px; /* Set the maximum width as needed */
-            margin-right: 10px; /* Adjust margin as needed */
-        }
+    td {
+        padding: 15px;
+    }
 
-        h6 {
-            margin: 0; /* Remove default margin to avoid extra space */
-        }
+    .product {
+        display: flex;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 
-        .unit, .quantity, .total, .action, .products, .units, .quantitys, .totals, .actions {
-            text-align: center;
-        }
+    .img {
+        max-width: 50px;
+        /* Set the maximum width as needed */
+        margin-right: 10px;
+        /* Adjust margin as needed */
+    }
 
-        .item_1_details {
-            width: 45vw;
-        }
+    h6 {
+        margin: 0;
+        /* Remove default margin to avoid extra space */
+    }
 
-        .products {
-            text-align: left;
-            width: 45%;
-        }
+    .unit,
+    .quantity,
+    .total,
+    .action,
+    .products,
+    .units,
+    .quantitys,
+    .totals,
+    .actions {
+        text-align: center;
+    }
 
-        @media only screen and (max-width: 600px) {
-            .product, .unit, .quantity, .total, .action, .products, .units, .quantitys, .totals, .actions {
-                font-size: 0.8rem;
-            }
-        }
-        .checkout_Content{
-            border-top: 1px solid
-        }
-        .checkout {
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            width: 80%;
-            background-color: #fff;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .item_1_details {
+        width: 45vw;
+    }
 
-        .checkout_Content {
-            text-align: left;
-        }
-        .total_Price{
-            text-align: left;
-        }
-        .total_Items{
-            text-align: right;
-            width: 10%;
-        }
+    .products {
+        text-align: left;
+        width: 45%;
+    }
 
-        .checkout_Content button {
-            float: right;
+    @media only screen and (max-width: 600px) {
+
+        .product,
+        .unit,
+        .quantity,
+        .total,
+        .action,
+        .products,
+        .units,
+        .quantitys,
+        .totals,
+        .actions {
+            font-size: 0.8rem;
         }
-        .selectAll{
-            width: 10%;
-        }
-        .deleteAll{
-            width: 60%;
-        }
+    }
+
+    .checkout_Content {
+        border-top: 1px solid
+    }
+
+    .checkout {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout_Content {
+        text-align: left;
+    }
+
+    .total_Price {
+        text-align: left;
+    }
+
+    .total_Items {
+        text-align: right;
+        width: 10%;
+    }
+
+    .checkout_Content button {
+        float: right;
+    }
+
+    .selectAll {
+        width: 10%;
+    }
+
+    .deleteAll {
+        width: 60%;
+    }
     </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- ... (Your existing HTML) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
+        <!-- Added border-radius here -->
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="/home"><img src="images/logo.png" style="width: 200px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
+                    style="width:200px; margin-left: 2vw;"></a>
+            <br>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="margin-right: 5vw;">
+                    <li class="nav-item" style="margin-right: 4vw;">
                         <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
                             </a>
+
                             <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <a class="dropdown-item" href="/my_account">My account</a>
-                                <a class="dropdown-item" href="/my_purchase">My Purchase</a>
-                                <a class="dropdown-item" href="login">Log out</a>
+                                <!-- Dropdown content goes here -->
+                                <a class="dropdown-item text-center" href="/profile">My account</a>
+                                <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
+                                <a class="dropdown-item text-center" href="login">Admin</a>
+                                <a class="dropdown-item text-center" href="login">Log out</a>
                             </div>
                         </div>
                     </li>
@@ -165,7 +219,11 @@
     <!-- Header Section -->
     <header style="margin-top: 65px">
         <div class="container" id="contents">
-            <h1><i>Cyber Cartel | Shopping Cart</i></h1>
+            <header class="d-flex justify-content-between" style="margin-top: 40px;">
+                <h2>Cyber Cartel | Shopping Cart</h2>
+                <br>
+                <br>
+            </header>
         </div>
     </header>
     <br>
@@ -275,7 +333,7 @@
     <table class="checkout">
         <tr class="checout_Content">
             <td class="selectAll">Select All</td>
-            <td class="deleteAll" >Delete All</td>
+            <td class="deleteAll">Delete All</td>
             <td class="total_Items">Total(items: 0)</td>
             <td class="total_Price">$0</td>
             <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
@@ -284,32 +342,45 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-light text-center py-2">
-        <p>&copy; 2023 Dashboard. All rights reserved.</p>
+    <footer class="bg-black text-light text-center py-2">
+        <div class="row">
+            <div class="col-md text-left ml-md-2">
+                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
+            </div>
+            <div class="col-md text-center">
+                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            </div>
+            <div class="col-md text-right mr-md-2">
+                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+            </div>
+        </div>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get the "Select All" checkbox
-            var selectAllCheckbox = document.querySelector('.selectAllCheckbox input');
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the "Select All" checkbox
+        var selectAllCheckbox = document.querySelector('.selectAllCheckbox input');
 
-            // Get all other checkboxes
-            var otherCheckboxes = document.querySelectorAll('table tr input[type="checkbox"]');
+        // Get all other checkboxes
+        var otherCheckboxes = document.querySelectorAll('table tr input[type="checkbox"]');
 
-            // Add an event listener to the "Select All" checkbox
-            selectAllCheckbox.addEventListener('change', function() {
-                // Loop through all other checkboxes and set their checked property
-                otherCheckboxes.forEach(function(checkbox) {
-                    checkbox.checked = selectAllCheckbox.checked;
-                });
+        // Add an event listener to the "Select All" checkbox
+        selectAllCheckbox.addEventListener('change', function() {
+            // Loop through all other checkboxes and set their checked property
+            otherCheckboxes.forEach(function(checkbox) {
+                checkbox.checked = selectAllCheckbox.checked;
             });
         });
+    });
     </script>
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+
+    </script>
+
 </body>
-</html>
