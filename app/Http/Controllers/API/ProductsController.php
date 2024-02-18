@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -24,11 +24,34 @@ class ProductsController extends Controller
         
     }
 
+    //SHOWS
     public function search_category($category){
         return Products::where("category", $category)->get();   
 
         // NEEDS RESPONSE IF NOT FOUND
         
+    }
+
+    //SHOWS ALL CPU - NOT FIXED
+    public function index_cpu(){
+        $cpu = Products::with('CPU')->get();
+        return response()->json(['CPUs' => $cpu]);
+    }
+
+    //SHOWS ALL GPU - NOT FIXED
+    public function index_gpu(){
+        $gpu = DB::table('products')->where('category', 'GPU');
+        return response()->json(['GPU' => $gpu]);
+    }
+
+    //SHOWS ALL RAM
+    public function index_ram(){
+        //
+    }
+
+    //SHOWS ALL CPU
+    public function index_psu(){
+        //
     }
 
     //STORES A PRODUCT
@@ -56,28 +79,6 @@ class ProductsController extends Controller
         $product = Products::find($id);
         $product -> delete();
         return response()->json(['message' => "succesfully deleted"]);
-    }
-
-    //SHOWS ALL CPU - NOT FIXED
-    public function index_cpu(){
-        $cpu = Products::with('CPU')->get();
-        return response()->json(['CPUs' => $cpu]);
-    }
-
-    //SHOWS ALL GPU - NOT FIXED
-    public function index_gpu(){
-        $gpu = DB::table('products')->where('category', 'GPU');
-        return response()->json(['GPU' => $gpu]);
-    }
-
-    //SHOWS ALL RAM
-    public function index_ram(){
-        //
-    }
-
-    //SHOWS ALL CPU
-    public function index_psu(){
-        //
     }
     
         // ORIGINAL FUNCTION

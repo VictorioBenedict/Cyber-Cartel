@@ -3,14 +3,15 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+//API CONTROLLERS
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\ProfileController;
 use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\CartController;
-
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\API\ProductsController;
 
 
 /*
