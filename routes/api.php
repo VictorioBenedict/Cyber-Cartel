@@ -38,24 +38,33 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'forgotPasswor
 Route::post('/reset-password', [ForgotPasswordController::class, 'reset']);
 
 //PROFILE
+Route::get('/profile/address-index', [AddressController::class, 'index']);
+Route::post('/profile/address-create', [AddressController::class, 'create_address']);
 Route::post('/profile/update-profile', [ProfileController::class, 'update_profile'])->middleware('auth:sanctum');
 Route::post('/profile/change-password', [ProfileController::class, 'change_password'])->middleware('auth:sanctum');
 
-Route::get('/profile/address-index', [AddressController::class, 'index']);
-Route::post('/profile/address-create', [AddressController::class, 'create_address']);
-
-//CART FUNCTIONS
+// CART FUNCTIONS //
 Route::get('cart/cart-show', [CartController::class, 'index']);
-Route::post('cart/cart-add', [CartController::class, 'addCart']);
+Route::post('cart/cart-add', [CartController::class, 'add_cart']);
+// Route::delete('cart/cart-remove', [CartController::class, 'remove_cart']);
+// Route::post('cart/cart-checkout', [CartController::class, 'checkout']);
 
-//PRODUCT FUNCTIONS
-Route::get('/products/products-search/{name}', [ProductsController::class, 'search_product']);
-Route::get('/products/category-search/{category}', [ProductsController::class, 'search_category']);
-Route::post('/products/products-create', [ProductsController::class, 'store']);
+// PRODUCT FUNCTIONS //
 Route::get('/products/products-show', [ProductsController::class, 'index']);
 Route::get('/products/show-cpu', [ProductsController::class, 'index_cpu']);
 Route::get('/products/show-gpu', [ProductsController::class, 'index_gpu']);
+Route::get('/products/show-mobo', [ProductsController::class, 'index_mobo']);
+Route::get('/products/show-ram', [ProductsController::class, 'index_ram']);
+Route::get('/products/show-storage', [ProductsController::class, 'index_storage']);
+Route::get('/products/show-psu', [ProductsController::class, 'index_psu']);
+Route::get('/products/show-case', [ProductsController::class, 'index_case']);
 
+Route::get('/products/products-search/{name}', [ProductsController::class, 'search_product']);
+Route::get('/products/category-search/{category}', [ProductsController::class, 'search_category']);
+Route::post('/products/products-create', [ProductsController::class, 'store']);
+Route::delete('/products/products-delete', [ProductsController::class, 'destroy']);
+
+// FOR ADMIN // TESTS //
 Route::apiResource('users', UserController::class)->middleware('auth:sanctum');
 Route::apiResource('addresses', AddressController::class)->middleware('auth:sanctum');
 

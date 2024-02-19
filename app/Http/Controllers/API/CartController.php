@@ -15,18 +15,9 @@ class CartController extends Controller
         return response()->json(['Cart' => $cart]);
     }
 
-    //ADDS EXISTING PRODUCT TO CART
-    // public function addCart(Request $request){
-    //     $id = $request->input('product');
-    //     $product_id = Products::with($id)->get();
-    //     DB::table('carts')->insert([
-    //         'products' => $product_id,
-        
-    //     ]);
-        
-    // }
 
-    public function addCart($product){
+    // NOT FIXED !!!!!!!!!
+    public function add_cart($product){
         $product = Products::find($product);
         DB::table('addresses')->insert([
             'products' => $request->product,
@@ -37,28 +28,16 @@ class CartController extends Controller
         return response()->json(['message' => "succesfully deleted"]);
     }
 
-    public function store(Request $request){
-        $cart = Address::all();
-        $product = Products::with('')->whereRelation('category','user_id',2)->first();
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        DB::table('addresses')->insert([
-            'region' => $request->region,
-            'city' => $request->city,
-            'address' => $request->address,
-            'postal_code' => $request->postal_code,
-            'user_id' => $user_id,
-            'created_at' => Carbon::now()->toDateTimeString(),
-            'updated_at' => Carbon::now()->toDateTimeString()
-        
-        ]);
+
+    //DELETES A PRODUCT FROM CART
+    public function destroy($id){
+        $product = Products::find($id);
+        $product -> delete();
+        return response()->json(['message' => "succesfully deleted"]);
     }
 
-    //REMOVES A PRODUCT FROM CART
-    public function delete(){
+    //CART CHECKOUT (PRODUCTS REDIRECT TO BOUGHT PRODUCTS AND RECEIPT SHOWS)
+    public function checkout(){
         //
     }
 }

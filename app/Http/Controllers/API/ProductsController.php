@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Products;
@@ -18,41 +19,47 @@ class ProductsController extends Controller
 
     //SEARCHES FOR A PRODUCT BY NAME
     public function search_product($name){
-        return Products::where("name", $name)->get();   
-
-        // NEEDS RESPONSE IF NOT FOUND
-        
+        return Products::where("name", $name)->get();    
     }
 
-    //SHOWS
+    //SEARCHES FOR A CATEGORY BY NAME
     public function search_category($category){
-        return Products::where("category", $category)->get();   
-
-        
-        // NEEDS RESPONSE IF NOT FOUND
-        
+        return Products::where("category", $category)->get();  
     }
 
-    //SHOWS ALL CPU - NOT FIXED
+    //CPU INDEX
     public function index_cpu(){
-        $cpu = Products::with('CPU')->get();
-        return response()->json(['CPUs' => $cpu]);
+        return Products::where("category", 'CPU')->get(); 
     }
 
-    //SHOWS ALL GPU - NOT FIXED
+    //GPU INDEX
     public function index_gpu(){
-        $gpu = DB::table('products')->where('category', 'GPU');
-        return response()->json(['GPU' => $gpu]);
+        return Products::where("category", 'GPU')->get(); 
     }
 
-    //SHOWS ALL RAM
+    //MOBO INDEX
+    public function index_mobo(){
+        return Products::where("category", 'MOBO')->get(); 
+    }
+
+    //RAM INDEX
     public function index_ram(){
-        //
+        return Products::where("category", 'RAM')->get(); 
     }
 
-    //SHOWS ALL CPU
+    //STORAGE INDEX
+    public function index_storage(){
+        return Products::where("category", 'STORAGE')->get(); 
+    }
+
+    //PSU INDEX
     public function index_psu(){
-        //
+        return Products::where("category", 'PSU')->get(); 
+    }
+
+    //CASE INDEX
+    public function index_case(){
+        return Products::where("category", 'CASE')->get();
     }
 
     //STORES A PRODUCT
@@ -81,25 +88,4 @@ class ProductsController extends Controller
         $product -> delete();
         return response()->json(['message' => "succesfully deleted"]);
     }
-    
-        // ORIGINAL FUNCTION
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'name' => 'required|max:255|string',
-    //         'photo' => 'nullable|mimes:png,jpg,jpeg,webp',
-    //         'price' => 'required|integer',
-    //         'details' => 'required|max:255|string',
-    //         'category' => 'required|max:255|string',
-    //     ]);
-
-        
-    //     Products::create([
-    //         'name' => $request->name,
-    //         'photo' => $path . $filename,
-    //         'price' => $request->price,
-    //         'details' => $request->details,
-    //         'category' => $request->category,
-    //     ]);
-    // }
 }
