@@ -27,8 +27,8 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Route::get('/signup',[SignupController::class, 'signup']);
 
-Route::get('/', function(){
-    return  view('LandingPage');
+Route::get('/', function () {
+    return view('LandingPage');
 });
 
 
@@ -36,53 +36,53 @@ Route::get('/', function(){
 //Authentication
 Route::post('/login', [SignupController::class, 'signups']);
 
-Route::get('/login', function(){
-    return  view('Login');
+Route::get('/login', function () {
+    return view('Login');
 });
 
-Route::get('/signup', function(){
-    return  view('Signup');
+Route::get('/signup', function () {
+    return view('Signup');
 });
 
-Route::get('/enterEmail', function(){
-    return  view('ForgotPassword');
+Route::get('/enterEmail', function () {
+    return view('ForgotPassword');
 });
 
-Route::post('/conPass', function(){
-    return  view('ConfirmPass');
+Route::post('/conPass', function () {
+    return view('ConfirmPass');
 });
 
 
-Route::get('/product_Info_SystemUnit_1', function(){
-    return  view('/Products_Information/System_Units/product_Info_SystemUnit_1');
+Route::get('/product_Info_SystemUnit_1', function () {
+    return view('/Products_Information/System_Units/product_Info_SystemUnit_1');
 });
 
-Route::get('/product_Info_SystemUnit_2', function(){
-    return  view('/Products_Information/System_Units/product_Info_SystemUnit_2');
+Route::get('/product_Info_SystemUnit_2', function () {
+    return view('/Products_Information/System_Units/product_Info_SystemUnit_2');
 });
 
-Route::get('/cart', function(){
-    return  view('Cart');
+Route::get('/cart', function () {
+    return view('Cart');
 });
 
-Route::get('/product_demo', function(){
-    return  view('Product_demo');
+Route::get('/product_demo', function () {
+    return view('Product_demo');
 });
 
-Route::get('/verify', function(){
-    return  view('Verify_Page');
+Route::get('/verify', function () {
+    return view('Verify_Page');
 });
 
-Route::post('/verify', function(){
-    return  view('Verify_Page');
+Route::post('/verify', function () {
+    return view('Verify_Page');
 });
 
-Route::get('/checkOut', function(){
-    return  view('CheckOut');
+Route::get('/checkOut', function () {
+    return view('CheckOut');
 });
 
-Route::get('/home', function(){
-    return  view('DashBoard');
+Route::get('/home', function () {
+    return view('DashBoard');
 });
 
 //Authetication / Verification
@@ -117,3 +117,4 @@ Route::get('/motherboard_category', [Category_Controller::class, 'Motherboard_Ca
 Route::get('/chassis_category', [Category_Controller::class, 'Chassis_Category_Route']);
 Route::get('/monitor_category', [Category_Controller::class, 'Monitor_Category_Route']);
 Route::get('/pre_built_units', [Category_Controller::class, 'PreBuilt_Category_Route']);
+Route::get('/psu_category', [Category_Controller::class, 'PSU_Category_Route']);
