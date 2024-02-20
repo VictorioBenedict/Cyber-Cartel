@@ -33,7 +33,7 @@ class OtherProducts extends Controller
 
     //MOVES BOUGHT TO REFUNDED
     public function refund(){
-        //
+        
     }
 
     //MOVES BOUGHT TO CANCEL

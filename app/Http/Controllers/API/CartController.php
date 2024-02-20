@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Products;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
+use Auth;
+use Hash;  
 
 class CartController extends Controller
 {
@@ -15,17 +19,20 @@ class CartController extends Controller
         return response()->json(['Cart' => $cart]);
     }
 
-
-    // NOT FIXED !!!!!!!!!
-    public function add_cart($product){
-        $product = Products::find($product);
-        DB::table('addresses')->insert([
-            'products' => $request->product,
+    //ADDS TO CART
+    public function add_cart($id, Request $request) {
+        $product = Products::find($id);
+        DB::table('carts')->insert([
+            'name' => $product->name,
+            'photo' => $product->photo,
+            'price' => $product->price,
+            'details' => $product->details,
+            'category' => $product->category,
+            'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
-        
         ]);
-        return response()->json(['message' => "succesfully deleted"]);
+        return response()->json(['message' => 'Product added to cart successfully'], 200);
     }
 
 

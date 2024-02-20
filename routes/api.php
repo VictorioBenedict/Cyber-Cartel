@@ -40,13 +40,14 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'reset']);
 //PROFILE
 Route::get('/profile/address-index', [AddressController::class, 'index']);
 Route::post('/profile/address-create', [AddressController::class, 'create_address']);
+Route::delete('/profile/address-delete/{id}', [AddressController::class, 'destroy']);
 Route::post('/profile/update-profile', [ProfileController::class, 'update_profile'])->middleware('auth:sanctum');
 Route::post('/profile/change-password', [ProfileController::class, 'change_password'])->middleware('auth:sanctum');
 
 // CART FUNCTIONS //
 Route::get('cart/cart-show', [CartController::class, 'index']);
-Route::post('cart/cart-add', [CartController::class, 'add_cart']);
-// Route::delete('cart/cart-remove', [CartController::class, 'remove_cart']);
+Route::post('cart/cart-add/{id}', [CartController::class, 'add_cart'])->middleware('auth:sanctum');;
+Route::delete('cart/cart-remove/{id}', [CartController::class, 'remove_cart']);
 // Route::post('cart/cart-checkout', [CartController::class, 'checkout']);
 
 // PRODUCT FUNCTIONS //

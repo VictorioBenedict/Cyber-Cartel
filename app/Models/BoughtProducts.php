@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class BoughtProducts extends Model
 {
     use HasFactory;
-    protected $fillable = ['products', 'user_id'];
+    protected $fillable = [
+        'name',
+        'photo',
+        'price',
+        'details',
+        'category',
+        'user_id',
+    ];
 
     //RELATION TO USERS
     public function users(){
