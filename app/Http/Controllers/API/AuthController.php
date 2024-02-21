@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         if ($validator->fails()){
             return response()->json([
-                'message'=> 'Validation fails',
+                'message'=> 'Failed',
                 'errors' => $validator->errors()
             ], 422);
         }
@@ -42,8 +42,8 @@ class AuthController extends Controller
     //LOGIN FUNCTION
     public function login(Request $request) {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-            'password' => 'required',
+            'email' => 'required|email|max:30',
+            'password' => 'required|min:5|max:16',
 
         ]);
 

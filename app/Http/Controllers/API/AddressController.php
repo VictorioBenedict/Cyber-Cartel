@@ -23,13 +23,12 @@ class AddressController extends Controller
     // CREATES A NEW ADDRESS
     public function store(Request $request){
         $addresses = Address::all();
-        $user_id = $request->user()->id;
         DB::table('addresses')->insert([
             'region' => $request->region,
             'city' => $request->city,
             'address' => $request->address,
             'postal_code' => $request->postal_code,
-            'user_id' => $user_id,
+            'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         

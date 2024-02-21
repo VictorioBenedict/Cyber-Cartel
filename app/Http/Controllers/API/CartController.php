@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Products;
+use App\Models\BoughtProducts;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
+use Auth;
+use Hash;  
 
 class CartController extends Controller
 {
@@ -15,50 +20,47 @@ class CartController extends Controller
         return response()->json(['Cart' => $cart]);
     }
 
-    //ADDS EXISTING PRODUCT TO CART
-    // public function addCart(Request $request){
-    //     $id = $request->input('product');
-    //     $product_id = Products::with($id)->get();
-    //     DB::table('carts')->insert([
-    //         'products' => $product_id,
-        
-    //     ]);
-        
-    // }
-
-    public function addCart($product){
-        $product = Products::find($product);
-        DB::table('addresses')->insert([
-            'products' => $request->product,
+    //ADDS TO CART
+    public function add_cart($id, Request $request) {
+        $product = Products::find($id);
+        DB::table('carts')->insert([
+            'name' => $product->name,
+            'photo' => $product->photo,
+            'price' => $product->price,
+            'details' => $product->details,
+            'category' => $product->category,
+            'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
-        
         ]);
-        return response()->json(['message' => "succesfully deleted"]);
+        return response()->json(['message' => 'Product added to cart successfully'], 200);
     }
 
-    public function store(Request $request){
-        $cart = Address::all();
-        $product = Products::with('')->whereRelation('category','user_id',2)->first();
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        $user_id = $request->user()->id;
-        DB::table('addresses')->insert([
-            'region' => $request->region,
-            'city' => $request->city,
-            'address' => $request->address,
-            'postal_code' => $request->postal_code,
-            'user_id' => $user_id,
-            'created_at' => Carbon::now()->toDateTimeString(),
-            'updated_at' => Carbon::now()->toDateTimeString()
-        
-        ]);
+
+    //DELETES A PRODUCT FROM CART
+    public function destroy($id){
+        $product = Cart::find($id);
+        $product -> delete();
+        return response()->json(['message' => "Product removed"]);
     }
 
-    //REMOVES A PRODUCT FROM CART
-    public function delete(){
-        //
+    public function checkout(Request $request){
+        $items = Cart::get();
+        foreach($items as $key => $value){
+            BoughtProducts::create([
+                'name' => $value->name,
+                'photo' => $value->photo,
+                'price' => $value->price,
+                'details' => $value->details,
+                'category' => $value->category,
+                'user_id' => $user_id = $request->user()->id,
+            ]);
+        }
+        $total = Cart::all('price')->sum('price');
+        Cart::where('user_id', $user_id)->delete();
+        return response()->json([
+            'Message' => 'Purchase succesful',
+            'Total spent' => $total,
+            ], 200);
     }
 }

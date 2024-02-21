@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
+    // UPDATES THE NAME AND PHOTO OF PROFILE
     public function update_profile(Request $request){
         $validator = Validator::make($request->all(), [
             'name'=>'required|min:2|max:100',
@@ -44,6 +45,36 @@ class ProfileController extends Controller
         ],200);
 
 
+    }
+
+    // UPDATES THE PROFILE PASSWORD
+    public function change_password(Request $request){
+        $validator = Validator::make($request->all(), [
+            'old_password' => 'required',
+            'password' => 'required',
+            'confirm_password' => 'required|same:password'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'message' => 'Validation failed',
+                'errors' => $validator->errors()
+            ], 422);
+        }
+
+        $user = $request->user();
+        if(Hash::check($request->old_password, $user->password)){
+        $user->update([
+            'password' => Hash::make($request->password)
+        ]);
+        return response()->json([
+            'message'=> 'password successfully updated',
+        ], 200);
+        } else {
+        return response()->json([
+            'message'=>'old password does not match',
+        ], 400);
+    }
     }
 
 

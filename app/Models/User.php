@@ -16,9 +16,9 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
 
-    //RELATION TO CART
+    //RELATION TO CART // PRODUCTS
     public function carts(){
-        return $this->hasOne(Cart::class);
+        return $this->hasMany(Cart::class);
     }
     
     //RELATION TO ADDRESSES
