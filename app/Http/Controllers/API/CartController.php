@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Products;
+use App\Models\BoughtProducts;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Auth;
@@ -38,13 +39,41 @@ class CartController extends Controller
 
     //DELETES A PRODUCT FROM CART
     public function destroy($id){
-        $product = Products::find($id);
+        $product = Cart::find($id);
         $product -> delete();
-        return response()->json(['message' => "succesfully deleted"]);
+        return response()->json(['message' => "Product removed"]);
     }
 
-    //CART CHECKOUT (PRODUCTS REDIRECT TO BOUGHT PRODUCTS AND RECEIPT SHOWS)
-    public function checkout(){
-        //
+    public function checkout(Request $request){
+        $items = Cart::get();
+        foreach($items as $key => $value){
+            BoughtProducts::create([
+                'name' => $value->name,
+                'photo' => $value->photo,
+                'price' => $value->price,
+                'details' => $value->details,
+                'category' => $value->category,
+                'user_id' => $user_id = $request->user()->id,
+            ]);
+        }
+        Cart::where('user_id', $user_id)->delete();
+        return response()->json(['message' => 'Purchase succesful'], 200);
     }
+
+    // OLD NOT WORKING // SAVE KO JUST INCASE 
+    //CART CHECKOUT (PRODUCTS REDIRECT TO BOUGHT PRODUCTS AND RECEIPT SHOWS)
+    // public function checkout(Request $request){
+    //     $items = Cart::get();
+    //     DB::table('bought_products')->insert([  
+    //         'name' => $items->name,
+    //         'photo' => $items->photo,
+    //         'price' => $items->price,
+    //         'details' => $items->details,
+    //         'category' => $items->category,
+    //         'user_id' => $user_id = $request->user()->id,
+    //         'created_at' => Carbon::now()->toDateTimeString(),
+    //         'updated_at' => Carbon::now()->toDateTimeString()
+    //     ]);
+    //     return response()->json(['message' => 'Purchase succesful'], 200);
+    // }
 }

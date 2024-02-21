@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Products;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Models\BoughtProducts;
+use App\Models\CancelledProducts;
+use App\Models\RefundedProducts;
+use App\Models\Cart;
 use Auth;
 use Hash;
 
@@ -16,6 +20,8 @@ use Hash;
 
 class ProductsController extends Controller
 {
+
+    // PRODUCTS FOR SALE // ========================================
 
     //SEARCHES FOR A PRODUCT BY NAME
     public function search_product($name){
@@ -38,8 +44,8 @@ class ProductsController extends Controller
     }
 
     //MOBO INDEX
-    public function index_mobo(){
-        return Products::where("category", 'MOBO')->get(); 
+    public function index_motherboard(){
+        return Products::where("category", 'Motherboard')->get(); 
     }
 
     //RAM INDEX
@@ -49,7 +55,7 @@ class ProductsController extends Controller
 
     //STORAGE INDEX
     public function index_storage(){
-        return Products::where("category", 'STORAGE')->get(); 
+        return Products::where("category", 'Storage')->get(); 
     }
 
     //PSU INDEX
@@ -87,5 +93,59 @@ class ProductsController extends Controller
         $product = Products::find($id);
         $product -> delete();
         return response()->json(['message' => "succesfully deleted"]);
+    }
+
+    // OTHERS // ======================================================
+
+    //SHOWS ALL BOUGHT PRODUCTS
+    public function index_bought(){
+        $bought = BoughtProducts::all();
+        return response()->json(['Bought Products:' => $bought]);
+    }
+
+    //SHOWS ALL CANCELLED PRODUCTS
+    public function index_cancelled(){
+        $cancelled = CancelledProducts::all();
+        return response()->json(['Cancelled Products:' => $cancelled]);
+    }
+
+    //SHOWS ALL REFUNDED PRODUCTS
+    public function index_refunded(){
+        $refunded = RefundedProducts::all();
+        return response()->json(['Refunded Products:' => $refunded]);
+    }
+
+    //MOVES BOUGHT TO REFUNDED
+    public function refund($id, Request $request){
+        $bought = BoughtProducts::find($id);
+        DB::table('refunded_products')->insert([
+            'name' => $bought->name,
+            'photo' => $bought->photo,
+            'price' => $bought->price,
+            'details' => $bought->details,
+            'category' => $bought->category,
+            'user_id' => $user_id = $request->user()->id,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        BoughtProducts::find($id)->delete();
+        return response()->json(['message' => 'Product successfully refunded'], 200);
+    }
+
+    //MOVES BOUGHT TO CANCELLED
+    public function cancel($id, Request $request){
+        $bought = BoughtProducts::find($id);
+        DB::table('cancelled_products')->insert([
+            'name' => $bought->name,
+            'photo' => $bought->photo,
+            'price' => $bought->price,
+            'details' => $bought->details,
+            'category' => $bought->category,
+            'user_id' => $user_id = $request->user()->id,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        BoughtProducts::find($id)->delete();
+        return response()->json(['message' => 'Product successfully cancelled'], 200);
     }
 }
