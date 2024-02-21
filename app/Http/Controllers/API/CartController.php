@@ -56,24 +56,11 @@ class CartController extends Controller
                 'user_id' => $user_id = $request->user()->id,
             ]);
         }
+        $total = Cart::all('price')->sum('price');
         Cart::where('user_id', $user_id)->delete();
-        return response()->json(['message' => 'Purchase succesful'], 200);
+        return response()->json([
+            'Message' => 'Purchase succesful',
+            'Total spent' => $total,
+            ], 200);
     }
-
-    // OLD NOT WORKING // SAVE KO JUST INCASE 
-    //CART CHECKOUT (PRODUCTS REDIRECT TO BOUGHT PRODUCTS AND RECEIPT SHOWS)
-    // public function checkout(Request $request){
-    //     $items = Cart::get();
-    //     DB::table('bought_products')->insert([  
-    //         'name' => $items->name,
-    //         'photo' => $items->photo,
-    //         'price' => $items->price,
-    //         'details' => $items->details,
-    //         'category' => $items->category,
-    //         'user_id' => $user_id = $request->user()->id,
-    //         'created_at' => Carbon::now()->toDateTimeString(),
-    //         'updated_at' => Carbon::now()->toDateTimeString()
-    //     ]);
-    //     return response()->json(['message' => 'Purchase succesful'], 200);
-    // }
 }
