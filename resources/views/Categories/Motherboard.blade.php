@@ -12,96 +12,111 @@
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-        @font-face {
-            font-family: "Spoof Trial Thin";
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-        }
+    @font-face {
+        font-family: "Spoof Trial Thin";
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+    }
 
-        body {
-            font-family: "Spoof Trial Thin";
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            overflow-x: hidden;
-        }
+    body {
+        font-family: "Spoof Trial Thin";
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+        overflow-x: hidden;
+    }
 
-        main {
-            flex: 1;
-        }
+    main {
+        flex: 1;
+    }
 
-        footer {
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
+    footer {
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
 
-        .slider-frame {
-            overflow: hidden;
-            max-width: 100%;
-            margin-top: 20px;
-        }
+    .slider-frame {
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 20px;
+    }
 
-        .slide-images {
-            display: flex;
-            flex-direction: row;
-            transition: transform 0.5s ease-in-out;
-        }
+    .slide-images {
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.5s ease-in-out;
+    }
 
-        .img-container {
-            width: 100%;
-            /* Adjust the width as needed */
-            box-sizing: border-box;
-            flex: 0 0 auto;
-            text-align: center;
-        }
+    .img-container {
+        width: 100%;
+        /* Adjust the width as needed */
+        box-sizing: border-box;
+        flex: 0 0 auto;
+        text-align: center;
+    }
 
-        #pics {
-            max-width: 100%;
-            /* Set max-width to 100% to ensure it doesn't exceed its container */
-            height: auto;
-            /* Allow the height to adjust proportionally */
-            display: block;
-            /* Remove any default inline styles that may affect sizing */
-            margin: 0 auto;
-        }
+    #pics {
+        max-width: 100%;
+        /* Set max-width to 100% to ensure it doesn't exceed its container */
+        height: auto;
+        /* Allow the height to adjust proportionally */
+        display: block;
+        /* Remove any default inline styles that may affect sizing */
+        margin: 0 auto;
+    }
 
-        .img-container img {
-            width: 75vw;
-            /* Make images responsive */
-            height: 500px;
-            /* Set a fixed height for all images */
-            object-fit: cover;
-            /* Ensure images cover the container without stretching */
-            border: 1px solid #ddd;
-            display: inline-block;
-        }
+    .img-container img {
+        width: 75vw;
+        /* Make images responsive */
+        height: 500px;
+        /* Set a fixed height for all images */
+        object-fit: cover;
+        /* Ensure images cover the container without stretching */
+        border: 1px solid #ddd;
+        display: inline-block;
+    }
 
-        .card:hover {
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            /* Adjust the color and intensity as needed */
-        }
+    .card {
+        transition: transform 0.1s ease-in-out;
+    }
 
-        .images {
-            width: 10px;
-            height: 10px;
-        }
+    .card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        /* Adjust the scale factor as needed */
+    }
 
-        .category_motherboard {
-            color: #f8f8f8;
-            background-color: #000000;
-        }
+    .images {
+        width: 10px;
+        height: 10px;
+    }
+
+    .category_motherboard {
+        color: #f8f8f8;
+        background-color: #000000;
+    }
+
+    .navbar-brand img {
+        transition: transform 0.3s ease-in-out;
+        /* Apply the transition to the transform property */
+    }
+
+    .navbar-brand img:hover {
+        transform: scale(1.1);
+        /* Increase the scale on hover */
+    }
     </style>
 </head>
 
@@ -117,12 +132,11 @@
             <br>
             <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
                 <!-- Desktop Search Bar -->
-
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 40vw; margin-left: -7vw;">
+                    style="width: 47vw; margin-left: -7vw;">
             </form>
 
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 6vw;">
+            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
@@ -130,7 +144,8 @@
                         <li class="nav-item" style="margin-right: 1.5vw;">
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
                                     Categories
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
@@ -178,7 +193,6 @@
                                     <!-- Dropdown content goes here -->
                                     <a class="dropdown-item text-center" href="/profile">My account</a>
                                     <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                    <a class="dropdown-item text-center" href="/my_purchase">Admin</a>
                                     <a class="dropdown-item text-center" href="login">Log out</a>
                                 </div>
                             </div>
@@ -422,7 +436,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>

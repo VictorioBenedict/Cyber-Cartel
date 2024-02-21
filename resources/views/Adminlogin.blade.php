@@ -23,6 +23,7 @@
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
     }
 
+    /* Additional styles for responsiveness */
     body {
         font-family: "Spoof Trial Thin";
         padding-top: 60px;
@@ -40,28 +41,26 @@
         color: black;
     }
 
+    /* Hover effect for the "Login" button */
+    .grey-hover:hover {
+        background-color: #333;
+        color: white;
+        /* You may adjust the text color as needed */
+    }
+
+    /* Increase right margin for the content */
     .custom-container {
         margin-right: -350px;
         /* Adjust as needed */
     }
 
-    #signupForm {
+    /* Add more padding for the login form */
+    /*ajust para sa login form*/
+    #loginForm {
         border: 1px solid #ccc;
         border-radius: 50px;
-        padding: 30px;
+        padding: 105px;
         /* Adjust as needed */
-    }
-
-    .btn-primary.black-button {
-        background-color: black;
-        color: white;
-        border: 1px solid black;
-    }
-
-    .btn-primary.black-button:hover {
-        background-color: #333;
-        border: 1px solid #333;
-        color: white;
     }
 
     .btn-black {
@@ -92,53 +91,39 @@
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
     }
-
-    /* Media queries for responsiveness */
-    @media (max-width: 768px) {
-        .custom-container {
-            margin-right: 0;
-        }
-
-        #signupForm {
-            padding: 20px;
-        }
-    }
     </style>
 </head>
 
 <body>
+
     <!-- Navigation Bar 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
         style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
         <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
-         Add your navigation links if needed 
+         Add your navigation links if needed
     </nav> -->
 
+
     <!-- Content Section -->
-    <section style="margin-top: -25px; margin-bottom: 20px;">
+    <section style="margin-top: 15px; margin-bottom: 20px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <form id="signupForm" action="/login" method="POST"
-                        style="border: 1px solid #ccc; border-radius: 50px; padding: 44px;">
+                    <form id="loginForm" action="/admindashboards" method="post">
                         @csrf
                         <header class="py-5 text-center">
-                            <h1>Sign Up</h1>
+                            <h1>Admin Login</h1>
                         </header>
-                        <div class="form-group password-container" style="margin-bottom: 30px;">
+
+                        <div class="form-group" style="margin-bottom: 15px;">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
                                 placeholder="Enter your username">
                         </div>
-                        <div class="form-group password-container" style="margin-bottom: 30px;">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Enter your Email">
-                        </div>
-                        <!-- Password Section -->
-                        <div class="form-group password-container" style="margin-bottom: 30px;">
+
+                        <div class="form-group" style="margin-bottom: 30px;">
                             <label for="password">Password</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="password" name="password"
@@ -150,21 +135,11 @@
                             </div>
                         </div>
 
-                        <!-- Confirm Password Section -->
-                        <div class="form-group password-container" style="margin-bottom: 40px;">
-                            <label for="confirmPassword">Confirm Password</label>
-                            <div class="input-group">
-                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
-                                    placeholder="Confirm Password">
-                                <div class="input-group-append">
-                                    <button type="button" class="btn btn-black btn-sm" id="showConfirmPasswordBtn"
-                                        onclick="toggleConfirmPassword()">Show</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block black-button">Sign-Up</button>
+                        <button type="submit" class="btn btn-block black-button grey-hover">Login</button>
+                        <br>
                     </form>
                 </div>
+
                 <!-- Image on the left side (as a clickable button) -->
                 <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left" style="left: 0; top: -40px;">
                     <a href="/">
@@ -174,6 +149,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer Section -->
     <footer class="bg-black text-light text-center py-3 fixed-bottom">
@@ -206,20 +182,6 @@
         } else {
             passwordInput.type = "password";
             showPasswordBtn.classList.remove("btn-black-active");
-        }
-    }
-
-    // Add this function to handle Confirm Password
-    function toggleConfirmPassword() {
-        var confirmPasswordInput = document.getElementById("confirmPassword");
-        var showConfirmPasswordBtn = document.getElementById("showConfirmPasswordBtn");
-
-        if (confirmPasswordInput.type === "password") {
-            confirmPasswordInput.type = "text";
-            showConfirmPasswordBtn.classList.add("btn-black-active");
-        } else {
-            confirmPasswordInput.type = "password";
-            showConfirmPasswordBtn.classList.remove("btn-black-active");
         }
     }
     </script>

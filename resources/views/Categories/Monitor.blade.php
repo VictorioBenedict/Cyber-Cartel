@@ -88,9 +88,14 @@
         display: inline-block;
     }
 
+    .card {
+        transition: transform 0.1s ease-in-out;
+    }
+
     .card:hover {
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        /* Adjust the color and intensity as needed */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+        /* Adjust the scale factor as needed */
     }
 
     .images {
@@ -101,6 +106,16 @@
     .category_monitor {
         color: #f8f8f8;
         background-color: #000000;
+    }
+
+    .navbar-brand img {
+        transition: transform 0.3s ease-in-out;
+        /* Apply the transition to the transform property */
+    }
+
+    .navbar-brand img:hover {
+        transform: scale(1.1);
+        /* Increase the scale on hover */
     }
     </style>
 </head>
@@ -115,15 +130,13 @@
             <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
                     style="width:200px; margin-left: 2vw;"></a>
             <br>
-
             <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
-
                 <!-- Desktop Search Bar -->
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 40vw; margin-left: -7vw;">
+                    style="width: 47vw; margin-left: -7vw;">
             </form>
 
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 6vw;">
+            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
@@ -131,7 +144,8 @@
                         <li class="nav-item" style="margin-right: 1.5vw;">
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
                                     Categories
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
@@ -179,7 +193,6 @@
                                     <!-- Dropdown content goes here -->
                                     <a class="dropdown-item text-center" href="/profile">My account</a>
                                     <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                    <a class="dropdown-item text-center" href="login">Admin</a>
                                     <a class="dropdown-item text-center" href="login">Log out</a>
                                 </div>
                             </div>

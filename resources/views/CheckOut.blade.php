@@ -134,6 +134,16 @@
         width: 0%;
         /* Set the width to 100% for full width */
     }
+
+    .navbar-brand img {
+        transition: transform 0.3s ease-in-out;
+        /* Apply the transition to the transform property */
+    }
+
+    .navbar-brand img:hover {
+        transform: scale(1.1);
+        /* Increase the scale on hover */
+    }
     </style>
 </head>
 
@@ -158,9 +168,9 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <a class="dropdown-item" href="/my_account">My account</a>
-                                <a class="dropdown-item" href="/my_purchase">My Purchase</a>
-                                <a class="dropdown-item" href="login">Log out</a>
+                                <a class="dropdown-item text-center" href="/my_account">My account</a>
+                                <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
+                                <a class="dropdown-item text-center" href="login">Log out</a>
                             </div>
                         </div>
                     </li>

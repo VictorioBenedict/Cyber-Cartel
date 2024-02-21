@@ -13,121 +13,97 @@
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-    @font-face {
-        font-family: "Spoof Trial Thin";
-        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-    }
+        @font-face {
+            font-family: "Spoof Trial Thin";
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+        }
 
-    body {
-        font-family: "Spoof Trial Thin";
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #ffffff;
-        overflow-x: hidden;
-    }
+        body {
+            font-family: "Spoof Trial Thin";
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
 
-    main {
-        flex: 1;
-    }
+        main {
+            flex: 1;
+        }
 
-    footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
 
-    .slider-frame {
-        overflow: hidden;
-        max-width: 100%;
-        margin-top: 20px;
-    }
+        .slider-frame {
+            overflow: hidden;
+            max-width: 100%;
+            margin-top: 20px;
+        }
 
-    .img-container {
-        width: 100%;
-        /* Adjust the width as needed */
-        box-sizing: border-box;
-        text-align: center;
-    }
+        .img-container {
+            width: 100%;
+            /* Adjust the width as needed */
+            box-sizing: border-box;
+            text-align: center;
+        }
 
-    .img-container img {
-        max-width: 100%;
-        /* Make images responsive */
-        height: auto;
-        /* Allow the height to adjust proportionally */
-        border: 1px solid #ddd;
-    }
+        .img-container img {
+            max-width: 100%;
+            /* Make images responsive */
+            height: auto;
+            /* Allow the height to adjust proportionally */
+            border: 1px solid #ddd;
+        }
 
-    .card:hover {
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-        /* Adjust the color and intensity as needed */
-    }
+        .card:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            /* Adjust the color and intensity as needed */
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 80%;
-        margin: 0 auto;
-        border: 1px solid black;
-    }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
 
-    td {
-        padding: 15px;
-    }
+        td {
+            padding: 15px;
+        }
 
-    .product {
-        display: flex;
-        align-items: center;
-        padding-top: 25px;
-        padding-bottom: 25px;
-    }
+        .product {
+            display: flex;
+            align-items: center;
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
 
-    .img {
-        max-width: 50px;
-        /* Set the maximum width as needed */
-        margin-right: 10px;
-        /* Adjust margin as needed */
-    }
+        .img {
+            max-width: 50px;
+            /* Set the maximum width as needed */
+            margin-right: 10px;
+            /* Adjust margin as needed */
+        }
 
-    h6 {
-        margin: 0;
-        /* Remove default margin to avoid extra space */
-    }
+        h6 {
+            margin: 0;
+            /* Remove default margin to avoid extra space */
+        }
 
-    .unit,
-    .quantity,
-    .total,
-    .action,
-    .products,
-    .units,
-    .quantitys,
-    .totals,
-    .actions {
-        text-align: center;
-    }
-
-    .item_1_details {
-        width: 45vw;
-    }
-
-    .products {
-        text-align: left;
-        width: 45%;
-    }
-
-    @media only screen and (max-width: 600px) {
-
-        .product,
         .unit,
         .quantity,
         .total,
@@ -137,48 +113,82 @@
         .quantitys,
         .totals,
         .actions {
-            font-size: 0.8rem;
+            text-align: center;
         }
-    }
 
-    .checkout_Content {
-        border-top: 1px solid
-    }
+        .item_1_details {
+            width: 45vw;
+        }
 
-    .checkout {
-        position: sticky;
-        bottom: 0;
-        left: 0;
-        width: 80%;
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+        .products {
+            text-align: left;
+            width: 45%;
+        }
 
-    .checkout_Content {
-        text-align: left;
-    }
+        @media only screen and (max-width: 600px) {
 
-    .total_Price {
-        text-align: left;
-    }
+            .product,
+            .unit,
+            .quantity,
+            .total,
+            .action,
+            .products,
+            .units,
+            .quantitys,
+            .totals,
+            .actions {
+                font-size: 0.8rem;
+            }
+        }
 
-    .total_Items {
-        text-align: right;
-        width: 10%;
-    }
+        .checkout_Content {
+            border-top: 1px solid
+        }
 
-    .checkout_Content button {
-        float: right;
-    }
+        .checkout {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .selectAll {
-        width: 10%;
-    }
+        .checkout_Content {
+            text-align: left;
+        }
 
-    .deleteAll {
-        width: 60%;
-    }
+        .total_Price {
+            text-align: left;
+        }
+
+        .total_Items {
+            text-align: right;
+            width: 10%;
+        }
+
+        .checkout_Content button {
+            float: right;
+        }
+
+        .selectAll {
+            width: 10%;
+        }
+
+        .deleteAll {
+            width: 60%;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease-in-out;
+            /* Apply the transition to the transform property */
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+            /* Increase the scale on hover */
+        }
     </style>
 </head>
 
@@ -206,7 +216,6 @@
                                 <!-- Dropdown content goes here -->
                                 <a class="dropdown-item text-center" href="/profile">My account</a>
                                 <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                <a class="dropdown-item text-center" href="login">Admin</a>
                                 <a class="dropdown-item text-center" href="login">Log out</a>
                             </div>
                         </div>
@@ -357,21 +366,21 @@
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get the "Select All" checkbox
-        var selectAllCheckbox = document.querySelector('.selectAllCheckbox input');
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the "Select All" checkbox
+            var selectAllCheckbox = document.querySelector('.selectAllCheckbox input');
 
-        // Get all other checkboxes
-        var otherCheckboxes = document.querySelectorAll('table tr input[type="checkbox"]');
+            // Get all other checkboxes
+            var otherCheckboxes = document.querySelectorAll('table tr input[type="checkbox"]');
 
-        // Add an event listener to the "Select All" checkbox
-        selectAllCheckbox.addEventListener('change', function() {
-            // Loop through all other checkboxes and set their checked property
-            otherCheckboxes.forEach(function(checkbox) {
-                checkbox.checked = selectAllCheckbox.checked;
+            // Add an event listener to the "Select All" checkbox
+            selectAllCheckbox.addEventListener('change', function () {
+                // Loop through all other checkboxes and set their checked property
+                otherCheckboxes.forEach(function (checkbox) {
+                    checkbox.checked = selectAllCheckbox.checked;
+                });
             });
         });
-    });
     </script>
 
     <!-- Bootstrap JS and Popper.js scripts -->
@@ -381,6 +390,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 
-    </script>
+        </script>
 
 </body>

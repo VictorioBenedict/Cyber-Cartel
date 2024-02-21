@@ -13,162 +13,184 @@
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-    @font-face {
-        font-family: "Spoof Trial Thin";
-        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-    }
+        @font-face {
+            font-family: "Spoof Trial Thin";
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+        }
 
-    body {
-        font-family: "Spoof Trial Thin";
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            font-family: "Spoof Trial Thin";
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-    .main {
-        flex: 1;
-    }
+        .main {
+            flex: 1;
+        }
 
-    footer {
-        background-color: #343a40;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-        width: 100%;
-    }
+        footer {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
 
-    table {
-        border-collapse: collapse;
-        width: 65%;
-        border: 1px solid black;
-    }
+        table {
+            border-collapse: collapse;
+            width: 65%;
+            border: 1px solid black;
+        }
 
-    td {
-        padding: 15px;
-        text-align: center;
-    }
+        td {
+            padding: 15px;
+            text-align: center;
+        }
 
-    .table_1 td {
-        padding: 15px;
-        text-align: center;
-        cursor: pointer;
-        width: 16.66%;
-    }
+        .table_1 td {
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            width: 16.66%;
+        }
 
-    .img {
-        max-width: 10%;
-        margin-right: 10px;
-    }
+        .img {
+            max-width: 10%;
+            margin-right: 10px;
+        }
 
-    .clicked {
-        border-bottom: 2px solid rgb(0, 0, 0);
-        color: rgb(68, 0, 255);
-    }
+        .clicked {
+            border-bottom: 2px solid rgb(0, 0, 0);
+            color: rgb(68, 0, 255);
+        }
 
-    .profile_img {
-        border-radius: 50%;
-        width: 7.5vw;
-        height: auto;
-    }
+        .profile_img {
+            border-radius: 50%;
+            width: 7.5vw;
+            height: auto;
+        }
 
-    .container {
-        display: flex;
-        width: 100%;
-        height: auto;
-    }
+        .container {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
 
-    .user_profile {
-        width: 30%;
-        overflow-y: hidden;
-        border-right: 1px solid #ccc;
-        box-sizing: border-box;
-        margin-right: 0;
-    }
+        .user_profile {
+            width: 30%;
+            overflow-y: hidden;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-right: 0;
+        }
 
-    .contents {
-        width: 100%;
-        flex: 1;
-        overflow-y: auto;
-        padding: 20px;
-        overflow-x: hidden;
-    }
+        .contents {
+            width: 100%;
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            overflow-x: hidden;
+        }
 
-    .contents table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid black;
-        margin-bottom: 20px;
-    }
+        .contents table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin-bottom: 20px;
+        }
 
-    .table_1 {
-        margin-bottom: 10px;
-        position: sticky;
-        z-index: 2;
-        background-color: #ffffff;
-    }
+        .table_1 {
+            margin-bottom: 10px;
+            position: sticky;
+            z-index: 2;
+            background-color: #ffffff;
+        }
 
-    .profile_img {
-        border-radius: 50%;
-        width: 7.5vw;
-        height: auto;
-    }
+        .profile_img {
+            border-radius: 50%;
+            width: 7.5vw;
+            height: auto;
+        }
 
-    .user_details {
-        text-align: left;
-        margin-left: 30%;
-        font-size: 14px;
-    }
+        .user_details {
+            text-align: left;
+            margin-left: 30%;
+            font-size: 14px;
+        }
 
-    .user_header {
-        text-align: left;
-        text-decoration: none;
-    }
+        .user_header {
+            text-align: left;
+            text-decoration: none;
+        }
 
-    .myPurchase_header {
-        margin-top: -30px;
-        text-align: left;
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-    }
+        .myPurchase_header {
+            margin-top: -30px;
+            text-align: left;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
 
-    .payment {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-    }
+        .payment {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
 
-    .address {
-        text-decoration: none;
-        color: rgb(4, 0, 255);
-    }
+        .address {
+            text-decoration: none;
+            color: rgb(4, 0, 255);
+        }
 
-    .change_pass {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-    }
+        .change_pass {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .highlight-black {
+            background-color: black;
+            color: white;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease-in-out;
+            /* Apply the transition to the transform property */
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+            /* Increase the scale on hover */
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- ... (Your existing HTML) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
+        <!-- Added border-radius here -->
+
         <div class="container-fluid">
-            <a class="navbar-brand" href="/home"><img src="images/logo.png" style="width:200px;"></a>
+            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
+                    style="width:200px; margin-left: 2vw;"></a>
             <br>
             <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
                 <!-- Desktop Search Bar -->
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 40vw;">
-                <button class="btn btn-outline-light" type="submit">Search</button>
+                    style="width: 47vw; margin-left: -7vw;">
             </form>
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 2vw;">
+
+            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
                         <!-- mx-auto to center the content -->
                         <li class="nav-item" style="margin-right: 1.5vw;">
                             <div class="nav-item dropdown">
@@ -178,18 +200,15 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                                     <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item" href="#">Processor</a>
-                                    <a class="dropdown-item" href="#">Motherboard</a>
-                                    <a class="dropdown-item" href="#">Ram</a>
-                                    <a class="dropdown-item" href="#">Video Card</a>
-                                    <a class="dropdown-item" href="#">Power Supply Unit</a>
-                                    <a class="dropdown-item" href="#">Solid State Drive</a>
-                                    <a class="dropdown-item" href="#">Hard Drive</a>
-                                    <a class="dropdown-item" href="#">Chassis</a>
-                                    <a class="dropdown-item" href="#">Monitor</a>
-                                    <a class="dropdown-item" href="#">Keyboard</a>
-                                    <a class="dropdown-item" href="#">Mouse</a>
-                                    <a class="dropdown-item" href="#">Headset</a>
+                                    <a class="dropdown-item text-center" href="/processor_category">Processor</a>
+                                    <a class="dropdown-item text-center" href="/motherboard_category">Motherboard</a>
+                                    <a class="dropdown-item text-center" href="/ram_category">Ram</a>
+                                    <a class="dropdown-item text-center" href="/gpu_category">Video Card</a>
+                                    <a class="dropdown-item text-center" href="/psu_category">Power Supply Unit</a>
+                                    <a class="dropdown-item text-center" href="/ssd_category">Solid State Drive</a>
+                                    <a class="dropdown-item text-center" href="/hdd_category">Hard Drive</a>
+                                    <a class="dropdown-item text-center" href="/chassis_category">Chassis</a>
+                                    <a class="dropdown-item text-center" href="/monitor_category">Monitor</a>
                                 </div>
                             </div>
                         </li>
@@ -201,22 +220,23 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                                     <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item" href="#">INTEL</a>
-                                    <a class="dropdown-item" href="#">AMD</a>
+                                    <a class="dropdown-item text-center" href="#">INTEL</a>
+                                    <a class="dropdown-item text-center" href="#">AMD</a>
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item" style="margin-right: 1.5vw;">
                             <div class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="color: white;">
                                     Profile
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                                     <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item" href="/profile">My account</a>
-                                    <a class="dropdown-item" href="/my_purchase">My Purchase</a>
-                                    <a class="dropdown-item" href="login">Log out</a>
+                                    <a class="dropdown-item text-center highlight-black" href="/profile">My account</a>
+                                    <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
+                                    <a class="dropdown-item text-center" href="login">Log out</a>
                                 </div>
                             </div>
                         </li>
@@ -234,14 +254,18 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
     <div class="container">
-        <div class="user_profile">
+        <div class="user_profile" style="margin-right: 60px;'">
             <table>
                 <tr>
-                    <td>
+                    <td style="margin-top: 90px;">
+                        <br>
                         <a href="/my_account"><img src="images/Pre-Built/sysu 1.jpg" class="profile_img"></a>
-                        <h6>Username</h6>
+                        <h4 style="margin-top: 30px;">Username</h4>
                         <a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">
+                            <br>
                             <p>Edit Profile</p>
                         </a>
                     </td>
@@ -253,14 +277,11 @@
                 </tr>
                 <td>
                     <div class="user_header">
-                        <a href="/my_account" style="text-decoration: none">My Account</a>
+                        <a href="/my_account" style="text-decoration: none;">My Account</a>
                     </div>
                     <div class="user_details">
                         <a href="/my_account" style="text-decoration: none;" class="myPurchase_header">
                             <p>Profile</p>
-                        </a>
-                        <a href="/bank_and_card" style="text-decoration: none;" class="payment">
-                            <p>Bank & Cards</p>
                         </a>
                         <a href="/address" style="text-decoration: none;" class="address">
                             <p>Address</p>
@@ -288,13 +309,13 @@
                     <td>
                         <div
                             style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2%;">
-                            <h6 style="margin: 0;">My Addresses</h6>
+                            <h4 style="margin: 0; font-weight: bold;">My Addresses</h4>
                             <button style="margin: 0;"><a href="/add_new_address"
                                     style="text-decoration: none; color: #000000;">+ Add New Address</a></button>
                         </div>
                         <hr style="margin: 0 auto; width: 100%;">
                         <div>
-                            <p style="margin: 0; text-align: left;">Address</p>
+                            <p style="margin: 0; text-align: left; font-weight: bold;">Address</p>
                         </div>
                     </td>
                 </tr>
@@ -324,22 +345,32 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-light text-center py-2">
-        <p>&copy; 2023 Dashboard. All rights reserved.</p>
+    <footer class="bg-black text-light text-center py-2">
+        <div class="row">
+            <div class="col-md text-left ml-md-2">
+                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
+            </div>
+            <div class="col-md text-center">
+                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            </div>
+            <div class="col-md text-right mr-md-2">
+                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>
-    function toggleBorderBottom(element) {
-        // Remove 'clicked' class from all td elements in the table
-        var tds = element.parentNode.getElementsByTagName('td');
-        for (var i = 0; i < tds.length; i++) {
-            tds[i].classList.remove('clicked');
-        }
+        function toggleBorderBottom(element) {
+            // Remove 'clicked' class from all td elements in the table
+            var tds = element.parentNode.getElementsByTagName('td');
+            for (var i = 0; i < tds.length; i++) {
+                tds[i].classList.remove('clicked');
+            }
 
-        // Add 'clicked' class to the clicked td element
-        element.classList.toggle('clicked');
-    }
+            // Add 'clicked' class to the clicked td element
+            element.classList.toggle('clicked');
+        }
     </script>
 
     <!-- Bootstrap JS and Popper.js scripts -->
@@ -348,7 +379,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>

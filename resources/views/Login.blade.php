@@ -11,76 +11,86 @@
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-        @font-face {
-            font-family: "Spoof Trial Thin";
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-        }
+    @font-face {
+        font-family: "Spoof Trial Thin";
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+    }
 
-        /* Additional styles for responsiveness */
-        body {
-            font-family: "Spoof Trial Thin";
-            padding-top: 60px;
-            overflow: hidden;
-            /* Add padding to body for the fixed navbar */
-        }
+    /* Additional styles for responsiveness */
+    body {
+        font-family: "Spoof Trial Thin";
+        padding-top: 60px;
+        overflow: hidden;
+        /* Add padding to body for the fixed navbar */
+    }
 
-        .black-button {
-            background-color: black;
-            color: white;
-        }
+    .black-button {
+        background-color: black;
+        color: white;
+    }
 
-        .black-link {
-            text-decoration: none;
-            color: black;
-        }
+    .black-link {
+        text-decoration: none;
+        color: black;
+    }
 
-        /* Hover effect for the "Login" button */
-        .grey-hover:hover {
-            background-color: #333;
-            color: white;
-            /* You may adjust the text color as needed */
-        }
+    /* Hover effect for the "Login" button */
+    .grey-hover:hover {
+        background-color: #333;
+        color: white;
+        /* You may adjust the text color as needed */
+    }
 
-        /* Increase right margin for the content */
-        .custom-container {
-            margin-right: -350px;
-            /* Adjust as needed */
-        }
+    /* Increase right margin for the content */
+    .custom-container {
+        margin-right: -350px;
+        /* Adjust as needed */
+    }
 
-        /* Add more padding for the login form */
-        /*ajust para sa login form*/
-        #loginForm {
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            padding: 105px;
-            /* Adjust as needed */
-        }
+    /* Add more padding for the login form */
+    /*ajust para sa login form*/
+    #loginForm {
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        padding: 105px;
+        /* Adjust as needed */
+    }
 
-        .btn-black {
-            background-color: white;
-            color: black;
-        }
+    .btn-black {
+        background-color: white;
+        color: black;
+    }
 
-        .btn-black-active {
-            background-color: black;
-            color: white;
-        }
+    .btn-black-active {
+        background-color: black;
+        color: white;
+    }
 
-        footer {
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
+    .position-fixed {
+        transition: transform 0.3s ease-in-out;
+        /* Adjust the transition properties as needed */
+    }
+
+    .position-fixed:hover {
+        transform: scale(1.2);
+        /* Adjust the scale factor as needed */
+    }
+
+    footer {
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
     </style>
 </head>
 
@@ -171,18 +181,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        function togglePassword() {
-            var passwordInput = document.getElementById("password");
-            var showPasswordBtn = document.getElementById("showPasswordBtn");
+    function togglePassword() {
+        var passwordInput = document.getElementById("password");
+        var showPasswordBtn = document.getElementById("showPasswordBtn");
 
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                showPasswordBtn.classList.add("btn-black-active");
-            } else {
-                passwordInput.type = "password";
-                showPasswordBtn.classList.remove("btn-black-active");
-            }
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            showPasswordBtn.classList.add("btn-black-active");
+        } else {
+            passwordInput.type = "password";
+            showPasswordBtn.classList.remove("btn-black-active");
         }
+    }
     </script>
 </body>
 

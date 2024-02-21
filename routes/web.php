@@ -44,6 +44,10 @@ Route::get('/signup', function () {
     return view('Signup');
 });
 
+Route::get('/adminlogin', function () {
+    return view('Adminlogin');
+});
+
 Route::get('/enterEmail', function () {
     return view('ForgotPassword');
 });
@@ -83,6 +87,31 @@ Route::get('/checkOut', function () {
 
 Route::get('/home', function () {
     return view('DashBoard');
+});
+
+//Admin panel
+Route::get('/adminlogin', function () {
+    return view('Adminlogin');
+});
+
+Route::post('/admindashboards', function () {
+    return view('Admindashboards');
+});
+
+Route::get('/admindashboards', function () {
+    return view('Admindashboards');
+});
+
+Route::get('/adminanalytics', function () {
+    return view('Adminanalytics');
+});
+
+Route::get('/admincustomers', function () {
+    return view('Admincustomers');
+});
+
+Route::get('/adminmanagements', function () {
+    return view('Adminmanagements');
 });
 
 //Authetication / Verification
