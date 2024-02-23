@@ -79,5 +79,7 @@ class CartController extends Controller
         $total = Cart::where('price')->sum('price');
         Cart::where('user_id', $user_id)->delete();
         return response()->json(['message' => 'Purchase succesful, total spent', $total], 200);
+
+        //TESTING
     }
 }
