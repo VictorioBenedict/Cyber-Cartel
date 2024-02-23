@@ -1,4 +1,4 @@
-<x-app-layout>
+
 
     <x-slot name="title">edit
 
@@ -59,4 +59,3 @@
     <x-slot name="scripts">
     </x-slot>
 
-</x-app-layout>
