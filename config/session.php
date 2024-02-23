@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'domain' => env('SESSION_DOMAIN=https://immense-wildwood-52155-6910ad3f7744.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
