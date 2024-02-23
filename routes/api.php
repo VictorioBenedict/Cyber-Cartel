@@ -76,6 +76,6 @@ Route::delete('/products/products-delete', [ProductsController::class, 'destroy'
 
 // FOR ADMIN // TESTS //
 Route::post('/test', [CartController::class, 'test']);
-Route::apiResource('users', UserController::class)->middleware('auth:sanctum');
+Route::apiResource('users', UserController::class);
 
 
