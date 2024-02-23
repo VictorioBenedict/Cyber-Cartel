@@ -12,7 +12,7 @@ class productController extends Controller
     public function index()
     {
         $products = Products::get();
-        return view('adminmanagements', compact('products'));
+        return view('productmanagements', compact('products'));
     }
     public function create()
     {
