@@ -199,7 +199,7 @@
         <!-- Added border-radius here -->
 
         <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
+            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
                     style="width:200px; margin-left: 2vw;"></a>
             <br>
 
@@ -209,14 +209,13 @@
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Profile
+                                {{auth()->user()->name}}
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                                 <!-- Dropdown content goes here -->
                                 <a class="dropdown-item text-center" href="/profile">My account</a>
                                 <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                <a class="dropdown-item text-center" href="login">Log out</a>
                             </div>
                         </div>
                     </li>
@@ -244,107 +243,37 @@
         <tr style="border-bottom: 1px solid">
             <td class="selectAllCheckbox"><input type="checkbox"></td>
             <td class="products">Product</td>
-            <td class="units">Unit Price</td>
-            <td class="quantitys">Quantity</td>
-            <td class="totals">Total Price</td>
+            <td class="units"></td>
+            <td class="quantitys">Unit Price</td>
+            <td class="totals">Category</td>
             <td class="actions">Action</td>
         </tr>
         <tr>
+        @foreach ($cart as $item)
+
             <td><input type="checkbox"></td>
             <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
+                <img src=" {{$item -> photo}}" class="img">
+                <h6>{{$item -> name}}</h6>
             </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
+            <td class="unit"></td>
+            <td class="quantity">₱ {{$item -> price}}</td>
+            <td class="total">{{$item -> category}}</td>
+            <td class="action">
+                <a href="{{url('addcart/'.$item -> id.'/delete')}}"
+                onclick ="return confirm('Are you sure?')">
+                Remove</a>
             </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
         </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">2</td>
-            <td class="total">$300</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox"></td>
-            <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
-            </td>
-            <td class="unit">$150</td>
-            <td class="quantity">1</td>
-            <td class="total">$150</td>
-            <td class="action">Delete</td>
-        </tr>
-    </table>
+        @endforeach
+        
     <br>
     <table class="checkout">
         <tr class="checout_Content">
-            <td class="selectAll">Select All</td>
-            <td class="deleteAll">Delete All</td>
+            <td class="selectAll"></td>
+            <td class="deleteAll"></td>
             <td class="total_Items">Total(items: 0)</td>
-            <td class="total_Price">$0</td>
+            <td class="total_Price">₱{{$total}}</td>
             <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
         </tr>
     </table>

@@ -173,82 +173,8 @@
 
 <body>
     <!-- Navigation Bar -->
-    <!-- ... (Your existing HTML) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 2vw;"></a>
-            <br>
-            <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
-                <!-- Desktop Search Bar -->
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 47vw; margin-left: -7vw;">
-            </form>
-
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-
-                        <!-- mx-auto to center the content -->
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Categories
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center" href="/processor_category">Processor</a>
-                                    <a class="dropdown-item text-center" href="/motherboard_category">Motherboard</a>
-                                    <a class="dropdown-item text-center" href="/ram_category">Ram</a>
-                                    <a class="dropdown-item text-center" href="/gpu_category">Video Card</a>
-                                    <a class="dropdown-item text-center" href="/psu_category">Power Supply Unit</a>
-                                    <a class="dropdown-item text-center" href="/ssd_category">Solid State Drive</a>
-                                    <a class="dropdown-item text-center" href="/hdd_category">Hard Drive</a>
-                                    <a class="dropdown-item text-center" href="/chassis_category">Chassis</a>
-                                    <a class="dropdown-item text-center" href="/monitor_category">Monitor</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pc Builder
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center" href="#">INTEL</a>
-                                    <a class="dropdown-item text-center" href="#">AMD</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="color: white;">
-                                    Profile
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center highlight-black" href="/profile">My account</a>
-                                    <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                    <a class="dropdown-item text-center" href="login">Log out</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        </div>
-    </nav>
+    
+    @include('Layouts.navbar')
 
     <!-- Header Section -->
     <br>
@@ -263,10 +189,7 @@
                     <td style="margin-top: 90px;">
                         <br>
                         <a href="/my_account"><img src="images/Pre-Built/sysu 1.jpg" class="profile_img"></a>
-                        <h4 style="margin-top: 30px;">Username</h4>
-                        <a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">
-                            <br>
-                            <p>Edit Profile</p>
+                        <h4 style="margin-top: 30px;">{{auth()->user()->name}}</h4>
                         </a>
                     </td>
                 </tr>
@@ -320,25 +243,24 @@
                     </td>
                 </tr>
 
-
-                <tr>
-                    <td>
-                        <h3 style="padding: 11%">You don't have addresses yet.</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div
-                            style="display: flex; align-items: center; justify-content: space-between; margin-bottom:2%">
-                            <h6 style="margin: 0;"></h6>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h1 style="padding: 15%"></h1>
-                    </td>
-                </tr>
+                @foreach ($addresses as $item)
+                    <tr >
+                        <td class="d-flex justify-content-between"  style="padding: 0px; padding-left: 15px;">
+                            <p>{{$item -> address}}</p>
+                            <a href="#"  style="margin-right: 2%"><p>Edit</p></a>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid;">
+                        <td class="d-flex justify-content-between" style="padding: 0px; padding-left: 15px;">
+                            <p>{{$item -> region}}, {{$item -> city}}, {{$item -> postal_code}}</p>
+                        </td>
+                    </tr>
+                @endforeach
+                    <tr>
+                        <td>
+                            <hr style="margin: 0 auto; width: 100%;">
+                        </td>
+                    </tr>
             </table>
         </div>
     </div>

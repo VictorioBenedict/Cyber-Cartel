@@ -154,7 +154,7 @@
         <!-- Added border-radius here -->
 
         <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
+            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
                     style="width:200px; margin-left: 2vw;"></a>
             <br>
 
@@ -164,13 +164,12 @@
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Profile
+                                {{auth()->user()->name}}
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
                                 <a class="dropdown-item text-center" href="/my_account">My account</a>
                                 <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                <a class="dropdown-item text-center" href="login">Log out</a>
                             </div>
                         </div>
                     </li>
@@ -198,78 +197,49 @@
             <td class="delivery_Address">Delivery Address</td>
         </tr>
         <tr style="border-bottom: 1px solid" class="user_Address_container">
-            <td class="user_Address_Data">User Address</td>
-            <td class="change_Address"><a href="/user_address_details">Change</a></td>
+        @foreach ($addresses as $item)
+            <td class="user_Address_Data">{{$item -> region}}, {{$item -> city}}, {{$item -> address}}, {{$item -> postal_code}}</td>
+        @endforeach
         </tr>
     </table>
     <br>
     <table>
         <tr style="border-bottom: 1px solid;">
             <td class="product_Container">Product Ordered</td>
-            <td class="unitPrice_Container">Unit Price</td>
-            <td class="amount_Container">Amount</td>
+            <td class="unitPrice_Container"></td>
+            <td class="amount_Container">Category</td>
             <td class="actions"></td>
-            <td class="totals">Total Price</td>
+            <td class="totals">Unit Price</td>
         </tr>
+        @foreach ($cart as $cartitem)
         <tr style="border-bottom: 1px solid;">
             <td class="product">
-                <img src="images/CPU/Amd/amd 1.jpg" class="img">
-                <h6>Product Information</h6>
+                <img src="{{$cartitem -> photo}}" class="img">
+                <h6>{{$cartitem -> name}}</h6>
             </td>
-            <td class="unit">$150</td>
-            <td class="quantity">-1 +</td>
+            <td class="unit"></td>
+            <td class="quantity">{{$cartitem -> category}}</td>
             <td></td>
-            <td class="total">$150</td>
+            <td class="total">₱{{$cartitem -> price}}</td>
         </tr>
+        @endforeach
         <tr>
             <td class="product">
             </td>
             <td class="unit"></td>
-            <td class="quantity">Shipping Fee</td>
+            <td class="total_Items"></td>
             <td></td>
-            <td class="total">$50</td>
-        </tr>
-        <tr>
-            <td class="product">
-            </td>
-            <td class="unit"></td>
-            <td class="total_Items">Total(items: 1)</td>
-            <td></td>
-            <td class="total_Price">$200</td>
+            <td class="total_Price">₱{{$total}}</td>
         </tr>
     </table>
     <br>
     <table>
-        <tr style="border-bottom: 1px solid;">
-            <td class="left-align">Payment Method</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="right-align  cash-on-delivery">Cash On Delivery</td>
-            <td class="right-align alignment">Change</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="right-align">Merchandise Subtotal:</td>
-            <td class="right-align alignment">$0</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="right-align">Shipping Total:</td>
-            <td class="right-align alignment">$0</td>
-        </tr>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td class="right-align">Total Payment:</td>
-        <td class="right-align alignment">$0</td>
+        <td class="right-align alignment">₱{{$total}}</td>
         <tr>
             <td></td>
             <td></td>

@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\api\AddressController;
 use App\Http\Controllers\Authentication_Controller;
+use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\Authetication_Controller;
 use App\Http\Controllers\Category_Controller;
 use Illuminate\Support\Facades\Route;
@@ -27,67 +30,41 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Route::get('/signup',[SignupController::class, 'signup']);
 
-Route::get('/', function () {
-    return view('LandingPage');
-});
-
-
+Route::get('/', function(){
+    return  view('DashBoard');
+})->name('home');;
+Route::get('/',[App\Http\Controllers\DashboardController::class,'index'])->name('home');;
 
 //Authentication
-Route::post('/login', [SignupController::class, 'signups']);
+Route::get('/login', [LoginController::class,'Login'])->name('Login');
+Route::post('/login', [LoginController::class,'Loginpost'])->name('Login.post');
+Route::get('/signup', [LoginController::class,'Signup'])->name('Signup');
+Route::post('/signup', [LoginController::class,'Signuppost'])->name('Signup.post');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+Route::group(['middleware'=>'auth'], function(){
+    //PROFILE
+    Route::get('/change_number', [Profile_Controller::class, 'New_PhoneNumber_Route']);
+    Route::get('/my_purchase', [Profile_Controller::class, 'My_Purchase_Route']);
+    Route::get('/profile', [Profile_Controller::class, 'Profile_Route']);
+    Route::get('/bank_and_card', [Profile_Controller::class, 'BankandCard_Route']);
+    Route::get('/add_card_details', [Profile_Controller::class, 'New_Card_Route']);
+    //Address
+    Route::get('/address', [AddressController::class, 'index']);
+    Route::get('/add_new_address', [AddressController::class, 'create']);
+    Route::post('/add_new_address', [AddressController::class, 'store']);
 
-Route::get('/login', function () {
-    return view('Login');
+    Route::get('/change_passwordV', [Profile_Controller::class, 'Pass_Verification_Route']);
+    Route::post('/change_password', [Profile_Controller::class, 'New_Password_Route']);
+    Route::get('/change_email', [Profile_Controller::class, 'New_Email_Route']);
+    Route::get('/my_account/edit', [LoginController::class, 'edit'])->name('user.edit-profile');
+    Route::put('/my_account', [LoginController::class, 'update'])->name('user.update-profile');
+    Route::get('/my_account', [LoginController::class, 'Profile_Route'])->name('user.profile');
 });
+Route::get('/enterEmail', [ForgetPasswordManager::class, 'forgetPassword'])->name("forget.password");
+Route::post('/enterEmail', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name("forget.password.post");
+Route::get('/conPass/{token}',  [ForgetPasswordManager::class, 'resetPassword'])->name("resetPassword")->name("reset.password");
+Route::post('/conPass',  [ForgetPasswordManager::class, 'resetPasswordPost'])->name("resetPassword")->name("reset.password.post");
 
-Route::get('/signup', function () {
-    return view('Signup');
-});
-
-Route::get('/adminlogin', function () {
-    return view('Adminlogin');
-});
-
-Route::get('/enterEmail', function () {
-    return view('ForgotPassword');
-});
-
-Route::post('/conPass', function () {
-    return view('ConfirmPass');
-});
-
-
-Route::get('/product_Info_SystemUnit_1', function () {
-    return view('/Products_Information/System_Units/product_Info_SystemUnit_1');
-});
-
-Route::get('/product_Info_SystemUnit_2', function () {
-    return view('/Products_Information/System_Units/product_Info_SystemUnit_2');
-});
-
-Route::get('/cart', function () {
-    return view('Cart');
-});
-
-Route::get('/product_demo', function () {
-    return view('Product_demo');
-});
-
-Route::get('/verify', function () {
-    return view('Verify_Page');
-});
-
-Route::post('/verify', function () {
-    return view('Verify_Page');
-});
-
-Route::get('/checkOut', function () {
-    return view('CheckOut');
-});
-
-Route::get('/home', function () {
-    return view('DashBoard');
-});
 
 //Admin panel
 Route::get('/adminlogin', function () {
@@ -110,9 +87,23 @@ Route::get('/admincustomers', function () {
     return view('Admincustomers');
 });
 
-Route::get('/adminmanagements', function () {
-    return view('Adminmanagements');
-});
+//productmanagement
+Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
+Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);
+Route::post('productmanagements/create',[App\Http\Controllers\productController::class,'store']);
+Route::get('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'edit']);
+Route::put('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'update']);
+Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productController::class,'destroy']);
+
+//products
+Route::get('/cart', [CartController::class,'index']);
+Route::post('/addcart/{id}', [CartController::class,'add_cart']);
+Route::get('/product_demo/{id}',[DashboardController::class,'details']);
+Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
+Route::get('/verify', function(){return  view('Verify_Page');});
+Route::post('/verify', function(){return  view('Verify_Page');});
+Route::get('/checkOut', [CartController::class,'checkoutindex']);
+
 
 //Authetication / Verification
 Route::get('/dashboard', [Authentication_Controller::class, 'Login_Authentication']);
@@ -120,28 +111,13 @@ Route::get('/dashboard', [Authentication_Controller::class, 'Sign_Up_Authenticat
 Route::post('/dashboard', [Authentication_Controller::class, 'Login_Authentication']);
 Route::post('/dashboard', [Authentication_Controller::class, 'Sign_Up_Authentication']);
 
-//PROFILE
-Route::get('/change_number', [Profile_Controller::class, 'New_PhoneNumber_Route']);
-Route::get('/my_purchase', [Profile_Controller::class, 'My_Purchase_Route']);
-Route::get('/profile', [Profile_Controller::class, 'Profile_Route']);
-Route::get('/bank_and_card', [Profile_Controller::class, 'BankandCard_Route']);
-Route::get('/address', [Profile_Controller::class, 'Address_Route']);
-Route::get('/add_card_details', [Profile_Controller::class, 'New_Card_Route']);
-Route::get('/add_new_address', [Profile_Controller::class, 'New_Address_Route']);
-Route::get('/user_address_details', [Profile_Controller::class, 'User_Address_Details_Route']);
-Route::get('/change_passwordV', [Profile_Controller::class, 'Pass_Verification_Route']);
-Route::post('/change_password', [Profile_Controller::class, 'New_Password_Route']);
-Route::get('/change_email', [Profile_Controller::class, 'New_Email_Route']);
-Route::get('/my_account', [Profile_Controller::class, 'Profile_Route']);
-
-
 
 //CATEGORIES
 Route::get('/processor_category', [Category_Controller::class, 'Cpu_Category_Route']);
 Route::get('/gpu_category', [Category_Controller::class, 'Gpu_Category_Route']);
 Route::get('/ram_category', [Category_Controller::class, 'Ram_Category_Route']);
 Route::get('/hdd_category', [Category_Controller::class, 'HDD_Category_Route']);
-Route::get('/ssd_category', [Category_Controller::class, 'SSD_Category_Route']);
+Route::get('/storage_category', [Category_Controller::class, 'SSD_Category_Route']);
 Route::get('/motherboard_category', [Category_Controller::class, 'Motherboard_Category_Route']);
 Route::get('/chassis_category', [Category_Controller::class, 'Chassis_Category_Route']);
 Route::get('/monitor_category', [Category_Controller::class, 'Monitor_Category_Route']);

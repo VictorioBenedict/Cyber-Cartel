@@ -92,93 +92,57 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
-                    <form id="signupForm" style="border: 1px solid #ccc; border-radius: 50px; padding: 60px;">
-                        @csrf
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <h4>Add New Credit Card</h4>
-                        </div>
-                        <table style="border: 1px solid #ccc; border-radius: 10px; width:100%;">
+                <table style="border: 1px solid #ccc; border-radius: 10px; width:100%;">
                             <tr>
                                 <td style=" padding: 2%;">
-                                    <p style="font-size: 15px; margin-bottom:-2.5px;">Your credit card details are
+                                    <p style="font-size: 15px; margin-bottom:-2.5px;">Your address details are
                                         protected.</p>
                                 </td>
                             </tr>
                             <tr>
                                 <td style=" padding-left: 2%;">
-                                    <p style="font-size: 12px">Cyber Cartel will not have access to your card info.</p>
+                                    <p style="font-size: 12px">Cyber Cartel will be secure with your personal information.</p>
                                 </td>
                             </tr>
                         </table>
-                        <h5 style="margin-top:2.5%; margin-bottom:2.5%">Card Details</h5>
-                        <div class="d-flex justify-content-between">
-                            <input type="text" class="form-control" id="full_name" name="full_name"
-                                placeholder="Full Name" style="width: 48%;">
-                            <input type="number" class="form-control" id="phone_number" name="phone_number"
-                                placeholder="Phone Number" style="width: 48%;">
-                        </div>
+                        <h5 style="margin-top:2.5%; margin-bottom:2.5%">Address</h5>
+                        @if (session('status'))
+                    <div class="alert alert-success">{{session('status')}}</div>
+                @endif
+                        
+                        <form action="{{url ('add_new_address')}}" method = "POST"  enctype="multipart/form-data">
+                            @csrf
 
-                        <br>
+                            <div class="mb-3">
+                                <label>Region</label>
+                                <input type="text" name="region" class="form-control" value="{{old('region')}}"/>
+                                @error('region') <span class="text-danger">{{$message}}</span> @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label>City</label>
+                                <input type="text" name="city" class="form-control" value="{{old('city')}}"/>
+                                @error('city') <span class="text-danger">{{$message}}</span> @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label>Address</label>
+                                <input type="text" name="address" class="form-control" value="{{old('address')}}"/>
+                                @error('address') <span class="text-danger">{{$message}}</span> @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label>Postal Code</label>
+                                <input type="text" name="postal_code" class="form-control" value="{{old('postal_code')}}"/>
+                                @error('postal_code') <span class="text-danger">{{$message}}</span> @enderror
+                            </div>
 
-
-                        <div class="form-group">
-                            <label for="location"
-                                style="display: flex; align-items: center; justify-content: flex-start;">Location:</label>
-                            <input type="text" id="selectedLocation" readonly placeholder="Select Location"
-                                onclick="showDropdown()">
-                            <input type="hidden" id="region" value="">
-                            <input type="hidden" id="province" value="">
-                            <input type="hidden" id="city" value="">
-                            <input type="hidden" id="barangay" value="">
-                        </div>
-
-                        <div id="dropdowns">
-                            <select id="regionDropdown" onchange="updateLocation('region')">
-                                <option value="" disabled selected>Select Region</option>
-                                <option value="region1">Region 1</option>
-                                <option value="region2">Region 2</option>
-                                <!-- Add more regions as needed -->
-                            </select>
-
-                            <select id="provinceDropdown" onchange="updateLocation('province')">
-                                <option value="" disabled selected>Select Province</option>
-                                <!-- Options will be populated dynamically using JavaScript -->
-                            </select>
-
-                            <select id="cityDropdown" onchange="updateLocation('city')">
-                                <option value="" disabled selected>Select City</option>
-                                <!-- Options will be populated dynamically using JavaScript -->
-                            </select>
-
-                            <select id="barangayDropdown" onchange="updateLocation('barangay')">
-                                <option value="" disabled selected>Select Barangay</option>
-                                <!-- Options will be populated dynamically using JavaScript -->
-                            </select>
-                        </div>
-                        <br>
-
-
-
-
-                        <div class="form-group" style="margin-bottom: 5%;">
-                            <p style="display: flex; align-items: center; justify-content: flex-start; font-size: 15px">
-                                House No, Building, Street Name,</p>
-                            <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
-                                placeholder="House No, Building, Street Name,">
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button type="submit" class="btn btn-light" style="width: 48%; border: 1px solid #000000;">
+                            <button type="button" class="btn btn-light" style="width: 48%; border: 1px solid #000000;">
                                 <a href="/address"
-                                    style="text-decoration: none; color: #000000; width: 100%; display: block;">Cancel</a>
+                                    style="text-decoration: none; color: #000000; width: 100%; display: block;">Back</a>
                             </button>
-
-                            <button type="submit" class="btn btn-secondary primary black-button" style="width: 48%;">
-                                <a href="/user_address_details"
-                                    style="text-decoration: none; color: #ccc; width: 100%; display: block;">Submit</a>
+                            <button type="submit" class="btn btn-secondary primary black-button" style="width: 48%;">Submit
                             </button>
-
-                        </div>
-                    </form>
+                            </button>
+                            </div>
+                            </form>
                 </div>
             </div>
         </div>

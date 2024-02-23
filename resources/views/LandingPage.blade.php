@@ -118,46 +118,7 @@
 
 <body>
     <!-- Navigation Bar -->
-
-    <!-- ... (Your existing HTML) -->
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 50px;"></a>
-
-            <li style="margin-left: 13vw; list-style-type: none;">
-                <!-- Added list-style-type: none; -->
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        style="width: 43vw; margin-top: 6px;"> <!-- Adjust the width as needed -->
-                </form>
-            </li>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ml-auto">
-                    <!-- Added ml-auto here -->
-                    <!-- mx-auto to center the content -->
-                    <li class="nav-item" style="margin-left: 50px; margin-right: 30px">
-                        <a class="nav-link" aria-current="page" href="login">Login</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 30px;">
-                        <a class="nav-link" aria-current="page" href="signup">Sign-up</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 30px;">
-                        <a class="nav-link" aria-current="page" href="/adminlogin">Admin</a>
-                    </li>
-                </ul>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    @include('Layouts.navbar')
 
 
 

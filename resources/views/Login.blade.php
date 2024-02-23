@@ -111,16 +111,27 @@
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <form id="loginForm" action="/dashboard" method="post">
+                    <div class>
+
+                        @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
+
+                        @if(session()->has('success'))
+                        <div class ="alert alert-success">{{session('success')}}</div>
+                        @endif
+                    </div>
+                    <form id="loginForm" action="{{route('Login.post')}}" method="post">
                         @csrf
                         <header class="py-5 text-center">
                             <h1>Login</h1>
                         </header>
 
                         <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="Enter your username">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="Enter your email">
+                                @error('email') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
@@ -131,6 +142,7 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
+                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                         </div>

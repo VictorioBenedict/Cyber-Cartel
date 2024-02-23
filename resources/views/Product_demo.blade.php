@@ -321,43 +321,7 @@
 
     <!-- ... (Your existing HTML) -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 50px;"></a>
-
-            <li style="margin-left: 13vw; list-style-type: none;">
-                <!-- Added list-style-type: none; -->
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                        style="width: 43vw; margin-top: 6px;"> <!-- Adjust the width as needed -->
-                </form>
-            </li>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ml-auto">
-                    <!-- Added ml-auto here -->
-                    <!-- mx-auto to center the content -->
-                    <li class="nav-item" style="margin-left: 50px; margin-right: 30px">
-                        <a class="nav-link" aria-current="page" href="login">Login</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 30px;">
-                        <a class="nav-link" aria-current="page" href="signup">Sign-up</a>
-                    </li>
-                    <li class="nav-item" style="margin-right: 30px;">
-                        <a class="nav-link" aria-current="page" href="/adminlogin">Admin</a>
-                    </li>
-                </ul>
-            </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+    @include('Layouts.navbar')
 
 
     <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
@@ -365,12 +329,12 @@
             <div class="product-div">
                 <div class="product-div-left">
                     <div class="img-container">
-                        <img src="images/Pre-Built/sysu 1.jpg" />
+                        <img src="{{$product-> photo}}"/>
                     </div>
                 </div>
                 <div class="product-div-right" style="margin-top: 160px;">
-                    <span class="product-name">Pc System Unit!Gaming Pc</span>
-                    <span class="product-price">₱12,500.00 PHP*</span>
+                    <span class="product-name">{{$product-> name}}</span>
+                    <span class="product-price">₱{{$product-> price}}</span>
                     <div class="product-rating">
                         <span><i class="fas fa-star"></i></span>
                         <span><i class="fas fa-star"></i></span>
@@ -380,16 +344,18 @@
                         <span>(50 ratings)</span>
                     </div>
                     <p class="product-description"></p>
+                    <form action="{{url('addcart',$product->id)}}" method = "POST">
+                    @csrf
                     <div class="btn-groups">
-                        <a href="/login">
-                            <button type="button" class="add-cart-btn">
+                            <button type="submit" class="add-cart-btn">
                                 <i class="fas fa-shopping-cart"></i>add to cart
                             </button>
-                        </a>
+                    </form>
                         <a href="/login">
                             <button type="button" class="buy-now-btn">
                                 <i class="fas fa-wallet"></i>buy now
                             </button>
+                    
                         </a>
                     </div>
                 </div>
@@ -407,30 +373,7 @@
                 <p class="product-description-one"></p>
 
                 <p class="product-description-one">
-                    Details<br>
-                    Condition<br>
-                    New<br>
-                    Fresh na fresh.<br>
-                    Pang YouTube lang ginamit..<br>
-                    <br><br>
-                    PC Set/Pwedi ring system unit only<br>
-                    Syempre may bawas sa sure buyer.<br>
-                    I5 4460<br>
-                    With glass side panel<br>
-                    Can play 99 percent of top 11,000 games.<br>
-                    GTA V/Dota 2/ Call of duty Warzone/Vallorant/FARLIGHT and almost all of the games.<br>
-                    <br><br>
-                    Amd Rx 580 video card/8 gig<br>
-                    Mootherboard/Lenovo 4 slot ram<br>
-                    Ram/Hyper Fury 8x2=16 Gig Ram<br>
-                    Casing/Keyteck<br>
-                    PSU/ Ramsta 80 plusWhite600watts<br>
-                    Storage/Ramsta 240 Ssd<br>
-                    Inplay Fans 3 PCs.<br>
-                    AO water cold heatsink inplay<br>
-                    Monitor/22inch' Hp<br>
-                    Keyboard/mouse.<br>
-                    Windows 10 activated.<br>
+                {{$product-> details}}
                 </p>
             </div>
         </div>

@@ -16,23 +16,37 @@ class AddressController extends Controller
 {
     //SHOWS ALL THE ADDRESSES
     public function index(){
-        $addresses = Address::all();
-        return response()->json(['addresses' => $addresses]);
+        $addresses = Address::all()->where('user_id',Auth::user()->id);
+        return  view('Profile.Address',compact('addresses'));
+    }
+
+    public function create(){
+        return view('Profile.Add_New_Address');
     }
 
     // CREATES A NEW ADDRESS
     public function store(Request $request){
+
+        $request->validate([
+            'region' => 'required|max:255|string',
+            'city' => 'required|string',
+            'address' => 'required|string',
+            'postal_code' => 'required|max:255|string',
+        ]);
+
         $addresses = Address::all();
-        DB::table('addresses')->insert([
+        $user_id = $request->user()->id;
+        Address::create([
             'region' => $request->region,
             'city' => $request->city,
             'address' => $request->address,
             'postal_code' => $request->postal_code,
-            'user_id' => $user_id = $request->user()->id,
+            'user_id' => $user_id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         
         ]);
+        return redirect('add_new_address')->with('status', 'success');
     }
 
     // EDITS THE ADDRESS

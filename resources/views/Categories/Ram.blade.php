@@ -122,90 +122,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <!-- ... (Your existing HTML) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/dashboard"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 2vw;"></a>
-            <br>
-            <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
-                <!-- Desktop Search Bar -->
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 47vw; margin-left: -7vw;">
-            </form>
-
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-
-                        <!-- mx-auto to center the content -->
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    style="color: white;">
-                                    Categories
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center category_processor"
-                                        href="/processor_category">Processor</a>
-                                    <a class="dropdown-item text-center category_motherboard"
-                                        href="/motherboard_category">Motherboard</a>
-                                    <a class="dropdown-item text-center category_ram" href="/ram_category">Ram</a>
-                                    <a class="dropdown-item text-center category_gpu" href="/gpu_category">Video
-                                        Card</a>
-                                    <a class="dropdown-item text-center category_psu" href="/psu_category">Power Supply
-                                        Unit</a>
-                                    <a class="dropdown-item text-center category_ssd" href="/ssd_category">Solid State
-                                        Drive</a>
-                                    <a class="dropdown-item text-center category_hdd" href="/hdd_category">Hard
-                                        Drive</a>
-                                    <a class="dropdown-item text-center category_chassis"
-                                        href="/chassis_category">Chassis</a>
-                                    <a class="dropdown-item text-center category_monitor"
-                                        href="/monitor_category">Monitor</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pc Builder
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center" href="#">INTEL</a>
-                                    <a class="dropdown-item text-center" href="#">AMD</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Profile
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center" href="/profile">My account</a>
-                                    <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                                    <a class="dropdown-item text-center" href="login">Log out</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-        </div>
-    </nav>
+    @include('Layouts.navbar')
 
     <br>
     <!-- Dashboard Content -->
@@ -220,198 +137,23 @@
                 </header>
             </div>
 
+            @foreach($RAM as $item)
             <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
+                <a href="{{url('product_demo/'.$item -> id.'')}}" style="text-decoration: none; color: inherit;">
                     <div class="card border-dark">
-                        <img src="images/Ram/Ram 1 G.Skill Trident Z5 Neo RGB DDR5-6000.jpg"
+                        <img src="{{ asset($item->photo) }}"
                             class="card-img-top border-top border-2 rounded-top" alt="Card Image">
                         <div class="card-body text-center"
                             style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
                             <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
+                            <h5 class="card-subtitle mb-0 mt-0"><i>{{$item -> name}}</i></h5>
+                            <p class="card-text">{{$item -> category}}</p>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{$item -> price}}</h6>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 2 Patriot Viper Steel DDR4-4400.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 3 Patriot Viper RGB DDR4-3600.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 4 Patriot Viper 4 DDR4-3400.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 5 Corsair Vengeance RGB Pro DDR4-3200.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 6 G.Skill Trident Z Neo DDR4-3600.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 1 G.Skill Trident Z5 Neo RGB DDR5-6000.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 2 Patriot Viper Steel DDR4-4400.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 3 Patriot Viper RGB DDR4-3600.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 4 Patriot Viper 4 DDR4-3400.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 5 Corsair Vengeance RGB Pro DDR4-3200.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="/product_Info_SystemUnit_1" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="images/Ram/Ram 6 G.Skill Trident Z Neo DDR4-3600.jpg"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>Gaming Pc</i></h5>
-                            <p class="card-text">System Unit</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱12,500</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            @endforeach
 
 
 

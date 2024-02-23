@@ -121,22 +121,36 @@
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <form id="signupForm" action="/login" method="POST"
+                    <div class
+                    @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
+
+                        @if(session()->has('success'))
+                        <div class ="alert alert-success">{{session('success')}}</div>
+                    @endif
+                    </div>
+
+                    <form id="signupForm" action="{{route('Signup.post')}}" method="POST"
                         style="border: 1px solid #ccc; border-radius: 50px; padding: 44px;">
                         @csrf
                         <header class="py-5 text-center">
                             <h1>Sign Up</h1>
                         </header>
                         <div class="form-group password-container" style="margin-bottom: 30px;">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
+                            <label for="name">Username</label>
+                            <input type="text" class="form-control" id="name" name="name"
                                 placeholder="Enter your username">
+                            @error('name') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group password-container" style="margin-bottom: 30px;">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email"
                                 placeholder="Enter your Email">
+                            @error('email') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
+
+
                         <!-- Password Section -->
                         <div class="form-group password-container" style="margin-bottom: 30px;">
                             <label for="password">Password</label>
@@ -146,6 +160,7 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
+                                        @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
                         </div>

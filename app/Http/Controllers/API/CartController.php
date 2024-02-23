@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Products;
@@ -16,12 +17,25 @@ class CartController extends Controller
 {
     //SHOWS PRODUCTS IN CART
     public function index(){
-        $cart = Cart::all();
-        return response()->json(['Cart' => $cart]);
+        $cart = Cart::all()->where('user_id',Auth::user()->id);
+        $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
+        return  view('Cart',compact('cart','total'));
+    }
+
+    public function checkoutindex(){
+        $addresses = Address::all()->where('user_id',Auth::user()->id);
+        $cart = Cart::all()->where('user_id',Auth::user()->id);
+        $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
+        return view('CheckOut',compact('addresses','cart','total'));
     }
 
     //ADDS TO CART
-    public function add_cart($id, Request $request) {
+    public function add_cart(Request $request, $id,) {
+
+        if (Auth::id())
+        {
+            $user_id=auth()->user();
+
         $product = Products::find($id);
         DB::table('carts')->insert([
             'name' => $product->name,
@@ -33,7 +47,11 @@ class CartController extends Controller
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
-        return response()->json(['message' => 'Product added to cart successfully'], 200);
+        return redirect()->back()->with(['status' => 'Product added to cart successfully'], 200);
+        }
+        else{
+            return redirect('login');
+        }
     }
 
 
@@ -41,8 +59,9 @@ class CartController extends Controller
     public function destroy($id){
         $product = Cart::find($id);
         $product -> delete();
-        return response()->json(['message' => "Product removed"]);
+        return redirect()->back()->with(['status' => "Product removed"]);
     }
+
 
     public function checkout(Request $request){
         $items = Cart::get();
@@ -56,11 +75,9 @@ class CartController extends Controller
                 'user_id' => $user_id = $request->user()->id,
             ]);
         }
-        $total = Cart::all('price')->sum('price');
+        
+        $total = Cart::where('price')->sum('price');
         Cart::where('user_id', $user_id)->delete();
-        return response()->json([
-            'Message' => 'Purchase succesful',
-            'Total spent' => $total,
-            ], 200);
+        return response()->json(['message' => 'Purchase succesful, total spent', $total], 200);
     }
 }

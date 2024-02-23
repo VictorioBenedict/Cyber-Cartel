@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/adminproductmanagements') }}">
+                <a href="{{ url('/adminmanagements') }}">
                     <i class="bx bxs-data"></i>
                     <span class="text">Product Management</span>
                 </a>
