@@ -19,8 +19,8 @@ class CartController extends Controller
     public function index(){
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
-        $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
-        return  view('Cart',compact('cart','total'));
+        $quantity = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
+        return  view('Cart',compact('cart','total','quantity'));
     }
 
     public function checkoutindex(){
@@ -28,7 +28,7 @@ class CartController extends Controller
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
         $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
-        return view('CheckOut',compact('addresses','cart','total'));
+        return view('CheckOut',compact('addresses','cart','total','totalitems'));
     }
 
     //ADDS TO CART
@@ -89,7 +89,7 @@ class CartController extends Controller
         return redirect()->back()->with(['status' => "Product removed"]);
     }
 
-
+    //to cart
     public function checkout(Request $request){
         $items = Cart::get();
         foreach($items as $key => $value){
