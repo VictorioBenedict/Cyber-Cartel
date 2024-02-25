@@ -19,8 +19,8 @@ class CartController extends Controller
     public function index(){
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
-        $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
-        return  view('Cart',compact('cart','total'));
+        $quantity = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
+        return  view('Cart',compact('cart','total','quantity'));
     }
 
     public function checkoutindex(){

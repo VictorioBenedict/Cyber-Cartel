@@ -272,7 +272,7 @@
         <tr class="checout_Content">
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
-            <td class="total_Items">Total(items: )</td>
+            <td class="total_Items">Total Items: {{$quantity}}</td>
             <td class="total_Price">₱{{$total}}</td>
             <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
         </tr>
