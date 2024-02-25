@@ -14,7 +14,7 @@
 
 
                         <h4>Add
-                            <a href="{{url('productmanagements')}}"class="btn btn-primary float-end">back</a>
+                            <a href="{{url('adminmanagements')}}"class="btn btn-primary float-end">back</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -19,6 +19,7 @@ class CartController extends Controller
     public function index(){
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
+        $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
         return  view('Cart',compact('cart','total'));
     }
 
@@ -26,6 +27,7 @@ class CartController extends Controller
         $addresses = Address::all()->where('user_id',Auth::user()->id);
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
+        $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
         return view('CheckOut',compact('addresses','cart','total'));
     }
 
@@ -37,16 +39,41 @@ class CartController extends Controller
             $user_id=auth()->user();
 
         $product = Products::find($id);
-        DB::table('carts')->insert([
+        $cart = Cart::where('user_id', $user_id->id)
+        ->where('name',$product->name)
+        ->where('photo',$product->photo)
+        ->where('price',$product->price)
+        ->where('details',$product->details)
+        ->where('category',$product->category)
+        ->first();
+
+        if ($cart){
+            $cart -> update([
             'name' => $product->name,
             'photo' => $product->photo,
             'price' => $product->price,
             'details' => $product->details,
             'category' => $product->category,
+            'quantity' => $cart->quantity+1,
+            'user_id' => $user_id = $request->user()->id,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+            ]);
+        }
+        else{
+        
+        Cart::create([
+            'name' => $product->name,
+            'photo' => $product->photo,
+            'price' => $product->price,
+            'details' => $product->details,
+            'category' => $product->category,
+            'quantity' => 1,
             'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
+        }
         return redirect()->back()->with(['status' => 'Product added to cart successfully'], 200);
         }
         else{
@@ -80,4 +107,6 @@ class CartController extends Controller
         Cart::where('user_id', $user_id)->delete();
         return response()->json(['message' => 'Purchase succesful, total spent', $total], 200);
     }
+
+    
 }

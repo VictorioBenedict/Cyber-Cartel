@@ -17,7 +17,7 @@
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="#" class="brand">
+        <a href="/" class="brand">
             <i class="bx bxs-smile"></i>
             <span class="text">Cyber Cartel</span>
         </a>

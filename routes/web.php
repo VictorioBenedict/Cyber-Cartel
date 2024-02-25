@@ -59,6 +59,14 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/my_account/edit', [LoginController::class, 'edit'])->name('user.edit-profile');
     Route::put('/my_account', [LoginController::class, 'update'])->name('user.update-profile');
     Route::get('/my_account', [LoginController::class, 'Profile_Route'])->name('user.profile');
+    //product and checkout
+    
+    Route::get('/cart', [CartController::class,'index']);
+    Route::post('/addcart/{id}', [CartController::class,'add_cart']);
+    Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
+    Route::get('/verify', function(){return  view('Verify_Page');});
+    Route::post('/verify', function(){return  view('Verify_Page');});
+    Route::get('/checkOut', [CartController::class,'checkoutindex']);
 });
 Route::get('/enterEmail', [ForgetPasswordManager::class, 'forgetPassword'])->name("forget.password");
 Route::post('/enterEmail', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name("forget.password.post");
@@ -96,13 +104,7 @@ Route::put('productmanagements/{id}/edit',[App\Http\Controllers\productControlle
 Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productController::class,'destroy']);
 
 //products
-Route::get('/cart', [CartController::class,'index']);
-Route::post('/addcart/{id}', [CartController::class,'add_cart']);
 Route::get('/product_demo/{id}',[DashboardController::class,'details']);
-Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
-Route::get('/verify', function(){return  view('Verify_Page');});
-Route::post('/verify', function(){return  view('Verify_Page');});
-Route::get('/checkOut', [CartController::class,'checkoutindex']);
 
 
 //Authetication / Verification

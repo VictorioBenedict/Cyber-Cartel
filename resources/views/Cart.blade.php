@@ -243,8 +243,8 @@
         <tr style="border-bottom: 1px solid">
             <td class="selectAllCheckbox"><input type="checkbox"></td>
             <td class="products">Product</td>
-            <td class="units"></td>
-            <td class="quantitys">Unit Price</td>
+            <td class="units">Unit Price</td>
+            <td class="quantitys">Quantity</td>
             <td class="totals">Category</td>
             <td class="actions">Action</td>
         </tr>
@@ -256,8 +256,8 @@
                 <img src=" {{$item -> photo}}" class="img">
                 <h6>{{$item -> name}}</h6>
             </td>
-            <td class="unit"></td>
-            <td class="quantity">₱ {{$item -> price}}</td>
+            <td class="unit">₱ {{$item -> price}}</td>
+            <td class="quantity">{{$item -> quantity}}</td>
             <td class="total">{{$item -> category}}</td>
             <td class="action">
                 <a href="{{url('addcart/'.$item -> id.'/delete')}}"
@@ -272,7 +272,7 @@
         <tr class="checout_Content">
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
-            <td class="total_Items">Total(items: 0)</td>
+            <td class="total_Items">Total(items: )</td>
             <td class="total_Price">₱{{$total}}</td>
             <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
         </tr>
