@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\api\AddressController;
+use App\Http\Controllers\API\AddressController;
 use App\Http\Controllers\Authentication_Controller;
-use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\API\CartController;
 use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\Authetication_Controller;
 use App\Http\Controllers\Category_Controller;
