@@ -26,6 +26,7 @@
     }
     a {
         text-decoration: none;
+        color: inherit;
     }
     body {
         font-family: "Spoof Trial Thin";
@@ -154,6 +155,7 @@
                         <h4 style="margin-top: 30px;">{{auth()->user()->name}}</h4>
                         <a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">
                             <br>
+                            <p>Edit Profile</p>
                         </a>
                     </td>
                 </tr>
@@ -169,9 +171,8 @@
                     <td><a href="/my_purchase" style="text-decoration: none;">My Purchase</a></td>
                 </tr>
             </table>
-            
         </div>
-        <!-- Table Section --> 
+        <!-- Table Section -->
         <div class="contents">
             <table class="table_1">
                 <tr style="border-bottom: 1px solid">
@@ -183,18 +184,6 @@
                     <td class="actions" onclick="toggleBorderBottom(this)">Cancelled</td>
                 </tr>
             </table>
-            @if(session()->has('message'))
-                        <div class ="alert alert-success">{{session('message')}}</div>
-                        @endif
-                        @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('message')}}</div>
-                        @endif
-                        @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('message')}}</div>
-                        @endif
-                        @if(session()->has('status'))
-                        <div class ="alert alert-danger">{{session('status')}}</div>
-                        @endif
             @foreach ($bought as $item)
             <table class="table_2">
                 <tr>
@@ -232,109 +221,21 @@
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
                     <td>
-                        <form method ="POST">
-                        @csrf
+                    <button>
+                        <a href="{{url('my_purchase/'.$item -> id.'/delete')}}"
+                        onclick ="return confirm('Are you sure?')">
+                        Remove Item</a></button>
                         <button>
                         <a href="{{url('my_purchase/'.$item -> id.'/delete')}}"
-                        onclick ="return confirm('Are you sure?')" style= "color: inherit;">
-                        Remove Item</a></button>
-                        <button formaction="{{url('tocancel',$item->id)}}">
-                        <a onclick ="return confirm('Are you sure?')" style= "color: inherit;">
+                        onclick ="return confirm('Are you sure?')">
                         Cancel</a></button>
-                        <button formaction="{{url('torefund',$item->id)}}">
-                        <a onclick ="return confirm('Are you sure?')">
+                        <form action="{{url('addcart',$item->id)}}" method = "POST">
+                        @csrf
+                        <button>
+                        <a 
+                        onclick ="return confirm('Are you sure?')">
                         Refund</a></button>
                         </form>
-                    </td>
-                </tr>
-            </table>
-            @endforeach
-            @foreach ($refunded as $item)
-            <table class="table_2">
-                <tr>
-                    <td style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-                        <h6 style="margin: 0; margin-left: auto; padding:10px">
-                            <a  style="text-decoration: none;">Order Status</a> | Refunded
-                        </h6>
-                        <hr style="margin: 0 auto; width: 100%;">
-                    </td>
-                <tr>
-                    <td style="text-align: left; display: flex; align-items: flex-start;">
-                        <img src=" {{$item -> photo}}" class="img" style="margin-right: 10px;">
-                        <div>
-                            <h5 style="margin: 0;">{{$item -> name}} </h5>
-                            <p style="margin: 0; display: flex; align-items: center;">
-                                Quantity: {{$item -> quantity}}
-                            </p>
-                        </div>
-                        <div style="margin-left: auto;">
-                            <p style="margin: 0;">₱ {{$item -> price}}</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <hr style="margin: 0 auto; width: 100%;">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="display: flex; align-items: center; justify-content: flex-end;">
-                        <h3 style="margin: 0;">Price: </h3>
-                        <h4 style="margin: 0;">₱ {{$item -> price * $item -> quantity}}</h4>
-                    </td>
-                </tr>
-                <tr style="display: flex; align-items: center; justify-content: flex-end;">
-                    <td>
-                        <button>
-                        <a href="{{url('my_refunded/'.$item -> id.'/delete')}}"
-                        onclick ="return confirm('Are you sure?')" style= "color: inherit;">
-                        Remove Item</a></button>
-                    </td>
-                </tr>
-            </table>
-            @endforeach
-            @foreach ($cancelled as $item)
-            <table class="table_2">
-                <tr>
-                    <td style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-                        <h6 style="margin: 0; margin-left: auto; padding:10px">
-                            <a  style="text-decoration: none;">Order Status</a> | Cancelled
-                        </h6>
-                        <hr style="margin: 0 auto; width: 100%;">
-                    </td>
-                <tr>
-                    <td style="text-align: left; display: flex; align-items: flex-start;">
-                        <img src=" {{$item -> photo}}" class="img" style="margin-right: 10px;">
-                        <div>
-                            <h5 style="margin: 0;">{{$item -> name}} </h5>
-                            <p style="margin: 0; display: flex; align-items: center;">
-                                Quantity: {{$item -> quantity}}
-                            </p>
-                        </div>
-                        <div style="margin-left: auto;">
-                            <p style="margin: 0;">₱ {{$item -> price}}</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <hr style="margin: 0 auto; width: 100%;">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td style="display: flex; align-items: center; justify-content: flex-end;">
-                        <h3 style="margin: 0;">Price: </h3>
-                        <h4 style="margin: 0;">₱ {{$item -> price * $item -> quantity}}</h4>
-                    </td>
-                </tr>
-                <tr style="display: flex; align-items: center; justify-content: flex-end;">
-                    <td>
-                        <button>
-                        <a href="{{url('my_cancelled/'.$item -> id.'/delete')}}"
-                        onclick ="return confirm('Are you sure?')" style= "color: inherit;">
-                        Remove Item</a></button>
                     </td>
                 </tr>
             </table>

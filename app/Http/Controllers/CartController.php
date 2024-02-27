@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Address;
+use App\Models\CancelledProducts;
+use App\Models\RefundedProducts;
 use Illuminate\Http\Request;
 use App\Models\Cart;
 use App\Models\Products;
@@ -22,13 +24,19 @@ class CartController extends Controller
         $quantity = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
         return  view('Cart',compact('cart','total','quantity'));
     }
-
+    //shows products in checkout
     public function checkoutindex(){
         $addresses = Address::all()->where('user_id',Auth::user()->id);
         $cart = Cart::all()->where('user_id',Auth::user()->id);
+        $bought = Cart::first();
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
         $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
-        return view('CheckOut',compact('addresses','cart','total'));
+        if($bought){
+        return view('CheckOut',compact('addresses','cart','total','bought','totalitems'));
+        }
+        else{
+            return redirect()->back()->with('error', 'No products detected');
+        }
     }
 
     //ADDS TO CART
@@ -74,7 +82,7 @@ class CartController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
         }
-        return redirect()->back()->with(['status' => 'Product added to cart successfully'], 200);
+        return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
         }
         else{
             return redirect('login');
@@ -89,24 +97,90 @@ class CartController extends Controller
         return redirect()->back()->with(['status' => "Product removed"]);
     }
 
+    public function destroy2($id){
+        $bought = BoughtProducts::find($id);
+        $bought -> delete();
+        return redirect()->back()->with(['status' => "Product removed"]);
+    }
 
+    public function destroy3($id){
+        $refunded = RefundedProducts::find($id);
+        $refunded -> delete();
+        return redirect()->back()->with(['status' => "Product removed"]);
+    }
+    public function destroy4($id){
+        $cancelled = CancelledProducts::find($id);
+        $cancelled-> delete();
+        return redirect()->back()->with(['status' => "Product removed"]);
+    }
+    //ADDS TO bought products
     public function checkout(Request $request){
-        $items = Cart::get();
-        foreach($items as $key => $value){
+        
+        $bought = Cart::get();
+        foreach($bought as $key => $value){
             BoughtProducts::create([
                 'name' => $value->name,
                 'photo' => $value->photo,
                 'price' => $value->price,
                 'details' => $value->details,
+                'quantity' => $value->quantity,
                 'category' => $value->category,
                 'user_id' => $user_id = $request->user()->id,
             ]);
         }
         
-        $total = Cart::where('price')->sum('price');
         Cart::where('user_id', $user_id)->delete();
-        return response()->json(['message' => 'Purchase succesful, total spent', $total], 200);
-    }
+        return redirect('my_purchase')->with(['status' => 'Bought successfully'], 200);
 
+    }
+    //BUY NOW
+    public function buy_now(Request $request, $id,) {
+
+        if (Auth::id())
+        {
+            $user_id=auth()->user();
+
+        $product = Products::find($id);
+        $cart = Cart::where('user_id', $user_id->id)
+        ->where('name',$product->name)
+        ->where('photo',$product->photo)
+        ->where('price',$product->price)
+        ->where('details',$product->details)
+        ->where('category',$product->category)
+        ->first();
+
+        if ($cart){
+            $cart -> update([
+            'name' => $product->name,
+            'photo' => $product->photo,
+            'price' => $product->price,
+            'details' => $product->details,
+            'category' => $product->category,
+            'quantity' => $cart->quantity+1,
+            'user_id' => $user_id = $request->user()->id,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+            ]);
+        }
+        else{
+        
+        Cart::create([
+            'name' => $product->name,
+            'photo' => $product->photo,
+            'price' => $product->price,
+            'details' => $product->details,
+            'category' => $product->category,
+            'quantity' => 1,
+            'user_id' => $user_id = $request->user()->id,
+            'created_at' => Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        }
+        return redirect("/checkOut")->with(['status' => 'Product added to cart successfully'], 200);
+        }
+        else{
+            return redirect('login');
+        }
+    }
     
 }

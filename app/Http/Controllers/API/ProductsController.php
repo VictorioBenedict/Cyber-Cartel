@@ -98,9 +98,9 @@ class ProductsController extends Controller
     // OTHERS // ======================================================
 
     //SHOWS ALL BOUGHT PRODUCTS
-    public function index_bought(){
-        $bought = BoughtProducts::all();
-        return response()->json(['Bought Products:' => $bought]);
+    public function bought(){
+        $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Purchase',compact('bought'));
     }
 
     //SHOWS ALL CANCELLED PRODUCTS
@@ -123,13 +123,14 @@ class ProductsController extends Controller
             'photo' => $bought->photo,
             'price' => $bought->price,
             'details' => $bought->details,
+            'quantity' => $bought -> quantity,
             'category' => $bought->category,
             'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
         BoughtProducts::find($id)->delete();
-        return response()->json(['message' => 'Product successfully refunded'], 200);
+        return redirect()-> back()-> with(['message' => 'Product successfully refunded'], 200);
     }
 
     //MOVES BOUGHT TO CANCELLED
@@ -140,12 +141,13 @@ class ProductsController extends Controller
             'photo' => $bought->photo,
             'price' => $bought->price,
             'details' => $bought->details,
+            'quantity' => $bought -> quantity,
             'category' => $bought->category,
             'user_id' => $user_id = $request->user()->id,
             'created_at' => Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
         BoughtProducts::find($id)->delete();
-        return response()->json(['message' => 'Product successfully cancelled'], 200);
+        return redirect()-> back()->with(['message' => 'Product successfully cancelled'], 200);
     }
 }

@@ -230,18 +230,22 @@
             <header class="d-flex justify-content-between" style="margin-top: 40px;">
                 <h2>Cyber Cartel | Shopping Cart</h2>
                 <br>
+                @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
                 <br>
             </header>
         </div>
     </header>
     <br>
+    
     <hr style="margin: 0 auto; width: 80vw;">
     <br>
-
+        
     <!-- Table Section -->
     <table>
         <tr style="border-bottom: 1px solid">
-            <td class="selectAllCheckbox"><input type="checkbox"></td>
+            <td></td>
             <td class="products">Product</td>
             <td class="units">Unit Price</td>
             <td class="quantitys">Quantity</td>
@@ -251,7 +255,7 @@
         <tr>
         @foreach ($cart as $item)
 
-            <td><input type="checkbox"></td>
+            <td></td>
             <td class="product">
                 <img src=" {{$item -> photo}}" class="img">
                 <h6>{{$item -> name}}</h6>
@@ -273,7 +277,7 @@
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
             <td class="total_Items">Total Items: {{$quantity}}</td>
-            <td class="total_Price">₱{{$total}}</td>
+            <td class="total_Price">₱{{$total*$quantity}}</td>
             <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
         </tr>
     </table>

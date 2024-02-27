@@ -7,8 +7,8 @@
             <br>
             <form class="d-lg-flex d-xl-flex d-md-flex d-sm-none d-none mb-2" style="margin-left: 10vw;">
                 <!-- Desktop Search Bar -->
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    style="width: 47vw; margin-left: -7vw;">
+                <a  type="search" placeholder="Search" aria-label="Search"
+                    style="width: 47vw; margin-left: -7vw;"></a>
             </form>
             @auth
             <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">

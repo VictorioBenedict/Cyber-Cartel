@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BoughtProducts;
+use App\Models\CancelledProducts;
+use App\Models\RefundedProducts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Profile_Controller extends Controller
 {
@@ -31,7 +35,14 @@ class Profile_Controller extends Controller
         return view('Profile.User_Address_Details');
     }
     public function My_Purchase_Route(){
-        return view('Profile.My_Purchase');
+        $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
+        $refunded = RefundedProducts::all()->where('user_id',Auth::user()->id);
+        $cancelled = CancelledProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Purchase',compact('bought','refunded','cancelled'));
+    }
+    public function bought(){
+        $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Purchase',compact('bought'));
     }
     public function Pass_Verification_Route(){
         return view('Profile.Change_Password_Verification');

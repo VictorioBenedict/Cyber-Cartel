@@ -44,7 +44,18 @@ Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 Route::group(['middleware'=>'auth'], function(){
     //PROFILE
     Route::get('/change_number', [Profile_Controller::class, 'New_PhoneNumber_Route']);
+    //purchase
     Route::get('/my_purchase', [Profile_Controller::class, 'My_Purchase_Route']);
+    Route::get('/my_purchase/{id}/delete', [CartController::class, 'destroy2']);
+    //bought
+    Route::get('/my_bought', [\App\Http\Controllers\API\ProductsController::class, 'bought']);
+
+    //refunded
+    Route::get('/my_refunded/{id}/delete', [CartController::class, 'destroy3']);
+
+    //cancelled
+    Route::get('/my_cancelled/{id}/delete', [CartController::class, 'destroy4']);
+
     Route::get('/profile', [Profile_Controller::class, 'Profile_Route']);
     Route::get('/bank_and_card', [Profile_Controller::class, 'BankandCard_Route']);
     Route::get('/add_card_details', [Profile_Controller::class, 'New_Card_Route']);
@@ -64,9 +75,15 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/cart', [CartController::class,'index']);
     Route::post('/addcart/{id}', [CartController::class,'add_cart']);
     Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
+    Route::post('/buynow/{id}', [CartController::class,'buy_now']);
+    Route::post('/topurchase/{id}', [CartController::class,'checkout']);
+    Route::post('/torefund/{id}', [\App\Http\Controllers\API\ProductsController::class,'refund']);
+    Route::post('/tocancel/{id}', [\App\Http\Controllers\API\ProductsController::class,'cancel']);
+    Route::get('/checkOut', [CartController::class,'checkoutindex']);
     Route::get('/verify', function(){return  view('Verify_Page');});
     Route::post('/verify', function(){return  view('Verify_Page');});
-    Route::get('/checkOut', [CartController::class,'checkoutindex']);
+    
+    
 });
 Route::get('/enterEmail', [ForgetPasswordManager::class, 'forgetPassword'])->name("forget.password");
 Route::post('/enterEmail', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name("forget.password.post");
@@ -106,12 +123,6 @@ Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productControl
 //products
 Route::get('/product_demo/{id}',[DashboardController::class,'details']);
 
-
-//Authetication / Verification
-Route::get('/dashboard', [Authentication_Controller::class, 'Login_Authentication']);
-Route::get('/dashboard', [Authentication_Controller::class, 'Sign_Up_Authentication']);
-Route::post('/dashboard', [Authentication_Controller::class, 'Login_Authentication']);
-Route::post('/dashboard', [Authentication_Controller::class, 'Sign_Up_Authentication']);
 
 
 //CATEGORIES

@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Info</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
@@ -38,7 +37,7 @@
         overflow-x: hidden;
     }
 
-    img {
+    .img {
         width: 100%;
         display: block;
     }
@@ -323,6 +322,9 @@
 
     @include('Layouts.navbar')
 
+    @if(session()->has('success'))
+                        <div class ="alert alert-success">{{session('success')}}</div>
+                        @endif
 
     <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;">
@@ -344,19 +346,16 @@
                         <span>(50 ratings)</span>
                     </div>
                     <p class="product-description"></p>
-                    <form action="{{url('addcart',$product->id)}}" method = "POST">
+                    <form method ="POST">
                     @csrf
                     <div class="btn-groups">
-                            <button type="submit" class="add-cart-btn">
+                            <button class="add-cart-btn" formaction="{{url('addcart',$product->id)}}">
                                 <i class="fas fa-shopping-cart"></i>add to cart
                             </button>
-                    </form>
-                        <a href="/login">
-                            <button type="button" class="buy-now-btn">
+                            <button class="buy-now-btn" formaction="{{url('buynow',$product->id)}}">
                                 <i class="fas fa-wallet"></i>buy now
                             </button>
-                    
-                        </a>
+                    </form>
                     </div>
                 </div>
             </div>

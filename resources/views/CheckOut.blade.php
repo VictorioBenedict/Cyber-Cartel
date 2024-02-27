@@ -206,10 +206,10 @@
     <table>
         <tr style="border-bottom: 1px solid;">
             <td class="product_Container">Product Ordered</td>
-            <td class="unitPrice_Container"></td>
+            <td class="unitPrice_Container">Unit Price</td>
             <td class="amount_Container">Category</td>
-            <td class="actions"></td>
-            <td class="totals">Unit Price</td>
+            <td class="actions">Quantity</td>
+            <td class="totals">Full Price</td>
         </tr>
         @foreach ($cart as $cartitem)
         <tr style="border-bottom: 1px solid;">
@@ -217,35 +217,30 @@
                 <img src="{{$cartitem -> photo}}" class="img">
                 <h6>{{$cartitem -> name}}</h6>
             </td>
-            <td class="unit"></td>
+            <td class="unit">₱{{$cartitem -> price}}</td>
             <td class="quantity">{{$cartitem -> category}}</td>
-            <td></td>
-            <td class="total">₱{{$cartitem -> price}}</td>
+            <td>{{$cartitem -> quantity}}</td>
+            <td class="total">₱{{$cartitem -> price * $cartitem ->quantity}}</td>
         </tr>
         @endforeach
-        <tr>
-            <td class="product">
-            </td>
-            <td class="unit"></td>
-            <td class="total_Items"></td>
-            <td></td>
-            <td class="total_Price">₱{{$total}}</td>
-        </tr>
     </table>
     <br>
     <table>
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td class="right-align">Total Payment:</td>
-        <td class="right-align alignment">₱{{$total}}</td>
+        <td class="right-align">Total Items: {{$totalitems}}</td>
+        <td class="right-align">Total Payment: </td>
+        <td class="right-align">₱{{$total * $totalitems}}</td>
         <tr>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td class="right-align button"><a href="/my_purchase"><button>Place Order</button></a></td>
+            <form action="{{url('topurchase',$bought->id)}}" method = "POST">
+            @csrf
+            <td class="right-align button"><button>Place Order</button></td>
+            </form>
         </tr>
     </table>
     <br>

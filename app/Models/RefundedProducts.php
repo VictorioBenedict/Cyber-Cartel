@@ -13,6 +13,7 @@ class RefundedProducts extends Model
         'photo',
         'price',
         'details',
+        'quantity',
         'category',
         'user_id',
     ];
