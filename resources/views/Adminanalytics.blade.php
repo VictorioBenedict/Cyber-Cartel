@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" />
@@ -75,80 +76,126 @@
 
             <ul class="box-info">
                 <li>
-                    <i class="bx bxs-calendar-check"></i>
+                    <i class="bx bxs-calendar-check" 
+                    style ="background: var(--light-blue);
+                    color: var(--blue);"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>New Order</p>
+                        <h3>Products</h3>
+                        <p>Total For Sale: {{$products}}</p>
+                        @if($boughtcount != 0)
+                        <p>Total Sales: ₱{{$boughtsold * $bought / $boughtcount}}</p>
+                        @else
+                            <p>Total Sales:₱0</p>
+                        @endif
                     </span>
                 </li>
                 <li>
-                    <i class="bx bxs-group"></i>
+                    <i class="bx bxs-group"
+                    style="background: var(--light-yellow);
+                    color: var(--yellow);"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Total Buyers</p>
+                        <h3>Users</h3>
+                        <p>Total Users: {{$user}}</p>
                     </span>
                 </li>
                 <li>
-                    <i class="bx bxs-group"></i>
+                    <i class="bx bxs-group"
+                    style ="background: var(--light-orange);
+                    color: var(--orange);"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Total Sales</p>
+                        <h3>Purchased Products</h3>
+                        <p>Total Units Bought: {{$bought}}</p>
+                        <p>Total Units Refunded: {{$refunded}}</p>
+                        <p>Total Units Cancelled: {{$cancelled}}</p>
                     </span>
                 </li>
+            </ul>
+            <ul class="box-info">
                 <li>
-                    <i class="bx bxs-chip"></i>
+                    <i class="bx bxs-chip" class='bx-fw'></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Processor</p>
+                        <h3>Processor</h3>
+                        @if($CPUCount != 0)
+                        <p>Total Sales: ₱{{$CPUSold * $CPU / $CPUCount}}</p>
+                        @else
+                            <p>Total Sales:₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$CPU}}</p>
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-microchip"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Motherboard</p>
+                        <h3>Motherboard</h3>
+                        @if($MotherboardCount != 0)
+                        <p>Total Sales: ₱{{$MotherboardSold * $Motherboard / $MotherboardCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$Motherboard}}</p>
+                        
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-ruler"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Ram</p>
+                        <h3>RAM</h3>
+                        @if($RAMCount != 0)
+                        <p>Total Sales: ₱{{$RAMSold * $RAM / $RAMCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$RAM}}</p>
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-buoy"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Video Card</p>
+                        <h3>GPU</h3>
+                        @if($GPUCount != 0)
+                        <p>Total Sales: ₱{{$GPUSold * $GPU / $GPUCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$GPU}}</p>
                     </span>
                 </li>
+            </ul>
+            <ul class="box-info">
                 <li>
                     <i class="bx bxs-checkbox"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Power Supply Unit</p>
+                        <h3>PSU</h3>
+                        @if($PSUCount != 0)
+                        <p>Total Sales: ₱{{$PSUSold * $PSU / $PSUCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$PSU}}</p>
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-rectangle"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Solid State Drive</p>
+                        <h3>Storage</h3>
+                        @if($StorageCount != 0)
+                        <p>Total Sales: ₱{{$StorageSold * $RAM / $StorageCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$Storage}}</p>
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-disc"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Hard Drive</p>
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-window-alt"></i>
-                    <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Chassis</p>
+                        <h3>Chassis</h3>
+                        @if($CaseCount != 0)
+                        <p>Total Sales: ₱{{$CaseSold * $Case / $CaseCount}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{$Case}}</p>
                     </span>
                 </li>
             </ul>

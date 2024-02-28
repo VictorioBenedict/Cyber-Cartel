@@ -111,8 +111,7 @@
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <form id="loginForm" action="/admindashboards" method="post">
-                        @csrf
+                    <form id="loginForm" action="/admindashboards">
                         <header class="py-5 text-center">
                             <h1>Admin Login</h1>
                         </header>

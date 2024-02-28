@@ -142,9 +142,10 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
-                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
+                                
                             </div>
+                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <button type="submit" class="btn btn-block black-button grey-hover">Login</button>

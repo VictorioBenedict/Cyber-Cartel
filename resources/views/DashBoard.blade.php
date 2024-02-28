@@ -161,7 +161,7 @@
                         </a>
                     </header>
                 </div>
-                @foreach($Case as $item)
+                @foreach($Case->slice(0,6) as $item)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$item -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -191,7 +191,7 @@
                 </div>
 
 
-                @foreach($CPU as $cpuitem)
+                @foreach($CPU->slice(0,6) as $cpuitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$cpuitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -221,7 +221,7 @@
                 </div>
 
 
-                @foreach($Motherboard as $mbitem)
+                @foreach($Motherboard->slice(0,6) as $mbitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$mbitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -251,7 +251,7 @@
                 </div>
 
 
-                @foreach($GPU as $gpuitem)
+                @foreach($GPU->slice(0,6) as $gpuitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$gpuitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -282,7 +282,7 @@
                 </div>
 
 
-                @foreach($RAM as $ramitem)
+                @foreach($RAM->slice(0,6) as $ramitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$ramitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -312,7 +312,7 @@
                 </div>
 
 
-                @foreach($PSU as $psuitem)
+                @foreach($PSU->slice(0,6) as $psuitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$psuitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">
@@ -340,7 +340,7 @@
                     </header>
                 </div>
 
-                @foreach($Storage as $storageitem)
+                @foreach($Storage->slice(0,6) as $storageitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/'.$storageitem -> id.'')}}" style="text-decoration: none; color: inherit;">
                         <div class="card border-dark">

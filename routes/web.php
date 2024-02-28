@@ -92,26 +92,11 @@ Route::post('/conPass',  [ForgetPasswordManager::class, 'resetPasswordPost'])->n
 
 
 //Admin panel
-Route::get('/adminlogin', function () {
-    return view('Adminlogin');
-});
-
-Route::post('/admindashboards', function () {
-    return view('Admindashboards');
-});
-
-Route::get('/admindashboards', function () {
-    return view('Admindashboards');
-});
-
-Route::get('/adminanalytics', function () {
-    return view('Adminanalytics');
-});
-
-Route::get('/admincustomers', function () {
-    return view('Admincustomers');
-});
-
+Route::get('/adminmanagements',[DashboardController::class,'adminmanagement']);
+Route::get('/admindashboards',[DashboardController::class,'admindashboard']);
+Route::get('/adminanalytics',[DashboardController::class,'adminanalytics']);
+Route::get('/admincustomers',[DashboardController::class,'admincustomers']);
+Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
 //productmanagement
 Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
 Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);

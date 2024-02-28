@@ -130,7 +130,7 @@ class CartController extends Controller
         }
         
         Cart::where('user_id', $user_id)->delete();
-        return redirect('my_purchase')->with(['status' => 'Bought successfully'], 200);
+        return redirect('my_purchase')->with(['bought' => 'Bought successfully'], 200);
 
     }
     //BUY NOW
