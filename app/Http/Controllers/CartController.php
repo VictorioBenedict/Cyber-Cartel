@@ -39,6 +39,22 @@ class CartController extends Controller
         }
     }
 
+    public function increase($id){
+        $cart = Cart::find($id);
+        $cart -> update([
+            'quantity' => $cart->quantity+1
+        ]);
+            return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
+    }
+
+    public function decrease($id){
+        $cart = Cart::find($id);
+        $cart -> update([
+            'quantity' => $cart->quantity-1
+        ]);
+            return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
+    }
+
     //ADDS TO CART
     public function add_cart(Request $request, $id,) {
 
@@ -82,7 +98,7 @@ class CartController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
         }
-        return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
+        return redirect()->back()->with(['success' => 'Product added to cart'], 200);
         }
         else{
             return redirect('login');
@@ -176,11 +192,23 @@ class CartController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
         }
-        return redirect("/checkOut")->with(['status' => 'Product added to cart successfully'], 200);
+        return redirect("/checkOut")->with(['status' => 'Product added to cart'], 200);
         }
         else{
             return redirect('login');
         }
+    }
+    public function bought(){
+        $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Bought',compact('bought'));
+    }
+    public function refunded(){
+        $refunded = RefundedProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Refunded',compact('refunded'));
+    }
+    public function cancelled(){
+        $cancelled = CancelledProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Cancelled',compact('cancelled'));
     }
     
 }

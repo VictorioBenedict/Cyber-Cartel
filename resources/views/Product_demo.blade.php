@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+    <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
@@ -145,16 +146,16 @@
     }
 
     .product-name {
-        font-size: 26px;
+        font-size: 50px;
         margin-bottom: 22px;
-        font-weight: 700;
+        font-weight: 70;
         letter-spacing: 1px;
         opacity: 0.9;
     }
 
     .product-price {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 30px;
         opacity: 0.9;
         font-weight: 500;
     }
@@ -322,10 +323,7 @@
 
     @include('Layouts.navbar')
 
-    @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('success')}}</div>
-                        @endif
-
+    
     <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;">
             <div class="product-div">
@@ -334,17 +332,12 @@
                         <img src="{{$product-> photo}}"/>
                     </div>
                 </div>
-                <div class="product-div-right" style="margin-top: 160px;">
+                <div class="product-div-right" style="margin-top: 100px;">
+                        @if(session()->has('success'))
+                        <div class ="alert alert-success">{{session('success')}}</div>
+                        @endif
                     <span class="product-name">{{$product-> name}}</span>
                     <span class="product-price">₱{{$product-> price}}</span>
-                    <div class="product-rating">
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star"></i></span>
-                        <span><i class="fas fa-star-half-alt"></i></span>
-                        <span>(50 ratings)</span>
-                    </div>
                     <p class="product-description"></p>
                     <form method ="POST">
                     @csrf
@@ -369,8 +362,6 @@
             <div class=" product-div-two style="text-align: left; ">
             <div class="product-div-left">
                 <h4>General Specifications</h4>
-                <p class="product-description-one"></p>
-
                 <p class="product-description-one">
                 {{$product-> details}}
                 </p>

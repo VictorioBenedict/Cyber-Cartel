@@ -33,12 +33,19 @@ class DashboardController extends Controller
     }
 
     public function details($id){
-        $product = Products::findOrFail($id);
+        $product = Products::find($id);
         return view('Product_demo',compact('product'));
     }
     public function admindashboard(){
         $user = User::get();
-        return view('Admindashboards', compact('user'));
+        $usercount = User::count();
+        $products = Products::count();
+        $bought = BoughtProducts::sum('quantity');
+        $boughtsold = BoughtProducts::sum('price');
+        $boughtcount = BoughtProducts::count();
+        $refunded = RefundedProducts::sum('quantity');
+        $cancelled = CancelledProducts::sum('quantity');
+        return view('Admindashboards', compact('user','products','boughtsold','boughtcount','refunded','cancelled','bought','usercount'));
     }
     public function adminanalytics(){
         $user = User::count();

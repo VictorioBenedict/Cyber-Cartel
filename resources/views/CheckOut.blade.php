@@ -239,7 +239,7 @@
             <td></td>
             <form action="{{url('topurchase',$bought->id)}}" method = "POST">
             @csrf
-            <td class="right-align button"><button>Place Order</button></td>
+            <td class="right-align button"><button class="btn btn-outline-dark">Place Order</button></td>
             </form>
         </tr>
     </table>

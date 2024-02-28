@@ -11,10 +11,12 @@
                     style="width: 47vw; margin-left: -7vw;"></a>
             </form>
             @auth
-            <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-
+                    <li class="nav-item" style="margin-right: 1.5vw;">
+                    <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px; margin-left: 3.5vw; margin-top: .4vw">
+                    </li>
                         <!-- mx-auto to center the content -->
                         <li class="nav-item" style="margin-right: 1.5vw;">
                             <div class="nav-item dropdown">
@@ -31,19 +33,6 @@
                                     <a class="dropdown-item text-center" href="/psu_category">Power Supply Unit</a>
                                     <a class="dropdown-item text-center" href="/storage_category">Storage</a>
                                     <a class="dropdown-item text-center" href="/hdd_category">Hard Drive</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item" style="margin-right: 1.5vw;">
-                            <div class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pc Builder
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                    <!-- Dropdown content goes here -->
-                                    <a class="dropdown-item text-center" href="#">INTEL</a>
-                                    <a class="dropdown-item text-center" href="#">AMD</a>
                                 </div>
                             </div>
                         </li>

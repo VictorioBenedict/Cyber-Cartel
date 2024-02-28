@@ -48,7 +48,6 @@
         table {
             border-collapse: collapse;
             width: 65%;
-            border: 1px solid black;
         }
 
         td {

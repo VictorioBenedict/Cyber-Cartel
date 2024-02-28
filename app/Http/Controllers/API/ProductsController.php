@@ -100,7 +100,15 @@ class ProductsController extends Controller
     //SHOWS ALL BOUGHT PRODUCTS
     public function bought(){
         $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
-        return view('Profile.My_Purchase',compact('bought'));
+        return view('Profile.My_Bought',compact('bought'));
+    }
+    public function refunded(){
+        $refunded = RefundedProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Refunded',compact('refunded'));
+    }
+    public function cancelled(){
+        $cancelled = CancelledProducts::all()->where('user_id',Auth::user()->id);
+        return view('Profile.My_Cancelled',compact('cancelled'));
     }
 
     //SHOWS ALL CANCELLED PRODUCTS

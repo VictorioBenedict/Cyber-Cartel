@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -195,34 +195,7 @@
 <body>
     <!-- Navigation Bar -->
     <!-- ... (Your existing HTML) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 2vw;"></a>
-            <br>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="margin-right: 4vw;">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{auth()->user()->name}}
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <!-- Dropdown content goes here -->
-                                <a class="dropdown-item text-center" href="/profile">My account</a>
-                                <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('Layouts.navbar')
 
     <!-- Header Section -->
     <header style="margin-top: 65px">
@@ -263,10 +236,24 @@
             <td class="unit">₱ {{$item -> price}}</td>
             <td class="quantity">{{$item -> quantity}}</td>
             <td class="total">{{$item -> category}}</td>
+            <form method="POST">
+            @csrf
             <td class="action">
-                <a href="{{url('addcart/'.$item -> id.'/delete')}}"
-                onclick ="return confirm('Are you sure?')">
-                Remove</a>
+            <button formaction="{{url('increasecart/'.$item -> id.'')}}" class="btn btn-outline-dark">
+                increase</button>
+            </form>
+            @if ($item->quantity > 1)
+            <a href="{{url('decreasecart/'.$item -> id.'')}}" class="btn btn-outline-secondary">
+            decrease </a>
+            <a href="{{url('addcart/'.$item -> id.'/delete')}}"
+            onclick ="return confirm('Are you sure?')" class="btn btn-outline-danger">
+            remove</a>
+            @else
+            <a href="{{url('addcart/'.$item -> id.'/delete')}}"
+            onclick ="return confirm('Are you sure?')" class="btn btn-outline-danger">
+            remove</a>
+            @endif
+            
             </td>
         </tr>
         @endforeach
@@ -278,7 +265,7 @@
             <td class="deleteAll"></td>
             <td class="total_Items">Total Items: {{$quantity}}</td>
             <td class="total_Price">₱{{$total*$quantity}}</td>
-            <td class="checkss"><a href="/checkOut"><button>CHECKOUT</button></a></td>
+            <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT</button></a></td>
         </tr>
     </table>
     <br>

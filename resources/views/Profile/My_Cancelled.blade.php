@@ -192,12 +192,12 @@
                         @if(session()->has('bought'))
                         <div class ="alert alert-success">{{session('bought')}}</div>
                         @endif
-            @foreach ($bought as $item)
+            @foreach ($cancelled as $item)
             <table class="table_2">
                 <tr>
                     <td style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
                         <h6 style="margin: 0; margin-left: auto; padding:10px">
-                            <a  style="text-decoration: none;">Order Status</a> | Bought
+                            <a  style="text-decoration: none;">Order Status</a> | Cancelled
                         </h6>
                         <hr style="margin: 0 auto; width: 100%;">
                     </td>
@@ -229,19 +229,10 @@
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
                     <td>
-                        <form method ="POST">
-                        @csrf
                         <button class="btn btn-outline-danger">
-                        <a href="{{url('my_purchase/'.$item -> id.'/delete')}}"
+                        <a href="{{url('my_cancelled/'.$item -> id.'/delete')}}"
                         onclick ="return confirm('Are you sure?')" style= "color: inherit;">
                         Remove Item</a></button>
-                        <button formaction="{{url('tocancel',$item->id)}}" class="btn btn-outline-secondary">
-                        <a onclick ="return confirm('Are you sure?')" style= "color: inherit;">
-                        Cancel</a></button>
-                        <button formaction="{{url('torefund',$item->id)}}" class="btn btn-outline-dark">
-                        <a onclick ="return confirm('Are you sure?')">
-                        Refund</a></button>
-                        </form>
                     </td>
                 </tr>
             </table>

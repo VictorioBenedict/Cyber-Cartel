@@ -186,10 +186,11 @@
     <br>
     <br>
     <br>
+    <br>
     <div class="container">
         <table class="user_profile">
             <tr>
-                <td>
+                <td >
                     <a href="/my_account">
                         <img src="images/Pre-Built/sysu 1.jpg" class="profile_img"
                             style="float: left; margin-left: -120px; margin-top: -60px;">
@@ -276,14 +277,6 @@
                         <p style="margin-left: 5%; font-weight: bold;">Email:</p>
                         <p style="margin-left: 2%;">{{auth()->user()->email}}</p>
                         <a href="/change_email" style="margin-left: 2%;">
-                        </a>
-                    </td>
-                </tr>
-                <tr class="phoneN">
-                    <td style="display: flex; align-items: center; justify-content: flex-start;">
-                        <p style="margin-left: 5%; font-weight: bold;">Phone Number:</p>
-                        <p style="margin-left: 2%;">123445678901</p>
-                        <a href="/change_number" style="margin-left: 2%;">
                         </a>
                     </td>
                 </tr>

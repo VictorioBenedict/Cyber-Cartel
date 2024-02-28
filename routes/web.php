@@ -47,9 +47,9 @@ Route::group(['middleware'=>'auth'], function(){
     //purchase
     Route::get('/my_purchase', [Profile_Controller::class, 'My_Purchase_Route']);
     Route::get('/my_purchase/{id}/delete', [CartController::class, 'destroy2']);
-    //bought
-    Route::get('/my_bought', [\App\Http\Controllers\API\ProductsController::class, 'bought']);
-
+    Route::get('/my_bought', [CartController::class, 'bought']);
+    Route::get('/my_refunded', [CartController::class, 'refunded']);
+    Route::get('/my_cancelled', [CartController::class, 'cancelled']);
     //refunded
     Route::get('/my_refunded/{id}/delete', [CartController::class, 'destroy3']);
 
@@ -74,6 +74,8 @@ Route::group(['middleware'=>'auth'], function(){
     
     Route::get('/cart', [CartController::class,'index']);
     Route::post('/addcart/{id}', [CartController::class,'add_cart']);
+    Route::post('/increasecart/{id}', [CartController::class,'increase']);
+    Route::get('/decreasecart/{id}', [CartController::class,'decrease']);
     Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
     Route::post('/buynow/{id}', [CartController::class,'buy_now']);
     Route::post('/topurchase/{id}', [CartController::class,'checkout']);

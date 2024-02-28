@@ -50,7 +50,6 @@
     table {
         border-collapse: collapse;
         width: 80%;
-        border: 1px solid black;
     }
 
     td {
@@ -175,12 +174,10 @@
         <div class="contents">
             <table class="table_1">
                 <tr style="border-bottom: 1px solid">
-                    <td class="products" onclick="toggleBorderBottom(this)">ALL</td>
-                    <td class="units" onclick="toggleBorderBottom(this)">Bought</td>
-                    <td class="quantitys" onclick="toggleBorderBottom(this)">To Ship</td>
-                    <td class="totals" onclick="toggleBorderBottom(this)">To Receive</td>
-                    <td class="actions" onclick="toggleBorderBottom(this)">Completed</td>
-                    <td class="actions" onclick="toggleBorderBottom(this)">Cancelled</td>
+                    <td class="products" ><a href="my_purchase" class="btn btn-outline-primary">All</a></td>
+                    <td class="units"><a href="my_bought" class="btn btn-outline-success">Bought</a></td>
+                    <td class="actions"><a href="my_cancelled" class="btn btn-outline-secondary">Cancelled</a></td>
+                    <td class="actions"><a href="my_refunded" class="btn btn-outline-dark">Refunded</a></td>
                 </tr>
             </table>
             @if(session()->has('message'))
@@ -234,14 +231,14 @@
                     <td>
                         <form method ="POST">
                         @csrf
-                        <button>
+                        <button class="btn btn-outline-danger">
                         <a href="{{url('my_purchase/'.$item -> id.'/delete')}}"
                         onclick ="return confirm('Are you sure?')" style= "color: inherit;">
                         Remove Item</a></button>
-                        <button formaction="{{url('tocancel',$item->id)}}">
+                        <button formaction="{{url('tocancel',$item->id)}}" class="btn btn-outline-secondary">
                         <a onclick ="return confirm('Are you sure?')" style= "color: inherit;">
                         Cancel</a></button>
-                        <button formaction="{{url('torefund',$item->id)}}">
+                        <button formaction="{{url('torefund',$item->id)}}" class="btn btn-outline-dark">
                         <a onclick ="return confirm('Are you sure?')">
                         Refund</a></button>
                         </form>
@@ -286,9 +283,9 @@
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
                     <td>
-                        <button>
+                        <button class="btn btn-outline-danger">
                         <a href="{{url('my_refunded/'.$item -> id.'/delete')}}"
-                        onclick ="return confirm('Are you sure?')" style= "color: inherit;">
+                        onclick ="return confirm('Are you sure?')" style= "color: inherit;" >
                         Remove Item</a></button>
                     </td>
                 </tr>
@@ -331,7 +328,7 @@
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
                     <td>
-                        <button>
+                        <button class="btn btn-outline-danger">
                         <a href="{{url('my_cancelled/'.$item -> id.'/delete')}}"
                         onclick ="return confirm('Are you sure?')" style= "color: inherit;">
                         Remove Item</a></button>

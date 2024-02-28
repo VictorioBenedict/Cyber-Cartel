@@ -74,25 +74,32 @@
             </div>
 
             <ul class="box-info">
-                <li>
-                    <i class="bx bxs-calendar-check"></i>
+            <li>
+                    <i class="bx bxs-calendar-check" ></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>New Order</p>
+                        <h3>Products</h3>
+                        <p>Total For Sale: {{$products}}</p>
+                        @if($boughtcount != 0)
+                        <p>Total Sales: ₱{{$boughtsold * $bought / $boughtcount}}</p>
+                        @else
+                            <p>Total Sales:₱0</p>
+                        @endif
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-group"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Total Buyers</p>
+                        <h3>Users</h3>
+                        <p>Total Users: {{$usercount}}</p>
                     </span>
                 </li>
                 <li>
-                    <i class="bx bxs-dollar-circle"></i>
+                    <i class="bx bxs-group"></i>
                     <span class="text">
-                        <h3>Blank Data</h3>
-                        <p>Total Sales</p>
+                        <h3>Purchased Products</h3>
+                        <p>Total Units Bought: {{$bought}}</p>
+                        <p>Total Units Refunded: {{$refunded}}</p>
+                        <p>Total Units Cancelled: {{$cancelled}}</p>
                     </span>
                 </li>
             </ul>
@@ -110,7 +117,7 @@
                         </thead>
                         <div>
                         <tbody>
-                            @foreach ($user as $item)
+                            @foreach ($user->slice(0,6) as $item)
                             <tr>
                                 <td>{{$item -> id }}</td>
                                 <td>{{$item -> name}}</td>
