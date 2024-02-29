@@ -31,9 +31,6 @@
         margin: 0;
         box-sizing: border-box;
     }
-    a {
-        text-decoration: none;
-    }
 
     html,
     body {
@@ -66,7 +63,7 @@
     }
 
     .main-wrapper {
-        min-height: 60vh;
+        min-height: 30vh;
         background-color: #eeeeee;
         display: flex;
         align-items: center;
@@ -235,7 +232,7 @@
         text-align: center;
         margin: auto;
         max-width: 1000px;
-        padding: 10px;
+        padding: 50px;
         background-color: #ff0000d6;
         border-radius: 50px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -360,9 +357,9 @@
         </div>
     </div>
 
-    <div style="; background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px;">
-            <div class=" product-div-two" style="text-align: left;">
+    <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
+        <div class="container" style="border: 1px solid black; border-radius: 50px;>
+            <div class=" product-div-two style="text-align: left; ">
             <div class="product-div-left">
                 <h4>General Specifications</h4>
                 <p class="product-description-one">
@@ -376,11 +373,11 @@
 
 
     <div class="main-wrapper" style="background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;">
+        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;>
             <!-- ... (existing content) ... -->
 
             <!-- Reviews Section -->
-            <div >
+            <div class=" reviews-section">
             <h2>Product Reviews</h2>
 
             <!-- Individual Review Comments -->
@@ -401,7 +398,7 @@
                     <span>Boss Ranhod</span>
                 </div>
                 <p class="review-text">
-                    Excellent product! It exceeded my expectations. Great value for
+                    Excellent processor! It exceeded my expectations. Great value for
                     the money.
                 </p>
             </div>
@@ -417,7 +414,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; Cyber Cartel 2024</p>
+                <p>&copy; 2024 Cyber Cartel</p>
             </div>
             <div class="col-md text-right mr-md-2">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
