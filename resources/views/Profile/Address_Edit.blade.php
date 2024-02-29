@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Cartel</title>
     <link rel="stylesheet" href="login.css">
@@ -84,11 +85,14 @@
         }
     </style>
 </head>
-
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
+        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
+    </nav>
 <body>
 
     <!-- Login Content -->
-    <section style="margin-top: 20px; margin-bottom: 20px;">
+    <section style="margin-top: 55px; margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
@@ -152,15 +156,20 @@
 
     <!-- Footer Section -->
     <footer class="bg-black text-light text-center py-2 fixed-bottom">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -170px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; 2023 Login Page. All rights reserved.</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -2663px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
             </div>
         </div>
     </footer>

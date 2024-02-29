@@ -264,26 +264,14 @@
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
             <td class="total_Items">Total Items: {{$quantity}}</td>
-            <td class="total_Price">₱{{$total*$quantity}}</td>
+            <td class="total_Price">₱{{$totalPrice}}</td>
             <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT</button></a></td>
         </tr>
     </table>
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+    @include("Layouts.footer")
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

@@ -357,9 +357,7 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-dark text-light text-center py-2">
-        <p>&copy; 2023 Dashboard. All rights reserved.</p>
-    </footer>
+    @include("Layouts.footer")
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>

@@ -31,6 +31,9 @@
         margin: 0;
         box-sizing: border-box;
     }
+    a {
+        text-decoration: none;
+    }
 
     html,
     body {
@@ -63,7 +66,7 @@
     }
 
     .main-wrapper {
-        min-height: 65vh;
+        min-height: 60vh;
         background-color: #eeeeee;
         display: flex;
         align-items: center;
@@ -357,7 +360,7 @@
         </div>
     </div>
 
-    <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
+    <div style="; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;">
             <div class=" product-div-two" style="text-align: left;">
             <div class="product-div-left">
@@ -398,7 +401,7 @@
                     <span>Boss Ranhod</span>
                 </div>
                 <p class="review-text">
-                    Excellent processor! It exceeded my expectations. Great value for
+                    Excellent product! It exceeded my expectations. Great value for
                     the money.
                 </p>
             </div>
@@ -414,7 +417,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
             <div class="col-md text-right mr-md-2">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>

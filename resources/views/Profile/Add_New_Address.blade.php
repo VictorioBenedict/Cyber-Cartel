@@ -84,11 +84,14 @@
         }
     </style>
 </head>
-
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
+        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
+    </nav>
 <body>
 
     <!-- Login Content -->
-    <section style="margin-top: 20px; margin-bottom: 20px;">
+    <section style="margin-top: 55px; margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">

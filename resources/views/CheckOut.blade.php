@@ -231,7 +231,7 @@
         <td></td>
         <td class="right-align">Total Items: {{$totalitems}}</td>
         <td class="right-align">Total Payment: </td>
-        <td class="right-align">₱{{$total * $totalitems}}</td>
+        <td class="right-align">₱{{$totalPrice}}</td>
         <tr>
             <td></td>
             <td></td>
@@ -246,19 +246,7 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+    @include("Layouts.footer")
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

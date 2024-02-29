@@ -80,7 +80,7 @@
                         <h3>Products</h3>
                         <p>Total For Sale: {{$products}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtint}}</p>
+                        <p>Total Sales: ₱{{$boughtTotal}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
@@ -97,16 +97,16 @@
                     <i class="bx bxs-group"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
-                        <p>Total Units Bought: {{$bought}}</p>
+                        <p>Total Units Bought: {{$boughtquant}}</p>
                         <p>Total Units Refunded: {{$refunded}}</p>
                         <p>Total Units Cancelled: {{$cancelled}}</p>
                     </span>
                 </li>
             </ul>
             
-            <span class="box-info"><h3>New Customers</h3></span>
             <ul class="box-info">
                 <li>
+                <span><h3>New Customers</h3></span>
                     <table class="table table-borderless">
                         <thead>
                             <tr>
@@ -117,7 +117,7 @@
                         </thead>
                         <div>
                         <tbody>
-                            @foreach ($user->slice(0,6) as $item)
+                            @foreach ($user->slice(0,5) as $item)
                             <tr>
                                 <td>{{$item -> id }}</td>
                                 <td>{{$item -> name}}</td>

@@ -107,15 +107,14 @@
 </head>
 
 <body>
-    <!-- Navigation Bar 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        <!-- Navigation Bar  -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
         style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
-        <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
-         Add your navigation links if needed 
-    </nav> -->
+        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
+    </nav>
 
     <!-- Content Section -->
-    <section style="margin-top: -25px; margin-bottom: 20px;">
+    <section style="margin-top: 55px; margin-bottom: 20px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row">

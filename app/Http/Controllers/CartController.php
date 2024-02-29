@@ -22,17 +22,25 @@ class CartController extends Controller
         $cart = Cart::all()->where('user_id',Auth::user()->id);
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
         $quantity = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
-        return  view('Cart',compact('cart','total','quantity'));
+        $totalPrice = 0;
+        foreach ($cart as $carts){
+            $totalPrice += $carts -> price * $carts ->quantity;
+        }
+        return  view('Cart',compact('cart','total','quantity','totalPrice'));
     }
     //shows products in checkout
     public function checkoutindex(){
         $addresses = Address::all()->where('user_id',Auth::user()->id);
         $cart = Cart::all()->where('user_id',Auth::user()->id);
-        $bought = Cart::first();
+        $bought = Cart::where('user_id',Auth::user()->id)->first();
         $total = Cart::all()->where('user_id',Auth::user()->id)->sum('price');
         $totalitems = Cart::all()->where('user_id',Auth::user()->id)->sum('quantity');
+        $totalPrice = 0;
         if($bought){
-        return view('CheckOut',compact('addresses','cart','total','bought','totalitems'));
+            foreach ($cart as $carts){
+                $totalPrice += $carts -> price * $carts ->quantity;
+            }
+        return view('CheckOut',compact('addresses','cart','total','bought','totalitems','totalPrice'));
         }
         else{
             return redirect()->back()->with('error', 'No products detected');

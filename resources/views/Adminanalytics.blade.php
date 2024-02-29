@@ -83,7 +83,7 @@
                         <h3>Products</h3>
                         <p>Total For Sale: {{$products}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtint}}</p>
+                        <p>Total Sales: ₱{{$boughtTotal}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
@@ -104,7 +104,7 @@
                     color: var(--orange);"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
-                        <p>Total Units Bought: {{$bought}}</p>
+                        <p>Total Units Bought: {{$boughtquant}}</p>
                         <p>Total Units Refunded: {{$refunded}}</p>
                         <p>Total Units Cancelled: {{$cancelled}}</p>
                     </span>
@@ -116,11 +116,11 @@
                     <span class="text">
                         <h3>Processor</h3>
                         @if($CPUCount != 0)
-                        <p>Total Sales: ₱{{$CPUSold * $CPU / $CPUCount}}</p>
+                        <p>Total Sales: ₱{{$CPUTotal}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$CPU}}</p>
+                        <p>Total Units Sold: {{$CPUquant}}</p>
                     </span>
                 </li>
                 <li>
@@ -128,11 +128,11 @@
                     <span class="text">
                         <h3>Motherboard</h3>
                         @if($MotherboardCount != 0)
-                        <p>Total Sales: ₱{{$MotherboardSold * $Motherboard / $MotherboardCount}}</p>
+                        <p>Total Sales: ₱{{$MotherboardTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Motherboard}}</p>
+                        <p>Total Units Sold: {{$Motherboardquant}}</p>
                         
                     </span>
                 </li>
@@ -141,11 +141,11 @@
                     <span class="text">
                         <h3>RAM</h3>
                         @if($RAMCount != 0)
-                        <p>Total Sales: ₱{{$RAMSold * $RAM / $RAMCount}}</p>
+                        <p>Total Sales: ₱{{$RAMTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$RAM}}</p>
+                        <p>Total Units Sold: {{$RAMquant}}</p>
                     </span>
                 </li>
                 <li>
@@ -153,11 +153,11 @@
                     <span class="text">
                         <h3>GPU</h3>
                         @if($GPUCount != 0)
-                        <p>Total Sales: ₱{{$GPUSold * $GPU / $GPUCount}}</p>
+                        <p>Total Sales: ₱{{$GPUTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$GPU}}</p>
+                        <p>Total Units Sold: {{$GPUquant}}</p>
                     </span>
                 </li>
             </ul>
@@ -167,11 +167,11 @@
                     <span class="text">
                         <h3>PSU</h3>
                         @if($PSUCount != 0)
-                        <p>Total Sales: ₱{{$PSUSold * $PSU / $PSUCount}}</p>
+                        <p>Total Sales: ₱{{$PSUTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$PSU}}</p>
+                        <p>Total Units Sold: {{$PSUquant}}</p>
                     </span>
                 </li>
                 <li>
@@ -179,11 +179,11 @@
                     <span class="text">
                         <h3>Storage</h3>
                         @if($StorageCount != 0)
-                        <p>Total Sales: ₱{{$StorageSold * $RAM / $StorageCount}}</p>
+                        <p>Total Sales: ₱{{$StorageTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Storage}}</p>
+                        <p>Total Units Sold: {{$Storagequant}}</p>
                     </span>
                 </li>
                 <li>
@@ -191,11 +191,11 @@
                     <span class="text">
                         <h3>Chassis</h3>
                         @if($CaseCount != 0)
-                        <p>Total Sales: ₱{{$CaseSold * $Case / $CaseCount}}</p>
+                        <p>Total Sales: ₱{{$CaseTotal}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Case}}</p>
+                        <p>Total Units Sold: {{$Casequant}}</p>
                     </span>
                 </li>
             </ul>
