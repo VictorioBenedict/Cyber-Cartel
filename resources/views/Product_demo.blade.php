@@ -324,7 +324,7 @@
     @include('Layouts.navbar')
 
     
-    <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
+    <div  style="margin-top: 120px; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;">
             <div class="product-div">
                 <div class="product-div-left">

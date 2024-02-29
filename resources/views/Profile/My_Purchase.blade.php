@@ -342,7 +342,7 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
             <div class="col-md text-left ml-md-2">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
