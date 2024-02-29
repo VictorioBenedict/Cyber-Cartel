@@ -232,7 +232,7 @@
         text-align: center;
         margin: auto;
         max-width: 1000px;
-        padding: 50px;
+        padding: 10px;
         background-color: #ff0000d6;
         border-radius: 50px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -358,8 +358,8 @@
     </div>
 
     <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px;>
-            <div class=" product-div-two style="text-align: left; ">
+        <div class="container" style="border: 1px solid black; border-radius: 50px;">
+            <div class=" product-div-two" style="text-align: left;">
             <div class="product-div-left">
                 <h4>General Specifications</h4>
                 <p class="product-description-one">
@@ -373,11 +373,11 @@
 
 
     <div class="main-wrapper" style="background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;>
+        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;">
             <!-- ... (existing content) ... -->
 
             <!-- Reviews Section -->
-            <div class=" reviews-section">
+            <div >
             <h2>Product Reviews</h2>
 
             <!-- Individual Review Comments -->

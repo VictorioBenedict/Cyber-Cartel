@@ -1,8 +1,8 @@
 
 
-    <x-slot name="title">edit
-
-    </x-slot>
+<head name="title">edit product
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
 
     <div class="container mt-5">
         <div class="row">
@@ -29,7 +29,8 @@
                             </div>
                             <div class="mb-3">
                                 <label>photo</label>
-                                <input type="file" name="photo" class="form-control">
+                                <input type="file" name="photo" class="form-control" >
+                                @error('photo') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label>price</label>
@@ -38,7 +39,7 @@
                             </div>
                             <div class="mb-3">
                                 <label>details</label>
-                                <input type="text" name="details" class="form-control" value="{{$crud -> details}}"/>
+                                <textarea type="text" name="details" cols="30" rows="10" class="form-control" value="{{$crud -> details}}">{{$crud -> details}}</textarea>
                                 @error('details') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">

@@ -63,6 +63,9 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/address', [AddressController::class, 'index']);
     Route::get('/add_new_address', [AddressController::class, 'create']);
     Route::post('/add_new_address', [AddressController::class, 'store']);
+    Route::get('/edit_address/{id}', [AddressController::class, 'edit']);
+    Route::put('/edit_address/{id}', [AddressController::class, 'update']);
+    Route::get('/delete_address/{id}', [AddressController::class, 'destroy']);
 
     Route::get('/change_passwordV', [Profile_Controller::class, 'Pass_Verification_Route']);
     Route::post('/change_password', [Profile_Controller::class, 'New_Password_Route']);

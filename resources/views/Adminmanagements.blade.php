@@ -108,7 +108,7 @@
                                     <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
                                 </td>
                                 <td>₱ {{$item -> price}}</td>
-                                <td>{{$item -> details}}</td>
+                                <td>{{ Str::limit($item -> details,'30','...')}}</td>
                                 <td>{{$item -> category}}</td>
                                 <td>
                                     <a href="{{url('productmanagements/'.$item -> id.'/edit')}}"

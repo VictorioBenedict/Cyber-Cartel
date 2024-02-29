@@ -48,19 +48,37 @@ class AddressController extends Controller
         ]);
         return redirect('add_new_address')->with('status', 'success');
     }
+    public function edit(int $id){
+        $address = Address::findorfail($id);
+        return view('Profile.Address_Edit',compact('address'));
+    }
 
     // EDITS THE ADDRESS
     public function update(Request $request, $id){
-        $addresses = Address::find($id);
-        $addresses -> update($request->all());
-        return response()->json(['addresses' => $addresses]);
+        $addresses = Address::find($id)->where('user_id',Auth::user()->id);
+        $request->validate([
+            'region' => 'required|max:255|string',
+            'city' => 'required|string',
+            'address' => 'required|string',
+            'postal_code' => 'required|max:255|string',
+        ]);
+        $user_id = $request->user()->id;
+        Address::findorfail($id)->update([
+            'region' => $request->region,
+            'city' => $request->city,
+            'address' => $request->address,
+            'postal_code' => $request->postal_code,
+            'user_id' => $user_id,
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        return redirect()->back()->with('status','success');
     }
 
     // DESTROYS ADDRESS
     public function destroy($id){
         $address = Address::find($id);
         $address -> delete();
-        return response()->json(['message' => "succesfully deleted"]);
+        return redirect()->back()->with('status', 'deleted');
     }
 
 

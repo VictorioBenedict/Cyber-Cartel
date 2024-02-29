@@ -80,7 +80,7 @@
                         <h3>Products</h3>
                         <p>Total For Sale: {{$products}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtsold * $bought / $boughtcount}}</p>
+                        <p>Total Sales: ₱{{$boughtint}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
@@ -104,10 +104,10 @@
                 </li>
             </ul>
             
-
+            <span class="box-info"><h3>New Customers</h3></span>
             <ul class="box-info">
                 <li>
-                    <table class="table table-hover">
+                    <table class="table table-borderless">
                         <thead>
                             <tr>
                                 <th>ID</th>
