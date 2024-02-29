@@ -83,7 +83,7 @@
                         <h3>Products</h3>
                         <p>Total For Sale: {{$products}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtsold * $bought / $boughtcount}}</p>
+                        <p>Total Sales: ₱{{$boughtint}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif

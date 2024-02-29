@@ -37,15 +37,16 @@ class DashboardController extends Controller
         return view('Product_demo',compact('product'));
     }
     public function admindashboard(){
-        $user = User::get();
+        $user = User::orderBy('id','desc')->get();
         $usercount = User::count();
         $products = Products::count();
         $bought = BoughtProducts::sum('quantity');
         $boughtsold = BoughtProducts::sum('price');
         $boughtcount = BoughtProducts::count();
+        $boughtint = (int)($boughtsold * $bought / $boughtcount);
         $refunded = RefundedProducts::sum('quantity');
         $cancelled = CancelledProducts::sum('quantity');
-        return view('Admindashboards', compact('user','products','boughtsold','boughtcount','refunded','cancelled','bought','usercount'));
+        return view('Admindashboards', compact('user','products','boughtsold','boughtcount','refunded','cancelled','bought','usercount','boughtint'));
     }
     public function adminanalytics(){
         $user = User::count();
@@ -53,6 +54,7 @@ class DashboardController extends Controller
         $bought = BoughtProducts::sum('quantity');
         $boughtsold = BoughtProducts::sum('price');
         $boughtcount = BoughtProducts::count();
+        $boughtint = (int)($boughtsold * $bought / $boughtcount);
         $refunded = RefundedProducts::sum('quantity');
         $cancelled = CancelledProducts::sum('quantity');
         $GPU = BoughtProducts::where("category","GPU")->sum('quantity');
@@ -78,7 +80,7 @@ class DashboardController extends Controller
         $CaseCount = BoughtProducts::where("category","Case",)->count();
         return view('Adminanalytics', compact('GPU','GPUSold','GPUCount','CPU','CPUSold','Motherboard',
         'MotherboardSold','PSU','PSUSold','Storage','StorageSold','Case','CaseSold','RAM','RAMSold','user',
-        'MotherboardCount','RAMCount','CPUCount','PSUCount','StorageCount','CaseCount','bought','refunded','cancelled','products','boughtsold','boughtcount'));
+        'MotherboardCount','RAMCount','CPUCount','PSUCount','StorageCount','CaseCount','bought','refunded','cancelled','products','boughtsold','boughtcount','boughtint'));
     }
     public function admincustomers(){
         $user = User::get();

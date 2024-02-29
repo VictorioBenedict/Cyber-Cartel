@@ -231,38 +231,36 @@
                 <tr>
                     <td>
                         <div
-                            style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2%;">
+                            style="display: flex; align-items: center; justify-content: space-between;">
                             <h4 style="margin: 0; font-weight: bold;">My Addresses</h4>
-                            <button style="margin: 0;"><a href="/add_new_address"
-                                    style="text-decoration: none; color: #000000;">+ Add New Address</a></button>
-                        </div>
-                        <hr style="margin: 0 auto; width: 100%;">
-                        <div>
-                            <p style="margin: 0; text-align: left; font-weight: bold;">Address</p>
+                            <a href="/add_new_address" class="btn btn-outline-dark">+ Add New Address</a>
                         </div>
                     </td>
                 </tr>
-
+            </table>
+            <hr style="margin: 0 auto; width: 100%;">
+            <table class="table_2">
                 @foreach ($addresses as $item)
-                <tr>
-                    <td class="d-flex justify-content-between" style="padding: 0px; padding-left: 15px;">
-                        <p>{{$item->address}}</p>
-                        <a href="#" style="margin-right: 2%">
-                            <p>Edit</p>
-                        </a>
-                    </td>
-                </tr>
-                <tr style="border-bottom: 1px solid;">
-                    <td class="d-flex justify-content-between" style="padding: 0px; padding-left: 15px;">
-                        <p>{{$item->region}}, {{$item->city}}, {{$item->postal_code}}</p>
-                    </td>
-                </tr>
-                @endforeach
-                <tr>
+
+                    <tr>
+                        <td class="d-flex justify-content-between"  style="padding: 0px; padding-left: 15px; margin-top:10px;">
+                            <h2>{{$item -> address}}</h2>
+                        </td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid;">
+                        <td class="d-flex justify-content-between" style="padding: 0px; padding-left: 15px;">
+                            <p>{{$item -> region}}, {{$item -> city}}, {{$item -> postal_code}}</p>
+                            
+                        </td>
+                    </tr>
+                    <tr style="display: flex; align-items: center; justify-content: flex-end;">
                     <td>
-                        <hr style="margin: 0 auto; width: 100%;">
+                    <a href="{{url('delete_address/'.$item -> id.'')}}" class="btn btn-outline-danger" onclick ="return confirm('Are you sure?')">Remove</a>
+                    </td><td>
+                    <a href="{{url('edit_address/'.$item -> id.'')}}"  style="margin-right: 2%"  class="btn btn-outline-secondary">Edit</a>
                     </td>
-                </tr>
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>

@@ -6,6 +6,7 @@ use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class productController extends Controller
 {
@@ -24,7 +25,7 @@ class productController extends Controller
             'name' => 'required|max:255|string',
             'photo' => 'required|mimes:png,jpg,jpeg,webp',
             'price' => 'required|integer',
-            'details' => 'required|max:255|string',
+            'details' => 'required|string',
             'category' => 'required|max:255|string',
         ]);
 
@@ -61,7 +62,7 @@ class productController extends Controller
             'name' => 'required|max:255|string',
             'photo' => 'required|mimes:png,jpg,jpeg,webp',
             'price' => 'required|integer',
-            'details' => 'required|max:255|string',
+            'details' => 'required|string',
             'category' => 'required|max:255|string',
         ]);
 

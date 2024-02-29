@@ -29,6 +29,7 @@
                             <div class="mb-3">
                                 <label>photo</label>
                                 <input type="file" name="photo" class="form-control"/>
+                                @error('photo') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label>price</label>
@@ -37,7 +38,7 @@
                             </div>
                             <div class="mb-3">
                                 <label>details</label>
-                                <input type="text" name="details" class="form-control" value="{{old('details')}}"/>
+                                <textarea type="text" name="details" cols="30" rows="10" class="form-control" value="{{old('details')}}"></textarea>
                                 @error('details') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">
