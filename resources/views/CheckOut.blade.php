@@ -144,6 +144,14 @@
         transform: scale(1.1);
         /* Increase the scale on hover */
     }
+
+    .black-btn {
+        padding: 5px;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        /* Adjust font size if needed */
+    }
     </style>
 </head>
 
@@ -197,9 +205,10 @@
             <td class="delivery_Address">Delivery Address</td>
         </tr>
         <tr style="border-bottom: 1px solid" class="user_Address_container">
-        @foreach ($addresses as $item)
-            <td class="user_Address_Data">{{$item -> region}}, {{$item -> city}}, {{$item -> address}}, {{$item -> postal_code}}</td>
-        @endforeach
+            @foreach ($addresses as $item)
+            <td class="user_Address_Data">{{$item->region}}, {{$item->city}}, {{$item->address}},
+                {{$item->postal_code}}</td>
+            @endforeach
         </tr>
     </table>
     <br>
@@ -214,13 +223,13 @@
         @foreach ($cart as $cartitem)
         <tr style="border-bottom: 1px solid;">
             <td class="product">
-                <img src="{{$cartitem -> photo}}" class="img">
-                <h6>{{$cartitem -> name}}</h6>
+                <img src="{{$cartitem->photo}}" class="img">
+                <h6>{{$cartitem->name}}</h6>
             </td>
-            <td class="unit">₱{{$cartitem -> price}}</td>
-            <td class="quantity">{{$cartitem -> category}}</td>
-            <td>{{$cartitem -> quantity}}</td>
-            <td class="total">₱{{$cartitem -> price * $cartitem ->quantity}}</td>
+            <td class="unit">₱{{$cartitem->price}}</td>
+            <td class="quantity">{{$cartitem->category}}</td>
+            <td>{{$cartitem->quantity}}</td>
+            <td class="total">₱{{$cartitem->price * $cartitem->quantity}}</td>
         </tr>
         @endforeach
     </table>
@@ -237,24 +246,26 @@
             <td></td>
             <td></td>
             <td></td>
-            <form action="{{url('topurchase',$bought->id)}}" method = "POST">
-            @csrf
-            <td class="right-align button"><button class="btn btn-outline-dark">Place Order</button></td>
+            <form action="{{url('topurchase', $bought->id)}}" method="POST">
+                @csrf
+                <td class="right-align button">
+                    <button class="black-btn">Place Order</button>
+                </td>
             </form>
         </tr>
     </table>
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
-            <div class="col-md text-left ml-md-2">
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-2">
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
             </div>
         </div>

@@ -11,49 +11,49 @@
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-        @font-face {
-            font-family: "Spoof Trial Thin";
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-        }
+    @font-face {
+        font-family: "Spoof Trial Thin";
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+    }
 
-        /* Additional styles for responsiveness */
-        body {
-            font-family: "Spoof Trial Thin";
-            padding-top: 60px;
-            /* Add padding to body for the fixed navbar */
-        }
+    /* Additional styles for responsiveness */
+    body {
+        font-family: "Spoof Trial Thin";
+        padding-top: 60px;
+        /* Add padding to body for the fixed navbar */
+    }
 
-        .black-button {
-            background-color: black;
-            color: white;
-        }
+    .black-button {
+        background-color: black;
+        color: white;
+    }
 
-        .black-link {
-            text-decoration: none;
-            color: black;
-        }
+    .black-link {
+        text-decoration: none;
+        color: black;
+    }
 
-        .btn-primary.black-button:hover {
-            background-color: #333;
-            border: 1px solid #333;
-            color: white;
-        }
+    .btn-primary.black-button:hover {
+        background-color: #333;
+        border: 1px solid #333;
+        color: white;
+    }
 
-        footer {
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-        }
+    footer {
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
     </style>
 </head>
 
@@ -116,15 +116,15 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-5">
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
             </div>
         </div>

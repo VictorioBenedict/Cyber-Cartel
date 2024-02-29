@@ -93,8 +93,8 @@
     }
 
     .card:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
         /* Adjust the scale factor as needed */
     }
 
@@ -116,7 +116,7 @@
 </head>
 
 <body>
-@include('Layouts.navbar')
+    @include('Layouts.navbar')
 
     <br>
     <!-- Dashboard Content -->

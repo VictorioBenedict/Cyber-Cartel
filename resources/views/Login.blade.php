@@ -114,11 +114,11 @@
                     <div class>
 
                         @if(session()->has('error'))
-                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        <div class="alert alert-danger">{{session('error')}}</div>
                         @endif
 
                         @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('success')}}</div>
+                        <div class="alert alert-success">{{session('success')}}</div>
                         @endif
                     </div>
                     <form id="loginForm" action="{{route('Login.post')}}" method="post">
@@ -131,7 +131,7 @@
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email" name="email"
                                 placeholder="Enter your email">
-                                @error('email') <span class="text-danger">{{$message}}</span> @enderror
+                            @error('email') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
@@ -142,10 +142,9 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
+                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
-                                
                             </div>
-                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <button type="submit" class="btn btn-block black-button grey-hover">Login</button>
@@ -171,22 +170,21 @@
     </section>
 
 
-
-
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-5">
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
             </div>
         </div>
     </footer>
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

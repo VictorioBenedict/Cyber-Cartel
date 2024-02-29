@@ -114,15 +114,15 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-5">
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
             </div>
         </div>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
@@ -25,130 +25,150 @@
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
     }
 
-        body {
-            font-family: "Spoof Trial Thin";
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        font-family: "Spoof Trial Thin";
+        margin: 0;
+        padding: 0;
+    }
 
-        .main {
-            flex: 1;
-        }
+    .main {
+        flex: 1;
+    }
 
-        footer {
+    footer {
         background-color: black;
         color: #fff;
         text-align: center;
         padding: 10px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        }
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 65%;
-            border: 1px solid black;
-        }
+    table {
+        border-collapse: collapse;
+        width: 65%;
+        border: 1px solid black;
+    }
 
-        td {
-            padding: 15px;
-            text-align: center;
-        }
+    td {
+        padding: 15px;
+        text-align: center;
+    }
 
-        .table_1 td {
-            padding: 15px;
-            text-align: center;
-            cursor: pointer;
-            width: 16.66%;
-        }
+    .table_1 td {
+        padding: 15px;
+        text-align: center;
+        cursor: pointer;
+        width: 16.66%;
+    }
 
-        .img {
-            max-width: 10%;
-            margin-right: 10px;
-        }
+    .img {
+        max-width: 10%;
+        margin-right: 10px;
+    }
 
-        .clicked {
-            border-bottom: 2px solid rgb(0, 0, 0);
-            color: rgb(68, 0, 255);
-        }
-        .profile_images {
-            border-radius: 50%;
-            width: 7vw;
-            height: auto;
-            margin-left: 35%;
-        }
+    .clicked {
+        border-bottom: 2px solid rgb(0, 0, 0);
+        color: rgb(68, 0, 255);
+    }
 
-        .container {
-            display: flex;
-            width: 100%;
-            height: auto;
-        }
+    .profile_images {
+        border-radius: 50%;
+        width: 7vw;
+        height: auto;
+        margin-left: 35%;
+    }
 
-        .user_profile {
-            width: 30%;
-            overflow-y: hidden;
-            box-sizing: border-box;
-            border: 1px solid rgb(255, 255, 255);
-        }
+    .container {
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
 
-        .contents {
-            width: 100%;
-            flex: 1;
-            overflow-y: auto;
-            padding-left: 20px;
-            overflow-x: hidden;
-        }
+    .user_profile {
+        width: 30%;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        border: 1px solid rgb(255, 255, 255);
+    }
 
-        .contents table {
-            width: 100%;
-            border-collapse: collapse;
-            border: 1px solid black;
-        }
+    .contents {
+        width: 100%;
+        flex: 1;
+        overflow-y: auto;
+        padding-left: 20px;
+        overflow-x: hidden;
+    }
 
-        .table_1 {
-            margin-bottom: 10px;
-            position: sticky;
-            z-index: 2;
-            background-color: #ffffff;
-        }
-        .profile_img {
-            border-radius: 50%;
-            width: 7.5vw;
-            height: auto;
-        }
-        .user_details{
-            text-align:left;
-            margin-left: 30%;
-            font-size: 14px;
-        }
-        .user_header{
-            text-align:left;
-            text-decoration: none;
-        }
-        .myPurchase_header{
-            margin-top: -30px;
-            text-align:left;
-            text-decoration: none;
-        }
-        .payment{
-            text-decoration: none;
-            color:rgb(0, 0, 0);
-        }
-        .address{
-            text-decoration: none;
-            color:rgb(0, 0, 0);
-        }
-        .change_pass{
-            text-decoration: none;
-            color:rgb(0, 0, 0);
-        }
-        .main_content {
+    .contents table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+
+    .table_1 {
+        margin-bottom: 10px;
+        position: sticky;
+        z-index: 2;
+        background-color: #ffffff;
+    }
+
+    .profile_img {
+        border-radius: 50%;
+        width: 7.5vw;
+        height: auto;
+    }
+
+    .user_details {
+        text-align: left;
+        margin-left: 30%;
+        font-size: 14px;
+    }
+
+    .user_header {
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .myPurchase_header {
+        margin-top: -30px;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .payment {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+
+    .address {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+
+    .change_pass {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+    }
+
+    .main_content {
         display: flex;
         flex-direction: column;
         width: 100%;
-        }
+    }
+
+    .navbar-brand img {
+        transition: transform 0.3s ease-in-out;
+        /* Apply the transition to the transform property */
+    }
+
+    .navbar-brand img:hover {
+        transform: scale(1.1);
+        /* Increase the scale on hover */
+    }
     </style>
 </head>
+
 <body>
     <!-- Navigation Bar -->
     @include('Layouts.navbar')
@@ -163,13 +183,15 @@
     <div class="container">
         <table class="user_profile">
             <tr>
-                <td >
+                <td>
                     <a href="/my_account">
                         <img src="images/Pre-Built/sysu 1.jpg" class="profile_img"
                             style="float: left; margin-left: -120px; margin-top: -60px;">
                     </a>
-                    <h2 style="margin-bottom: 20px;">{{auth()->user()->name}}</h2>
-                    
+                    <h2 style="margin-bottom: 20px; margin-top: -41px;">{{auth()->user()->name}}</h2>
+                    <a href="my_account/edit" style="text-decoration: none; color: rgb(0, 0, 0);">
+                        <p>Edit Profile</p>
+                    </a>
                 </td>
             </tr>
             <tr>
@@ -210,70 +232,83 @@
                 </td>
             </tr>
         </table>
+
         <!-- Table Section -->
         <div class="contents">
+            <br>
             <table class="table_2">
                 <tr>
                     <td style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
-                        <h4 style=" margin-right: auto; padding: 10px; font-weight: bold;">
+                        <h4 style="margin: 0; margin-right: auto; padding: 10px">
                             My Profile
                         </h4>
-                        <p style="margin: 0; margin-right: auto; padding-left:10px; font-weight: bold;">Manage and
-                            protect your account</p>
-                        <br>
+                        <p style="margin: 0; margin-right: auto; padding-left:10px">Manage and protect your account</p>
                         <hr style="margin: 0 auto; width: 100%;">
                     </td>
                 </tr>
-               
-                <form action="{{route("user.update-profile")}}" method = "POST"  enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
-                            <div class="profile_picture">
-                                <tr>
-                                    <td style="display: flex; align-items: center; justify-content: flex-start;">
-                                        <img src="images/Pre-Built/sysu 1.jpg" class="profile_images">
-                                        <button style="margin-left: 5%;">Select Image</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><hr style="margin: 0 auto; width: 100%;"></td>
-                                </tr>
-                            </div>
-                            <tr class="user">
-                    <td style="display: flex; align-items: center; justify-content: flex-start;">
-                        <p style="margin-left: 5%; font-weight: bold;">Username:</p>
-                                <input type="text"  style="margin-bottom: 1.5%; margin-left:2%" name ="name" id="name" value="{{$user -> name}}"/>
-                            </td>
-                            
-                        </tr>
-                        <tr class="email">
-                    <td style="display: flex; align-items: center; justify-content: flex-start;">
-                        <p style="margin-left: 5%; font-weight: bold;">Email:</p>
-                                <input type="email"  style="margin-bottom: 1.5%; margin-left:2%" name ="email" id="email" value="{{$user -> email}}"/>
+                <form action="{{route("user.update-profile")}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="profile_picture">
+                        <tr>
+                            <td style="display: flex; align-items: center; justify-content: flex-start;">
+                                <img src="images/Pre-Built/sysu 1.jpg" class="profile_images">
+                                <button style="margin-left: 5%;">Select Image</button>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <hr style="margin: 0 auto; width: 100%;">
+                            </td>
+                        </tr>
+                    </div>
+                    <tr class="user">
+                        <td style="display: flex; align-items: center; justify-content: flex-start;">
+                            <p style="margin-left: 10px;">Username:</p>
+                            <input type="text" style="margin-bottom: 1.5%; margin-left:2%" name="name" id="name"
+                                value="{{$user->name}}" />
+                        </td>
+                    </tr>
+                    <tr class="email">
+                        <td style="display: flex; align-items: center; justify-content: flex-start;">
+                            <p style="margin-left: 10px;">Email:</p>
+                            <input type="email" style="margin-bottom: 1.5%; margin-left:2%" name="email" id="email"
+                                value="{{$user->email}}" />
+                        </td>
+                    </tr>
+                    <tr class="phoneN">
+                        <td style="display: flex; align-items: center; justify-content: flex-start;">
+                            <p style="margin-left: 10px;">Phone Number:</p>
+                            <p style="margin-left: 2%;">123445678901</p>
+                        </td>
+                    </tr>
                     <tr style="display: flex; align-items: center; justify-content: flex-end;">
                         <td>
                             <button type="submit">Save</button>
                         </td>
                     </tr>
-                    </form>
+                </form>
             </table>
         </div>
     </div>
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -170px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; 2023 Login Page. All rights reserved.</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -2663px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
             </div>
         </div>
     </footer>
@@ -284,6 +319,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

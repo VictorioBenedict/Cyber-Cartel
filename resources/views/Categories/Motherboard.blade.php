@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel | Motherboard</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -93,8 +93,8 @@
     }
 
     .card:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
         /* Adjust the scale factor as needed */
     }
 
@@ -131,7 +131,9 @@
         <div class="row">
             <div class="container" id="contents">
                 <header class="d-flex justify-content-between" style="margin-top: 30px;">
-                    <h4><i>MotherBoard</i></h4>
+                    <h2>
+                        <p>Motherboard</p>
+                    </h2>
                     <br>
                     <br>
                 </header>
@@ -140,16 +142,18 @@
 
             @foreach($Motherboard as $item)
             <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/'.$item -> id.'')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card border-dark">
-                        <img src="{{ asset($item->photo) }}"
-                            class="card-img-top border-top border-2 rounded-top" alt="Card Image">
+                <a href="{{url('product_demo/' . $item->id . '')}}" style="text-decoration: none; color: inherit;">
+                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+                        <img src="{{ asset($item->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
+                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
                         <div class="card-body text-center"
-                            style="background-color: rgb(243, 243, 243); color: rgb(0, 0, 0);">
+                            style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
                             <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0"><i>{{$item -> name}}</i></h5>
-                            <p class="card-text">{{$item -> category}}</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$item -> price}}</h6>
+                            <h5 class="card-subtitle mb-0 mt-0">
+                                <p>{{$item->name}}</p>
+                            </h5>
+                            <p class="card-text">{{$item->category}}</p>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{$item->price}}</h6>
                         </div>
                     </div>
                 </a>
@@ -160,19 +164,25 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -550px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px;">&copy; 2023 Login Page. All rights reserved.</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -500px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
             </div>
         </div>
     </footer>
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

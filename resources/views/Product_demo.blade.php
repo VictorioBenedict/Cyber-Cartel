@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel | Product Info</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -146,16 +146,16 @@
     }
 
     .product-name {
-        font-size: 50px;
+        font-size: 26px;
         margin-bottom: 22px;
-        font-weight: 70;
+        font-weight: 700;
         letter-spacing: 1px;
         opacity: 0.9;
     }
 
     .product-price {
         font-weight: 700;
-        font-size: 30px;
+        font-size: 24px;
         opacity: 0.9;
         font-weight: 500;
     }
@@ -195,7 +195,7 @@
         font-size: 16px;
         font-family: inherit;
         text-transform: uppercase;
-        padding: 15px 16px;
+        padding: 15px 20px;
         color: #fff;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -323,47 +323,50 @@
 
     @include('Layouts.navbar')
 
-    
+    @if(session()->has('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+    @endif
+
     <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;">
             <div class="product-div">
                 <div class="product-div-left">
                     <div class="img-container">
-                        <img src="{{$product-> photo}}"/>
+                        <img src="{{$product->photo}}" />
                     </div>
                 </div>
-                <div class="product-div-right" style="margin-top: 100px;">
-                        @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('success')}}</div>
-                        @endif
-                    <span class="product-name">{{$product-> name}}</span>
-                    <span class="product-price">₱{{$product-> price}}</span>
-                    <p class="product-description"></p>
-                    <form method ="POST">
+                <div class="product-div-right" style="margin-top: 160px;">
+                    <span class="product-name">{{$product->name}}</span>
+                    <span class="product-price">₱{{$product->price}}</span>
+                </div>
+                <p class="product-description"></p>
+                <form method="POST">
                     @csrf
                     <div class="btn-groups">
-                            <button class="add-cart-btn" formaction="{{url('addcart',$product->id)}}">
-                                <i class="fas fa-shopping-cart"></i>add to cart
-                            </button>
-                            <button class="buy-now-btn" formaction="{{url('buynow',$product->id)}}">
-                                <i class="fas fa-wallet"></i>buy now
-                            </button>
-                    </form>
-                    </div>
-                </div>
+                        <button class="add-cart-btn" formaction="{{url('addcart', $product->id)}}">
+                            <i class="fas fa-shopping-cart"></i>add to cart
+                        </button>
+                        <button class="buy-now-btn" formaction="{{url('buynow', $product->id)}}">
+                            <i class="fas fa-wallet"></i>buy now
+                        </button>
+                </form>
             </div>
-
-            <!-- Additional box for details -->
         </div>
     </div>
 
-    <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
+    <!-- Additional box for details -->
+    </div>
+    </div>
+
+    <div class="main-wrapper" style="margin-top: -150px; background-color: white;">
         <div class="container" style="border: 1px solid black; border-radius: 50px;>
             <div class=" product-div-two style="text-align: left; ">
             <div class="product-div-left">
                 <h4>General Specifications</h4>
+                <p class="product-description-one"></p>
+
                 <p class="product-description-one">
-                {{$product-> details}}
+                    {{$product->details}}
                 </p>
             </div>
         </div>
@@ -372,7 +375,7 @@
 
 
 
-    <div class="main-wrapper" style="background-color: white;">
+    <div class="main-wrapper" style="background-color: white; margin-top: -150px;">
         <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;>
             <!-- ... (existing content) ... -->
 
@@ -409,15 +412,20 @@
 
     <!-- Footer Section -->
     <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -630px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px;">&copy; Cyber Cartel 2024</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -600px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
             </div>
         </div>
     </footer>

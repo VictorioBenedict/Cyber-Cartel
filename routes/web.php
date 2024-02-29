@@ -30,18 +30,20 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Route::get('/signup',[SignupController::class, 'signup']);
 
-Route::get('/', function(){
-    return  view('DashBoard');
-})->name('home');;
-Route::get('/',[App\Http\Controllers\DashboardController::class,'index'])->name('home');;
+Route::get('/', function () {
+    return view('DashBoard');
+})->name('home');
+;
+Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+;
 
 //Authentication
-Route::get('/login', [LoginController::class,'Login'])->name('Login');
-Route::post('/login', [LoginController::class,'Loginpost'])->name('Login.post');
-Route::get('/signup', [LoginController::class,'Signup'])->name('Signup');
-Route::post('/signup', [LoginController::class,'Signuppost'])->name('Signup.post');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
-Route::group(['middleware'=>'auth'], function(){
+Route::get('/login', [LoginController::class, 'Login'])->name('Login');
+Route::post('/login', [LoginController::class, 'Loginpost'])->name('Login.post');
+Route::get('/signup', [LoginController::class, 'Signup'])->name('Signup');
+Route::post('/signup', [LoginController::class, 'Signuppost'])->name('Signup.post');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::group(['middleware' => 'auth'], function () {
     //PROFILE
     Route::get('/change_number', [Profile_Controller::class, 'New_PhoneNumber_Route']);
     //purchase
@@ -71,44 +73,48 @@ Route::group(['middleware'=>'auth'], function(){
     Route::put('/my_account', [LoginController::class, 'update'])->name('user.update-profile');
     Route::get('/my_account', [LoginController::class, 'Profile_Route'])->name('user.profile');
     //product and checkout
-    
-    Route::get('/cart', [CartController::class,'index']);
-    Route::post('/addcart/{id}', [CartController::class,'add_cart']);
-    Route::post('/increasecart/{id}', [CartController::class,'increase']);
-    Route::get('/decreasecart/{id}', [CartController::class,'decrease']);
-    Route::get('/addcart/{id}/delete',[CartController::class,'destroy']);
-    Route::post('/buynow/{id}', [CartController::class,'buy_now']);
-    Route::post('/topurchase/{id}', [CartController::class,'checkout']);
-    Route::post('/torefund/{id}', [\App\Http\Controllers\API\ProductsController::class,'refund']);
-    Route::post('/tocancel/{id}', [\App\Http\Controllers\API\ProductsController::class,'cancel']);
-    Route::get('/checkOut', [CartController::class,'checkoutindex']);
-    Route::get('/verify', function(){return  view('Verify_Page');});
-    Route::post('/verify', function(){return  view('Verify_Page');});
-    
-    
+
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/addcart/{id}', [CartController::class, 'add_cart']);
+    Route::post('/increasecart/{id}', [CartController::class, 'increase']);
+    Route::get('/decreasecart/{id}', [CartController::class, 'decrease']);
+    Route::get('/addcart/{id}/delete', [CartController::class, 'destroy']);
+    Route::post('/buynow/{id}', [CartController::class, 'buy_now']);
+    Route::post('/topurchase/{id}', [CartController::class, 'checkout']);
+    Route::post('/torefund/{id}', [\App\Http\Controllers\API\ProductsController::class, 'refund']);
+    Route::post('/tocancel/{id}', [\App\Http\Controllers\API\ProductsController::class, 'cancel']);
+    Route::get('/checkOut', [CartController::class, 'checkoutindex']);
+    Route::get('/verify', function () {
+        return view('Verify_Page');
+    });
+    Route::post('/verify', function () {
+        return view('Verify_Page');
+    });
+
+
 });
 Route::get('/enterEmail', [ForgetPasswordManager::class, 'forgetPassword'])->name("forget.password");
 Route::post('/enterEmail', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name("forget.password.post");
-Route::get('/conPass/{token}',  [ForgetPasswordManager::class, 'resetPassword'])->name("resetPassword")->name("reset.password");
-Route::post('/conPass',  [ForgetPasswordManager::class, 'resetPasswordPost'])->name("resetPassword")->name("reset.password.post");
+Route::get('/conPass/{token}', [ForgetPasswordManager::class, 'resetPassword'])->name("resetPassword")->name("reset.password");
+Route::post('/conPass', [ForgetPasswordManager::class, 'resetPasswordPost'])->name("resetPassword")->name("reset.password.post");
 
 
 //Admin panel
-Route::get('/adminmanagements',[DashboardController::class,'adminmanagement']);
-Route::get('/admindashboards',[DashboardController::class,'admindashboard']);
-Route::get('/adminanalytics',[DashboardController::class,'adminanalytics']);
-Route::get('/admincustomers',[DashboardController::class,'admincustomers']);
-Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
+Route::get('/adminmanagements', [DashboardController::class, 'adminmanagement']);
+Route::get('/admindashboards', [DashboardController::class, 'admindashboard']);
+Route::get('/adminanalytics', [DashboardController::class, 'adminanalytics']);
+Route::get('/admincustomers', [DashboardController::class, 'admincustomers']);
+Route::get('/adminlogin', [DashboardController::class, 'adminlogin']);
 //productmanagement
-Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
-Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);
-Route::post('productmanagements/create',[App\Http\Controllers\productController::class,'store']);
-Route::get('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'edit']);
-Route::put('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'update']);
-Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productController::class,'destroy']);
+Route::get('/adminmanagements', [App\Http\Controllers\productController::class, 'index']);
+Route::get('productmanagements/create', [App\Http\Controllers\productController::class, 'create']);
+Route::post('productmanagements/create', [App\Http\Controllers\productController::class, 'store']);
+Route::get('productmanagements/{id}/edit', [App\Http\Controllers\productController::class, 'edit']);
+Route::put('productmanagements/{id}/edit', [App\Http\Controllers\productController::class, 'update']);
+Route::get('productmanagements/{id}/delete', [App\Http\Controllers\productController::class, 'destroy']);
 
 //products
-Route::get('/product_demo/{id}',[DashboardController::class,'details']);
+Route::get('/product_demo/{id}', [DashboardController::class, 'details']);
 
 
 
@@ -123,3 +129,7 @@ Route::get('/chassis_category', [Category_Controller::class, 'Chassis_Category_R
 Route::get('/monitor_category', [Category_Controller::class, 'Monitor_Category_Route']);
 Route::get('/pre_built_units', [Category_Controller::class, 'PreBuilt_Category_Route']);
 Route::get('/psu_category', [Category_Controller::class, 'PSU_Category_Route']);
+
+Route::get('/terms', function () {
+    return view('Terms');
+});

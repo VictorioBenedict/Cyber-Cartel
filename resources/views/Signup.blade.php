@@ -121,14 +121,13 @@
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <div class
-                    @if(session()->has('error'))
-                        <div class ="alert alert-danger">{{session('error')}}</div>
+                    <div class @if(session()->has('error'))
+                        <div class="alert alert-danger">{{session('error')}}</div>
                         @endif
 
                         @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('success')}}</div>
-                    @endif
+                        <div class="alert alert-success">{{session('success')}}</div>
+                        @endif
                     </div>
 
                     <form id="signupForm" action="{{route('Signup.post')}}" method="POST"
@@ -160,9 +159,9 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
+                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
-                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <!-- Confirm Password Section -->
@@ -176,7 +175,6 @@
                                         onclick="toggleConfirmPassword()">Show</button>
                                 </div>
                             </div>
-                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <button type="submit" class="btn btn-primary btn-block black-button">Sign-Up</button>
                     </form>
@@ -192,15 +190,15 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-5">
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
             </div>
         </div>
