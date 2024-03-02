@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <style>
     @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
@@ -30,7 +32,17 @@
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
-        background-color: #ffffff
+        background-color: #ffffff;
+    }
+    h4{
+        font-weight:bold;
+    }
+    h1{
+        font-weight:bold;
+    }
+    a{
+        text-decoration:none;
+        font-size:18px;
     }
 
     main {
@@ -41,9 +53,7 @@
         background-color: black;
         color: #fff;
         text-align: center;
-        padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        padding: 5px;
     }
 
     .slider-frame {
@@ -56,6 +66,7 @@
         display: flex;
         flex-direction: row;
         transition: transform 0.5s ease-in-out;
+        border: hidden;
     }
 
     .img-container {
@@ -64,6 +75,11 @@
         box-sizing: border-box;
         flex: 0 0 auto;
         text-align: center;
+    }
+
+    .img {
+        border-bottom-left-radius: 30px;
+
     }
 
     #pics {
@@ -88,8 +104,13 @@
 
     }
 
+    .card .card-body {
+        border-radius: 0px 0px 30px 30px;
+    }
+
     .card {
         transition: transform 0.1s ease-in-out;
+        border-radius: 30px;
     }
 
     .card:hover {
@@ -112,6 +133,19 @@
         transform: scale(1.1);
         /* Increase the scale on hover */
     }
+
+    .rounded-bottom {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .navbar {
+        transition: transform 0.3s ease-out;
+    }
+
+    .navbar-hidden {
+        transform: translateY(-100%);
+    }
     </style>
 </head>
 
@@ -132,21 +166,22 @@
     <div class="slider-frame">
         <div class="slide-images">
             <div class="img-container">
-                <img src="images/image 1.jpg" alt="Slide 1">
+                <img src="images/slide 1.png" alt="Slide 1">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/intel 1.jpg') }}" alt="Slide 2">
+                <img src="{{ URL('images/slide 2.png') }}" alt="Slide 2">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/gpu 1.jpg') }}" alt="Slide 3">
+                <img src="{{ URL('images/slide 3.png') }}" alt="Slide 3">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/ram.jpg') }}" alt="Slide 4">
+                <img src="{{ URL('images/slide 4.png') }}" alt="Slide 4">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/motherboard.png') }}" alt="Slide 5">
+                <img src="{{ URL('images/slide 5.png') }}" alt="Slide 5">
             </div>
         </div>
+
         <br>
 
         <!--case-->
@@ -157,22 +192,20 @@
                         <h4>
                             <p>Chassis</p>
                         </h4>
-                        <br>
                         <a href="/chassis_category">
-                            <p style="margin-top:15px ">See all</p>
+                            <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
 
                 @foreach($Case as $item)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                    <a href="{{url('product_demo/' . $item->id . '')}}"
-                        style="text-decoration: none; color: inherit;">
-                        <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+                    <a href="{{url('product_demo/' . $item->id . '')}}" style="text-decoration: none; color: inherit;">
+                        <div class="card" style="border-radius: 30px 30px 30px 30px;">
                             <img src="{{ asset($item->photo) }}" class="card-img-top border-2 img-fluid"
-                                alt="Card Image" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+                                alt="Card Image" style="border-top-left-radius: 30px; border-top-right-radius: 30px; ">
                             <div class="card-body text-center"
-                                style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+                                style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
                                 <!-- Removed border-radius from the img element -->
                                 <h5 class="card-subtitle mb-0 mt-0">
                                     <p>{{$item->name}}</p>
@@ -186,8 +219,9 @@
             </div>
         </div>
 
-                <!--CPU-->
-                <div class="container mt-4">
+
+        <!-- CPU -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
@@ -196,7 +230,7 @@
                         </h4>
                         <br>
                         <a href="/processor_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
@@ -223,17 +257,18 @@
             </div>
         </div>
 
-                <!--Motherboard-->
-                <div class="container mt-4">
+
+        <!-- Motherboard -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
                         <h4>
-                            <p>MotherBoard</p>
+                            <p>Motherboard</p>
                         </h4>
                         <br>
                         <a href="motherboard_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
@@ -260,8 +295,9 @@
             </div>
         </div>
 
-               <!--GPU-->
-               <div class="container mt-4">
+
+        <!-- GPU -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
@@ -270,12 +306,12 @@
                         </h4>
                         <br>
                         <a href="gpu_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
 
-                @foreach($GPU->slice(0,6) as $gpuitem)
+                @foreach($GPU as $gpuitem)
                 <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                     <a href="{{url('product_demo/' . $gpuitem->id . '')}}"
                         style="text-decoration: none; color: inherit;">
@@ -296,9 +332,9 @@
             </div>
         </div>
 
-                
-                <!--RAM-->
-                <div class="container mt-4">
+
+        <!-- RAM -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
@@ -307,7 +343,7 @@
                         </h4>
                         <br>
                         <a href="ram_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
@@ -334,8 +370,10 @@
             </div>
         </div>
 
-                <!--PSU-->
-                <div class="container mt-4">
+
+
+        <!-- Power Supply (PSU) -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
@@ -344,7 +382,7 @@
                         </h4>
                         <br>
                         <a href="psu_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
@@ -370,8 +408,10 @@
             </div>
         </div>
 
-                <!--Storage-->
-                <div class="container mt-4">
+
+
+        <!-- Storage -->
+        <div class="container mt-4">
             <div class="row">
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
@@ -380,7 +420,7 @@
                         </h4>
                         <br>
                         <a href="storage_category">
-                            <p style="margin-top:15px ">See all</p>
+                        <p class="btn btn-outline-dark">See all</p>
                         </a>
                     </header>
                 </div>
@@ -406,7 +446,7 @@
             </div>
         </div>
 
-                
+
         <!-- Footer Section -->
         <footer class="bg-black text-light text-center py-2">
             <div class="container">
@@ -427,9 +467,6 @@
             </div>
         </footer>
 
-        <!-- ... (Your existing HTML) -->
-
-        <!-- ... (Your existing HTML) -->
 
         <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -487,6 +524,7 @@
                 isSwiping = false;
             }
 
+
             slideContainer.addEventListener("touchstart", handleStart);
             slideContainer.addEventListener("touchmove", handleMove);
             slideContainer.addEventListener("touchend", handleEnd);
@@ -505,6 +543,31 @@
 
             slideContainer.addEventListener("mouseleave", function() {
                 intervalId = setInterval(nextSlide, 5000);
+            });
+        });
+
+        // Wait for the DOM to be ready
+        $(document).ready(function() {
+            var previousScroll = 0;
+
+            // Listen for the scroll event
+            $(window).scroll(function() {
+                var currentScroll = $(this).scrollTop();
+
+                // Determine the scrolling direction
+                var scrollingDown = currentScroll > previousScroll;
+
+                // Check if the user has scrolled past the top
+                if (currentScroll > 0) {
+                    // If scrolling down, hide the navbar; if scrolling up, show the navbar when close to the top
+                    if (scrollingDown) {
+                        $('.navbar').addClass('navbar-hidden');
+                    } else if (currentScroll < 50) {
+                        $('.navbar').removeClass('navbar-hidden');
+                    }
+                }
+
+                previousScroll = currentScroll;
             });
         });
         </script>

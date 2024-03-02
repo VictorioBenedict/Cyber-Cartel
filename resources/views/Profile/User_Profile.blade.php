@@ -41,8 +41,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     table {
@@ -216,7 +214,7 @@
                         </div>
                         <br>
                         <div class="user_details" style="margin-left: 40px;">
-                            <a href="/my_account" style="text-decoration: none; " class="myPurchase_header">
+                            <a href="/my_account" style="text-decoration: none; " class="myPurchase_header" >
                                 <p>Profile</p>
                             </a>
                             <a href="/address" style="text-decoration: none; " class="address">
@@ -296,8 +294,7 @@
                             style="text-decoration: none;">Terms and Conditions</a></p>
                 </div>
                 <div class="col-md text-center">
-                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; 2023 Login Page. All rights reserved.</p>
-                </div>
+                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; Cyber Cartel 2024</p></div>
                 <div class="col-md text-right pr-md-2">
                     <p style="margin-top: 15px; margin-right: -2663px;"><a
                             href="https://www.facebook.com/cybercartelpage" class="text-light"

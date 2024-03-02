@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <!-- Added border-radius here -->
 
     <div class="container-fluid">
@@ -24,13 +24,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="categoriesDropdown" style="margin-left: -2vw;">
                         <!-- Dropdown content goes here -->
-                        <a class="dropdown-item text-center" href="/chassis_category">Chassis</a>
                         <a class="dropdown-item text-center" href="/processor_category">Processor</a>
                         <a class="dropdown-item text-center" href="/motherboard_category">Motherboard</a>
                         <a class="dropdown-item text-center" href="/ram_category">Ram</a>
                         <a class="dropdown-item text-center" href="/gpu_category">Graphics Card</a>
                         <a class="dropdown-item text-center" href="/psu_category">Power Supply Unit</a>
                         <a class="dropdown-item text-center" href="/storage_category">Storage</a>
+                        <a class="dropdown-item text-center" href="/hdd_category">Hard Drive</a>
                     </div>
                 </div>
             </li>
@@ -42,7 +42,7 @@
                         {{auth()->user()->name}}
                     </a>
                     <div class="dropdown-menu ml-auto mr-auto" aria-labelledby="userDropdown"
-                        style="margin-left: -4.2vw;">
+                        style="margin-left: -2.5vw;">
                         <!-- Dropdown content goes here -->
                         <a class=" dropdown-item text-center" href="/profile">My account</a>
                         <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>

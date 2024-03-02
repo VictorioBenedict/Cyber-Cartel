@@ -22,9 +22,10 @@
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="/" class="brand">
-            <i class="bx bxs-smile"></i>
-            <span class="text">Cyber Cartel</span>
+    <a href="/" class="brand">
+            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+                style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
+            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
         </a>
         <ul class="side-menu top">
             <li>

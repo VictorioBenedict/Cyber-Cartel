@@ -40,9 +40,11 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
         }
+        
+    a{
+        color:#d6ac03;
+    }
 
         table {
             border-collapse: collapse;
@@ -264,16 +266,21 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -170px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; Cyber Cartel 2024</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -2663px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
             </div>
         </div>
     </footer>

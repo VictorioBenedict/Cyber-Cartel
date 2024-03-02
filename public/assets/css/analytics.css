@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
 * {
     margin: 0;
@@ -15,8 +15,8 @@ li {
 }
 
 :root {
-    --poppins: "Poppins", sans-serif;
-    --lato: "Lato", sans-serif;
+    --poppins: "Spoof Trial Thin", sans-serif;
+    --lato: "Spoof Trial Thin", sans-serif;
 
     --light: #ffffff;
     --blue: #000000;
@@ -395,6 +395,7 @@ body {
     display: flex;
     align-items: center;
     grid-gap: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #content main .box-info li .bx {
@@ -407,8 +408,6 @@ body {
     align-items: center;
 }
 
-
-
 #content main .box-info li .text h3 {
     font-size: 24px;
     font-weight: 600;
@@ -418,6 +417,45 @@ body {
 #content main .box-info li .text p {
     color: var(--dark);
 }
+
+/* <!--asdasdadsasd--> */
+#content main .box-info-end {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+#content main .box-info-end li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#content main .box-info-end li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content main .box-info-end li .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#content main .box-info-end li .text p {
+    color: var(--dark);
+}
+/* <!--asdasdadsasd--> */
 
 #content main .table-data {
     display: flex;
@@ -599,6 +637,10 @@ body {
     }
 
     #content main .box-info {
+        grid-template-columns: 1fr;
+    }
+
+    #content main .box-info-end {
         grid-template-columns: 1fr;
     }
 

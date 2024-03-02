@@ -17,9 +17,10 @@
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="/" class="brand">
-            <i class="bx bxs-smile"></i>
-            <span class="text">Cyber Cartel</span>
+    <a href="/" class="brand">
+            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+                style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
+            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
         </a>
         <ul class="side-menu top">
             <li class="active">
@@ -94,7 +95,7 @@
                     </span>
                 </li>
                 <li>
-                    <i class="bx bxs-group"></i>
+                    <i class="bx bxs-cart-add"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
                         <p>Total Units Bought: {{$boughtquant}}</p>

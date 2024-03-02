@@ -44,8 +44,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     table {
@@ -150,33 +148,7 @@
 <body>
     <!-- Navigation Bar -->
     <!-- ... (Your existing HTML) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-radius: 0 0 15px 15px;">
-        <!-- Added border-radius here -->
-
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png"
-                    style="width:200px; margin-left: 2vw;"></a>
-            <br>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item" style="margin-right: 4vw;">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{auth()->user()->name}}
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                                <a class="dropdown-item text-center" href="/my_account">My account</a>
-                                <a class="dropdown-item text-center" href="/my_purchase">My Purchase</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('Layouts.navbar')
 
     <header style="margin-top: 65px">
         <div class="container" id="contents">

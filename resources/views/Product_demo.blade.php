@@ -74,6 +74,9 @@
         max-width: 1200px;
         padding: 0 1rem;
         margin: 0 auto;
+        overflow: auto;
+        height:auto;
+        word-wrap: break-word;
     }
 
     .product-div {
@@ -355,29 +358,28 @@
 
             <!-- Additional box for details -->
         </div>
-    </div>
 
     <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px;>
-            <div class=" product-div-two style="text-align: left; ">
+    <div class="container" style="border: 1px solid black; border-radius: 50px;">
+        <div class="product-div-two" style="text-align: left;">
             <div class="product-div-left">
                 <h4>General Specifications</h4>
                 <p class="product-description-one">
-                {{$product-> details}}
+                    {{$product->details}}
                 </p>
             </div>
         </div>
     </div>
-    </div>
+</div>
 
 
 
-    <div class="main-wrapper" style="background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;>
+    <div class="main-wrapper" style="background-color: white; margin-top: 10px;">
+        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;">
             <!-- ... (existing content) ... -->
 
             <!-- Reviews Section -->
-            <div class=" reviews-section">
+            <div>
             <h2>Product Reviews</h2>
 
             <!-- Individual Review Comments -->

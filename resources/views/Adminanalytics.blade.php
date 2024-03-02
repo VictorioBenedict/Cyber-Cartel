@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -10,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="{{ asset ('assests/css/bootstrap.css') }}">
     <link rel="stylesheet" href="assets/css/analytics.css" />
-    <script src="{{ asset('assests/js/jquery.js') }}"></script>
+    <script src="{{ asset('assests/js/jquery.js') }}"></script>    
 
     <title>Analytics</title>
 </head>
@@ -18,9 +19,10 @@
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-        <a href="/" class="brand">
-            <i class="bx bxs-smile"></i>
-            <span class="text">Cyber Cartel</span>
+    <a href="/" class="brand">
+            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+                style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
+            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
         </a>
         <ul class="side-menu top">
             <li>
@@ -91,17 +93,15 @@
                 </li>
                 <li>
                     <i class="bx bxs-group"
-                    style="background: var(--light-yellow);
-                    color: var(--yellow);"></i>
+                    style="background: var(--light-yellow);"></i>
                     <span class="text">
                         <h3>Users</h3>
                         <p>Total Users: {{$user}}</p>
                     </span>
                 </li>
                 <li>
-                    <i class="bx bxs-group"
-                    style ="background: var(--light-orange);
-                    color: var(--orange);"></i>
+                    <i class="bx bxs-cart-add"
+                    style ="background: var(--light-orange);"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
                         <p>Total Units Bought: {{$boughtquant}}</p>
@@ -148,7 +148,9 @@
                         <p>Total Units Sold: {{$RAMquant}}</p>
                     </span>
                 </li>
-                <li>
+            </ul>
+            <ul class="box-info">
+            <li>
                     <i class="bx bxs-buoy"></i>
                     <span class="text">
                         <h3>GPU</h3>
@@ -160,8 +162,6 @@
                         <p>Total Units Sold: {{$GPUquant}}</p>
                     </span>
                 </li>
-            </ul>
-            <ul class="box-info">
                 <li>
                     <i class="bx bxs-checkbox"></i>
                     <span class="text">
@@ -186,6 +186,11 @@
                         <p>Total Units Sold: {{$Storagequant}}</p>
                     </span>
                 </li>
+                
+            </ul>
+            <ul class="box-info-end">
+                <li style="visibility: hidden;"></li>
+
                 <li>
                     <i class="bx bxs-disc"></i>
                     <span class="text">
@@ -193,89 +198,17 @@
                         @if($CaseCount != 0)
                         <p>Total Sales: ₱{{$CaseTotal}}</p>
                         @else
-                            <p>Total Sales: ₱0</p>
+                        <p>Total Sales: ₱0</p>
                         @endif
                         <p>Total Units Sold: {{$Casequant}}</p>
                     </span>
                 </li>
+
+                <li style="visibility: hidden;"></li>
             </ul>
-
-
+             
     </section>
-
-    <script src="script.js"></script>
-
-    <!-- <script>
-    // Sample data for the bar charts
-    const dailyData = {
-      labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5"],
-      datasets: [{
-        label: "Daily Sales",
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-        data: [5, 10, 8, 12, 15],
-      },],
-    };
-
-    const monthlyData = {
-      labels: ["January", "February", "March", "April", "May"],
-      datasets: [{
-        label: "Monthly Sales",
-        backgroundColor: "rgba(54, 162, 235, 0.2)",
-        borderColor: "rgba(54, 162, 235, 1)",
-        borderWidth: 1,
-        data: [10, 20, 15, 25, 30],
-      },],
-    };
-
-    // Get the bar chart canvas element
-    const barChartCanvas = document.getElementById("barChart");
-
-    // Create the bar chart with daily data by default
-    const barChart = new Chart(barChartCanvas, {
-      type: "bar",
-      data: dailyData,
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-
-    // Function to switch between daily and monthly data
-    function switchChartData(isMonthly) {
-      const newData = isMonthly ? monthlyData : dailyData;
-      barChart.data = newData;
-      barChart.update();
-    }
-
-    // Sample data for the pie chart
-    const pieData = {
-      labels: ["Blank", "Blank", "Blank", "Blank", "Blank"],
-      datasets: [{
-        data: [20, 15, 10, 30, 25],
-        backgroundColor: [
-          "#3c91e6",
-          "#db504a",
-          "#ffce26",
-          "#fd7238",
-          "#342e37",
-        ],
-      },],
-    };
-
-    // Get the pie chart canvas element
-    const pieChartCanvas = document.getElementById("pieChart");
-
-    // Create the pie chart
-    const pieChart = new Chart(pieChartCanvas, {
-      type: "pie",
-      data: pieData,
-    });
-  </script> -->
+    
 
 </body>
 

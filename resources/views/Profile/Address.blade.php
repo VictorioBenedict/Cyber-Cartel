@@ -41,8 +41,6 @@
             color: #fff;
             text-align: center;
             padding: 10px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
         }
 
         table {
@@ -239,6 +237,7 @@
             </table>
             <hr style="margin: 0 auto; width: 100%;">
             <table class="table_2">
+            @if(count($addresses)>=1)
                 @foreach ($addresses as $item)
                     <tr>
                         <td class="d-flex justify-content-between"  style="padding: 0px; padding-left: 15px; margin-top:10px;">
@@ -258,8 +257,14 @@
                     <a href="{{url('edit_address/'.$item -> id.'')}}"  style="margin-right: 2%"  class="btn btn-outline-secondary">Edit</a>
                     </td>
                     </tr>
-
                 @endforeach
+            @else
+                <tr>
+                    <td><p style="font-size:30px; margin-bottom: -15px">No Address Found</p></td>
+                    <tr><td>please add a new address</td></tr>
+                    
+                </tr>
+            @endif
             </table>
         </div>
     </div>
@@ -274,7 +279,7 @@
                             style="text-decoration: none;">Terms and Conditions</a></p>
                 </div>
                 <div class="col-md text-center">
-                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; 2023 Login Page. All rights reserved.</p>
+                    <p style="margin-top: 15px; margin-right: -1250px">&copy; Cyber Cartel 2024</p>
                 </div>
                 <div class="col-md text-right pr-md-2">
                     <p style="margin-top: 15px; margin-right: -2663px;"><a

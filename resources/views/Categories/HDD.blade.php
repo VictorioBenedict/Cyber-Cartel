@@ -43,8 +43,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     .slider-frame {
@@ -92,9 +90,13 @@
         transition: transform 0.1s ease-in-out;
     }
 
+    .card .card-body {
+        border-radius: 0px 0px 30px 30px;
+    }
+
     .card:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
         /* Adjust the scale factor as needed */
     }
 
@@ -411,9 +413,6 @@
                     </div>
                 </a>
             </div>
-
-
-
         </div>
     </div>
 
@@ -426,7 +425,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
             <div class="col-md text-right mr-md-2">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>

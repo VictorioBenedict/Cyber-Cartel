@@ -26,14 +26,14 @@
         }
 
         body {
-            font-family: "Spoof Trial Thin";
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            overflow-x: hidden;
-        }
+        font-family: "Spoof Trial Thin";
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #ffffff;
+        overflow-x: hidden;
+    }
 
         main {
             flex: 1;
@@ -44,8 +44,6 @@
             color: #fff;
             text-align: center;
             padding: 10px;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
         }
 
         .slider-frame {
@@ -226,38 +224,46 @@
             <td class="actions">Action</td>
         </tr>
         <tr>
+    
+    @if(count($cart)>0)
         @foreach ($cart as $item)
-
+        <form method="POST">
+            @csrf
             <td></td>
             <td class="product">
                 <img src=" {{$item -> photo}}" class="img">
                 <h6>{{$item -> name}}</h6>
             </td>
             <td class="unit">₱ {{$item -> price}}</td>
-            <td class="quantity">{{$item -> quantity}}</td>
-            <td class="total">{{$item -> category}}</td>
-            <form method="POST">
-            @csrf
-            <td class="action">
-            <button formaction="{{url('increasecart/'.$item -> id.'')}}" class="btn btn-outline-dark">
-                increase</button>
+            <td class="quantity">
+                <button formaction="{{url('increasecart/'.$item -> id.'')}}" class="btn btn-outline-dark">+</button>
             </form>
+            {{$item -> quantity}}
             @if ($item->quantity > 1)
-            <a href="{{url('decreasecart/'.$item -> id.'')}}" class="btn btn-outline-secondary">
-            decrease </a>
+            <a href="{{url('decreasecart/'.$item -> id.'')}}" class="btn btn-outline-secondary">- </a>
+            </td>
+            <td class="total">{{$item -> category}}</td>
+            <td class="action">
             <a href="{{url('addcart/'.$item -> id.'/delete')}}"
             onclick ="return confirm('Are you sure?')" class="btn btn-outline-danger">
             remove</a>
             @else
+             <td class="total">{{$item -> category}}</td>
+            <td class="action">
             <a href="{{url('addcart/'.$item -> id.'/delete')}}"
             onclick ="return confirm('Are you sure?')" class="btn btn-outline-danger">
-            remove</a>
+            remove</a></td>
             @endif
-            
+
             </td>
         </tr>
         @endforeach
-        
+    @else
+    <td></td>
+    <td></td>
+    <td><p style="font-size: 20px; margin-bottom:-8x">No Items in Cart</p></td>
+    @endif
+    
     <br>
     <table class="checkout">
         <tr class="checout_Content">
@@ -269,6 +275,7 @@
         </tr>
     </table>
     <br>
+    
 
     <!-- Footer Section -->
     @include("Layouts.footer")

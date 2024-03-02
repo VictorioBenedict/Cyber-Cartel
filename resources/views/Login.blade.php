@@ -88,8 +88,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
     </style>
 </head>
@@ -98,7 +96,7 @@
 
     <!-- Navigation Bar  -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
+        style="background-color: black; position: fixed; width: 100%;">
         <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
     </nav>
 
@@ -179,7 +177,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
             <div class="col-md text-right mr-md-5">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>

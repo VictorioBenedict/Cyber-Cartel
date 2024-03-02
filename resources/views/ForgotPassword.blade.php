@@ -56,8 +56,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     .navbar-brand img {

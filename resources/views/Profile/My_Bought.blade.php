@@ -43,8 +43,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     table {
@@ -113,6 +111,15 @@
         background-color: black;
         color: white;
     }
+    .custom-btn-highlight {
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        /* Remove default link underline */
+        padding: 10.5px;
+        /* Adjust padding as needed */
+    }
 
     .table_1 {
         margin-bottom: 10px;
@@ -172,12 +179,14 @@
         </div>
         <!-- Table Section --> 
         <div class="contents">
-            <table class="table_1">
+        <table class="table_1">
                 <tr style="border-bottom: 1px solid">
-                    <td class="products" ><a href="my_purchase" class="btn btn-outline-primary">All</a></td>
-                    <td class="units"><a href="my_bought" class="btn btn-outline-success">Bought</a></td>
-                    <td class="actions"><a href="my_cancelled" class="btn btn-outline-secondary">Cancelled</a></td>
-                    <td class="actions"><a href="my_refunded" class="btn btn-outline-dark">Refunded</a></td>
+                    <td class="products"><a href="my_purchase" class="btn btn-outline-dark">All</a></td>
+                    <td class="units"><a href="my_bought" class="btn btn-dark">Bought</a></td>
+                    <td class="actions"><a href="my_cancelled" class="btn btn-outline-dark">Cancelled</a></td>
+                    <td class="actions">
+                        <a href="my_refunded" class="btn btn-outline-dark">Refunded</a>
+                    </td>
                 </tr>
             </table>
             @if(session()->has('message'))
@@ -192,6 +201,7 @@
                         @if(session()->has('bought'))
                         <div class ="alert alert-success">{{session('bought')}}</div>
                         @endif
+    @if(count($bought)>=1)
             @foreach ($bought as $item)
             <table class="table_2">
                 <tr>
@@ -245,11 +255,15 @@
                     </td>
                 </tr>
             </table>
-            @endforeach
-            
+            @endforeach    
         </div>
     </div>
     <br>
+    @else
+        <table class="table_2">
+            <td>No Products Found</td>
+        </table>
+        @endif
 
     <!-- Footer Section -->
     <footer class="bg-black text-light text-center py-2 fixed-bottom" >

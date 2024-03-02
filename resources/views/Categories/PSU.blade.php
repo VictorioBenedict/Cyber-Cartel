@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel | PSU</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -43,8 +43,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     .slider-frame {
@@ -92,9 +90,13 @@
         transition: transform 0.1s ease-in-out;
     }
 
+    .card .card-body {
+        border-radius: 0px 0px 30px 30px;
+    }
+
     .card:hover {
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.05);
         /* Adjust the scale factor as needed */
     }
 
@@ -142,7 +144,7 @@
             @foreach($PSU as $item)
             <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
                 <a href="{{url('product_demo/' . $item->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+                    <div class="card" style="border-radius: 30px 30px 30px 30px;">
                         <img src="{{ asset($item->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
                             style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
                         <div class="card-body text-center"
@@ -162,9 +164,26 @@
     </div>
 
 
-
     <!-- Footer Section -->
-    @include("Layouts.footer")
+    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-left pl-md-2">
+                    <p style="margin-top: 15px; margin-left: -550px;"><a href="/terms" class="text-light"
+                            style="text-decoration: none;">Terms and Conditions</a></p>
+                </div>
+                <div class="col-md text-center">
+                    <p style="margin-top: 15px;">&copy; Cyber Cartel 2024</p>
+                </div>
+                <div class="col-md text-right pr-md-2">
+                    <p style="margin-top: 15px; margin-right: -500px;"><a
+                            href="https://www.facebook.com/cybercartelpage" class="text-light"
+                            style="text-decoration: none;">Follow us on Facebook</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

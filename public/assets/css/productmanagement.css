@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
-
+@import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +14,8 @@ li {
 }
 
 :root {
-    --poppins: "Poppins", sans-serif;
-    --lato: "Lato", sans-serif;
+    --poppins: "Spoof Trial Thin", sans-serif;
+    --lato: "Spoof Trial Thin", sans-serif;
 
     --light: #ffffff;
     --blue: #000000;
@@ -126,7 +125,7 @@ body {
     position: absolute;
     width: 40px;
     height: 40px;
-    border-radius: 10%;
+    border-radius: 50%;
     bottom: -40px;
     right: 0;
     box-shadow: 20px -20px 0 var(--grey);
@@ -330,7 +329,7 @@ body {
     padding: 36px 24px;
     font-family: var(--poppins);
     max-height: calc(100vh - 56px);
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 #content main .head-title {
@@ -465,39 +464,46 @@ body {
     cursor: pointer;
 }
 
-#content main .table-data .order {
+#content main .table-data .statistics {
     flex-grow: 1;
     flex-basis: 500px;
 }
 
-#content main .table-data .order table {
+#content main .table-data .statistics table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#content main .table-data .order table th {
+#content main .table-data .statistics table th {
     padding-bottom: 12px;
     font-size: 13px;
     text-align: left;
     border-bottom: 1px solid var(--grey);
 }
 
-#content main .table-data .order table td {
+#content main .table-data .statistics table td {
     padding: 16px 0;
 }
 
-#content main .table-data .order table tr td:first-child {
+#content main .table-data .statistics table tr td:first-child {
     display: flex;
     align-items: center;
     grid-gap: 12px;
     padding-left: 6px;
 }
 
-#content main .table-data .order table tbody tr:hover {
+#content main .table-data .statistics table td img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#content main .table-data .statistics table tbody tr:hover {
     background: var(--grey);
 }
 
-#content main .table-data .order table tr td .status {
+#content main .table-data .statistics table tr td .status {
     font-size: 10px;
     padding: 6px 16px;
     color: var(--light);
@@ -505,28 +511,30 @@ body {
     font-weight: 700;
 }
 
-#content main .table-data .order table tr td .status.completed {
+#content main .table-data .statistics table tr td .status.completed {
     background: var(--blue);
 }
 
-#content main .table-data .order table tr td .status.process {
+#content main .table-data .statistics table tr td .status.process {
     background: var(--yellow);
 }
 
-#content main .table-data .order table tr td .status.pending {
+#content main .table-data .statistics table tr td .status.pending {
     background: var(--orange);
 }
 
-#content main .table-data .todo {
+#content main .table-data .new-customers {
+    /* Updated class name */
     flex-grow: 1;
     flex-basis: 300px;
 }
 
-#content main .table-data .todo .todo-list {
+#content main .table-data .new-customers .new-customers-list {
+    /* Updated class name */
     width: 100%;
 }
 
-#content main .table-data .todo .todo-list li {
+#content main .table-data .new-customers .new-customers-list li {
     width: 100%;
     margin-bottom: 16px;
     background: var(--grey);
@@ -537,20 +545,27 @@ body {
     align-items: center;
 }
 
-#content main .table-data .todo .todo-list li .bx {
+#content main .table-data .new-customers .new-customers-list li .bx {
     cursor: pointer;
 }
 
-#content main .table-data .todo .todo-list li.completed {
+#content main .table-data .new-customers .new-customers-list li.completed {
     border-left: 10px solid var(--blue);
 }
 
-#content main .table-data .todo .todo-list li.not-completed {
+#content main .table-data .new-customers .new-customers-list li.not-completed {
     border-left: 10px solid var(--orange);
 }
 
-#content main .table-data .todo .todo-list li:last-child {
+#content main .table-data .new-customers .new-customers-list li:last-child {
     margin-bottom: 0;
+}
+
+.white-box {
+    background-color: #fff; /* Set background color to white */
+    padding: 20px; /* Add padding for spacing inside the box */
+    border-radius: 20px; /* Optional: Add rounded corners */
+    margin-top: 30px;
 }
 
 /* MAIN */
@@ -614,79 +629,8 @@ body {
         min-width: 420px;
     }
 
-    #content main .table-data .todo .todo-list {
+    #content main .table-data .new-customers .new-customers-list {
+        /* Updated class name */
         min-width: 420px;
-    }
-
-    footer {
-        background: var(--dark);
-        color: var(--light);
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
-    footer p {
-        margin: 0;
-        font-size: 14px;
-    }
-
-    #content main .table-data .customer-list {
-        width: 100%;
-        /* Set the width to 100% */
-        margin-top: 24px;
-        /* Add some margin if needed */
-        overflow-x: auto;
-        /* Enable horizontal scrolling if needed */
-    }
-
-    #content main .table-data .customer-list h3 {
-        font-size: 24px;
-        font-weight: 600;
-        color: var(--dark);
-        margin-bottom: 16px;
-    }
-
-    #content main .table-data .customer-list table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    #content main .table-data .customer-list th,
-    #content main .table-data .customer-list td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid var(--grey);
-    }
-
-    #content main .table-data .customer-list th {
-        font-size: 14px;
-        color: var(--dark-grey);
-    }
-
-    #content main .table-data .customer-list td {
-        font-size: 16px;
-        color: var(--dark);
-    }
-
-    #content main .table-data .customer-list tbody tr:hover {
-        background: var(--grey);
-    }
-
-    #content main .table-data .customer-list td button {
-        padding: 8px 12px;
-        margin-right: 8px;
-        cursor: pointer;
-        border: none;
-        border-radius: 4px;
-        background: var(--blue);
-        color: var(--light);
-        font-size: 14px;
-    }
-
-    #content main .table-data .customer-list td button:hover {
-        background: var(--dark-blue);
     }
 }

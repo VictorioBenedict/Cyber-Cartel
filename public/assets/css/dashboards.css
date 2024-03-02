@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
-
+@import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +14,8 @@ li {
 }
 
 :root {
-    --poppins: "Poppins", sans-serif;
-    --lato: "Lato", sans-serif;
+    --poppins: "Spoof Trial Thin", sans-serif;
+    --lato: "Spoof Trial Thin", sans-serif;
 
     --light: #ffffff;
     --blue: #000000;
