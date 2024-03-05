@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+    style="background-image: linear-gradient(to right, #937952, #4d9584); box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); ">
     <!-- Added border-radius here -->
 
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('images/cyber_-removebg-preview.png') }}" style="width: 200px; margin-left: 2vw;">
+            <img src="{{ asset('images/final_logo-removebg-preview.png') }}" style="width: 200px; margin-left: 2vw;">
         </a>
         <br>
     </div>
@@ -12,14 +13,15 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
             <li class="nav-item" style="margin-right: 40px; margin-top: 5px;">
-                <a href="/cart"><img src="images/shopping-cart.png" style="width: 25px;"></a>
+                <a href="/cart"><img src="images/cart.png" style="width: 25px;"></a>
             </li>
 
             <!-- mx-auto to center the content -->
             <li class="nav-item" style="margin-right: 1.5vw;">
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="color: white; ">
                         Categories
                     </a>
                     <div class="dropdown-menu" aria-labelledby="categoriesDropdown" style="margin-left: -2vw;">
@@ -36,9 +38,10 @@
             </li>
 
             <li class="nav-item" style="margin-right: 3vw;">
-                <div class="nav-item dropdown">
+                <div class=" nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="color: white; ">
                         {{auth()->user()->name}}
                     </a>
                     <div class="dropdown-menu ml-auto mr-auto" aria-labelledby="userDropdown"
@@ -61,14 +64,15 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <div class="container-fluid">
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item" style="margin-left: 50px; margin-right: 50px; margin-top: 3px;">
-                    <a class="nav-link" aria-current="page" href="login">Login</a>
+                <li class="nav-item"
+                    style="margin-left: 50px; margin-right: 50px; margin-top: 3px; color: white; ">
+                    <a class="nav-link" aria-current="page" href="login" style="color: white;">Login</a>
                 </li>
-                <li class="nav-item" style="margin-right: 40px; margin-top: 3px;">
-                    <a class="nav-link" aria-current="page" href="signup">Signup</a>
+                <li class="nav-item" style="margin-right: 40px; margin-top: 3px; color: white;">
+                    <a class="nav-link" aria-current="page" href="signup" style="color: white;">Signup</a>
                 </li>
-                <li class="nav-item" style="margin-right: 50px; margin-top: 3px;">
-                    <a class="nav-link" aria-current="page" href="/adminlogin">Admin</a>
+                <li class="nav-item" style="margin-right: 50px; margin-top: 3px; color: white;">
+                    <a class="nav-link" aria-current="page" href="/adminlogin" style="color: white;">Admin</a>
                 </li>
             </ul>
         </div>

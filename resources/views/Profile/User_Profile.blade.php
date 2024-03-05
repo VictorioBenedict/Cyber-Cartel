@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -30,6 +31,10 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        overflow-y: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     .main {
@@ -37,10 +42,7 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        margin-top: auto;
     }
 
     table {
@@ -102,7 +104,10 @@
     .contents table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid black;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: none;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     }
 
     .table_1 {
@@ -188,17 +193,18 @@
     <div class="container">
         <table class="user_profile">
             <tr>
-                <td >
+                <td>
                     <a href="/my_account">
                         <img src="images/Pre-Built/sysu 1.jpg" class="profile_img"
                             style="float: left; margin-left: -120px; margin-top: -60px;">
                     </a>
                     <h2 style="margin-bottom: 20px; margin-top: -41px;">{{auth()->user()->name}}</h2>
-                    <a href="my_account/edit"style="text-decoration: none; color: rgb(0, 0, 0);">
-                        <p>Edit Profile</p>
+                    <a href="my_account/edit" style="text-decoration: none; color: rgb(0, 0, 0);">
+                        <p>Edit Profile <i class='bx bx-edit'></i></p>
                     </a>
                 </td>
             </tr>
+            <br>
             <tr>
                 <td>
                     <hr style="margin: 0 auto; width: 100%; margin-bottom: -400px; margin-left: -90px; ">
@@ -214,7 +220,7 @@
                         </div>
                         <br>
                         <div class="user_details" style="margin-left: 40px;">
-                            <a href="/my_account" style="text-decoration: none; " class="myPurchase_header" >
+                            <a href="/my_account" style="text-decoration: none; " class="myPurchase_header">
                                 <p>Profile</p>
                             </a>
                             <a href="/address" style="text-decoration: none; " class="address">
@@ -246,7 +252,7 @@
                         <h4 style=" margin-right: auto; padding: 10px; font-weight: bold;">
                             My Profile
                         </h4>
-                        <p style="margin: 0; margin-right: auto; padding-left:10px; font-weight: bold;">Manage and
+                        <p style="margin: 0; margin-right: auto; padding-left:10px;">Manage and
                             protect your account</p>
                         <br>
                         <hr style="margin: 0 auto; width: 100%;">
@@ -278,6 +284,12 @@
                         </a>
                     </td>
                 </tr>
+                <tr class="phoneN">
+                    <td style="display: flex; align-items: center; justify-content: flex-start;">
+                        <a href="/change_number" style="margin-left: 2%;">
+                        </a>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>
@@ -286,23 +298,9 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2 fixed-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md text-left pl-md-2">
-                    <p style="margin-top: 15px; margin-left: -170px;"><a href="/terms" class="text-light"
-                            style="text-decoration: none;">Terms and Conditions</a></p>
-                </div>
-                <div class="col-md text-center">
-                    <p style="margin-top: 15px; margin-right: -1250px;">&copy; Cyber Cartel 2024</p></div>
-                <div class="col-md text-right pr-md-2">
-                    <p style="margin-top: 15px; margin-right: -2663px;"><a
-                            href="https://www.facebook.com/cybercartelpage" class="text-light"
-                            style="text-decoration: none;">Follow us on Facebook</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+@include('Layouts.footer3')
+
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
 

@@ -31,7 +31,6 @@
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
-        background-color: #ffffff;
         overflow-x: hidden;
     }
 
@@ -40,17 +39,18 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        margin-top: auto;
     }
 
     table {
         border-collapse: collapse;
         width: 80%;
         margin: 0 auto;
-        border: 1px solid black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .tatable {
+        min-height: 551px;
     }
 
     td {
@@ -142,6 +142,15 @@
         transform: scale(1.1);
         /* Increase the scale on hover */
     }
+
+    .black-btn {
+        padding: 5px;
+        background-color: #4d9584;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        /* Adjust font size if needed */
+    }
     </style>
 </head>
 
@@ -154,6 +163,9 @@
         <div class="container" id="contents">
             <header class="d-flex justify-content-between" style="margin-top: 40px;">
                 <h2>Cyber Cartel | Checkout</h2>
+                @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
                 <br>
                 <br>
             </header>
@@ -166,17 +178,22 @@
     <!-- Table Section -->
     <table>
         <tr>
-            <td class="delivery_Address">Delivery Address</td>
+            <td class="delivery_Address" style="font-weight:bold;">Delivery Address</td>
         </tr>
-        <tr style="border-bottom: 1px solid" class="user_Address_container">
-        @foreach ($addresses as $item)
+        <tr  class="user_Address_container">
+        @if(count($addresses)>=1)
+        @foreach ($addresses->slice(0,3) as $item)
             <td class="user_Address_Data">{{$item -> region}}, {{$item -> city}}, {{$item -> address}}, {{$item -> postal_code}}</td>
         @endforeach
+        @else
+        <td><p>Please add an address</p></td>
+        <td><a class="btn btn-outline-dark" href="/profile">My account</a></td>
+        @endif
         </tr>
     </table>
     <br>
     <table>
-        <tr style="border-bottom: 1px solid;">
+        <tr style="font-weight:bold;">
             <td class="product_Container">Product Ordered</td>
             <td class="unitPrice_Container">Unit Price</td>
             <td class="amount_Container">Category</td>
@@ -184,7 +201,7 @@
             <td class="totals">Full Price</td>
         </tr>
         @foreach ($cart as $cartitem)
-        <tr style="border-bottom: 1px solid;">
+        <tr>
             <td class="product">
                 <img src="{{$cartitem -> photo}}" class="img">
                 <h6>{{$cartitem -> name}}</h6>
@@ -218,7 +235,7 @@
     <br>
 
     <!-- Footer Section -->
-    @include("Layouts.footer")
+    @include("Layouts.footer2")
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

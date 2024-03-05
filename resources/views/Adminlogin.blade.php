@@ -111,15 +111,19 @@
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <form id="loginForm" action="/admindashboards">
+                    @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
+                    <form id="loginForm" action="{{route('adminpost')}}" method="post">
+                    @csrf
                         <header class="py-5 text-center">
                             <h1>Admin Login</h1>
                         </header>
 
                         <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"
-                                placeholder="Enter your username">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email"
+                                placeholder="Enter your email">
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">

@@ -5,27 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cart</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
     <style>
-        @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
+    @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
-        @font-face {
-            font-family: "Spoof Trial Thin";
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
-            src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
-                url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
-        }
+    @font-face {
+        font-family: "Spoof Trial Thin";
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot");
+        src: url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
+    }
 
-        body {
+    body {
         font-family: "Spoof Trial Thin";
         display: flex;
         flex-direction: column;
@@ -35,73 +36,98 @@
         overflow-x: hidden;
     }
 
-        main {
-            flex: 1;
-        }
+    main {
+        flex: 1;
+    }
 
-        footer {
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
+    footer {
+        margin-top: auto;
+    }
 
-        .slider-frame {
-            overflow: hidden;
-            max-width: 100%;
-            margin-top: 20px;
-        }
+    .slider-frame {
+        overflow: hidden;
+        max-width: 100%;
+        margin-top: 20px;
+    }
 
-        .img-container {
-            width: 100%;
-            /* Adjust the width as needed */
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .img-container {
+        width: 100%;
+        /* Adjust the width as needed */
+        box-sizing: border-box;
+        text-align: center;
+    }
 
-        .img-container img {
-            max-width: 100%;
-            /* Make images responsive */
-            height: auto;
-            /* Allow the height to adjust proportionally */
-            border: 1px solid #ddd;
-        }
+    .img-container img {
+        max-width: 100%;
+        /* Make images responsive */
+        height: auto;
+        /* Allow the height to adjust proportionally */
+        border: 1px solid #ddd;
+    }
 
-        .card:hover {
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            /* Adjust the color and intensity as needed */
-        }
+    .card:hover {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        /* Adjust the color and intensity as needed */
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 0 auto;
-            border: 1px solid black;
-        }
+    table {
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-        td {
-            padding: 15px;
-        }
+    .tatable {
+        min-height: 551px;
+    }
 
-        .product {
-            display: flex;
-            align-items: center;
-            padding-top: 25px;
-            padding-bottom: 25px;
-        }
+    td {
+        padding: 15px;
+    }
 
-        .img {
-            max-width: 50px;
-            /* Set the maximum width as needed */
-            margin-right: 10px;
-            /* Adjust margin as needed */
-        }
+    .product {
+        display: flex;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 
-        h6 {
-            margin: 0;
-            /* Remove default margin to avoid extra space */
-        }
+    .img {
+        max-width: 50px;
+        /* Set the maximum width as needed */
+        margin-right: 10px;
+        /* Adjust margin as needed */
+    }
 
+    h6 {
+        margin: 0;
+        /* Remove default margin to avoid extra space */
+    }
+
+    .unit,
+    .quantity,
+    .total,
+    .action,
+    .products,
+    .units,
+    .quantitys,
+    .totals,
+    .actions {
+        text-align: center;
+    }
+
+    .item_1_details {
+        width: 45vw;
+    }
+
+    .products {
+        text-align: left;
+        width: 45%;
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        .product,
         .unit,
         .quantity,
         .total,
@@ -111,82 +137,66 @@
         .quantitys,
         .totals,
         .actions {
-            text-align: center;
+            font-size: 0.8rem;
         }
+    }
 
-        .item_1_details {
-            width: 45vw;
-        }
+    .checkout_Content {
+        border-top: 1px solid
+    }
 
-        .products {
-            text-align: left;
-            width: 45%;
-        }
+    .checkout {
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        background-color: #fff;
+        padding: 10px;
+    }
 
-        @media only screen and (max-width: 600px) {
+    .checkout_Content {
+        text-align: left;
+    }
 
-            .product,
-            .unit,
-            .quantity,
-            .total,
-            .action,
-            .products,
-            .units,
-            .quantitys,
-            .totals,
-            .actions {
-                font-size: 0.8rem;
-            }
-        }
+    .total_Price {
+        text-align: left;
+    }
 
-        .checkout_Content {
-            border-top: 1px solid
-        }
+    .total_Items {
+        text-align: right;
+        width: 10%;
+    }
 
-        .checkout {
-            position: sticky;
-            bottom: 0;
-            left: 0;
-            width: 80%;
-            background-color: #fff;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .checkout_Content button {
+        float: right;
+    }
 
-        .checkout_Content {
-            text-align: left;
-        }
+    .selectAll {
+        width: 10%;
+    }
 
-        .total_Price {
-            text-align: left;
-        }
+    .deleteAll {
+        width: 60%;
+    }
 
-        .total_Items {
-            text-align: right;
-            width: 10%;
-        }
+    .navbar-brand img {
+        transition: transform 0.3s ease-in-out;
+        /* Apply the transition to the transform property */
+    }
 
-        .checkout_Content button {
-            float: right;
-        }
+    .navbar-brand img:hover {
+        transform: scale(1.1);
+        /* Increase the scale on hover */
+    }
 
-        .selectAll {
-            width: 10%;
-        }
-
-        .deleteAll {
-            width: 60%;
-        }
-
-        .navbar-brand img {
-            transition: transform 0.3s ease-in-out;
-            /* Apply the transition to the transform property */
-        }
-
-        .navbar-brand img:hover {
-            transform: scale(1.1);
-            /* Increase the scale on hover */
-        }
+    .black-btn {
+        padding: 5px;
+        background-color: #4d9584;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        /* You can use 'small' or specify a specific size like '12px', '0.8em', etc. */
+    }
     </style>
 </head>
 
@@ -214,14 +224,15 @@
     <br>
         
     <!-- Table Section -->
+    <div class="tatable">
     <table>
-        <tr style="border-bottom: 1px solid">
+        <tr>
             <td></td>
-            <td class="products">Product</td>
-            <td class="units">Unit Price</td>
-            <td class="quantitys">Quantity</td>
-            <td class="totals">Category</td>
-            <td class="actions">Action</td>
+            <td class="products" style="font-weight:bold;">Product</td>
+            <td class="units" style="font-weight:bold;">Unit Price</td>
+            <td class="quantitys" style="font-weight:bold;">Quantity</td>
+            <td class="totals" style="font-weight:bold;">Category</td>
+            <td class="actions" style="font-weight:bold;">Action</td>
         </tr>
         <tr>
     
@@ -271,14 +282,14 @@
             <td class="deleteAll"></td>
             <td class="total_Items">Total Items: {{$quantity}}</td>
             <td class="total_Price">₱{{$totalPrice}}</td>
-            <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT</button></a></td>
+            <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT  <i class='bx bx-check-circle'></i></button></a></td>
         </tr>
     </table>
     <br>
-    
+    </div>
 
     <!-- Footer Section -->
-    @include("Layouts.footer")
+    @include("Layouts.footer2")
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

@@ -135,7 +135,23 @@ class DashboardController extends Controller
     public function adminlogin(){
         return view('Adminlogin');
     }
-    
+    public function adminAuth(Request $request) {
+
+        $request->validate([
+            'email'    => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('email', 'password');
+          if (Auth::attempt($credentials)) {
+            $user = User::where('email', $request->email)->first();
+            if ($user->id == '1') {
+                return redirect()->route('admindashboards');
+            } else {
+                return redirect()->back()->with('error', 'Unauthorized ');
+            }
+        }
+        return redirect()->back()->with('error', 'Oppes! You have entered invalid credentials');
+    } 
 }
 
     

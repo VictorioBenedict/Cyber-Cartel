@@ -56,7 +56,7 @@
             <br>
             <br>
             <li>
-                <a class="dropdown-item text-center" href="login" style="color: red;">
+                <a class="dropdown-item text-center" href="{{route('logout')}}"  style="color: red;">
                     <i class="bx bxs-log-out"></i> Log out
                 </a>
             </li>

@@ -16,6 +16,9 @@
         a{
             color:blue;
         }
+        .table-responsive {
+        max-height:670px;
+        }
     </style>
 </head>
 
@@ -59,7 +62,7 @@
             <br>
             <br>
             <li>
-                <a class="dropdown-item text-center" href="login" style="color: red;">
+                <a class="dropdown-item text-center" href="{{route('logout')}}" style="color: red;">
                     <i class="bx bxs-log-out"></i> Log out
                 </a>
             </li>
@@ -74,58 +77,54 @@
 
         <!-- MAIN -->
         <main>
-            <div class="content">
-                <div class="head-title">
-                    <div class="left">
-                        <h1>Product Management</h1>
-                        <ul class="breadcrumb"></ul>
-                    </div>
-                </div>
-                    <a class="btn btn-outline-dark" a href="{{url('productmanagements/create')}}"> Add
-                        product</a>
+    <div class="content">
+        <div class="head-title">
+            <div class="left">
+                <h1>Product Management</h1>
+                <ul class="breadcrumb"></ul>
             </div>
+        </div>
+        <a class="btn btn-outline-dark" href="{{url('productmanagements/create')}}"> Add product</a>
+    </div>
+    <ul class="box-info">
+    <li>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Photo</th>
+                    <th>Price</th>
+                    <th>Detail</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $item)
+                <tr>
+                    <td>{{$item -> id }}</td>
+                    <td>{{$item -> name}}</td>
+                    <td>
+                        <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
+                    </td>
+                    <td>₱ {{$item -> price}}</td>
+                    <td>{{ Str::limit($item -> details,'30','...')}}</td>
+                    <td>{{$item -> category}}</td>
+                    <td>
+                        <a href="{{url('productmanagements/'.$item -> id.'/edit')}}" class="btn btn-outline-secondary">Edit</a>
+                        <a href="{{url('productmanagements/'.$item -> id.'/delete')}}" class="btn btn-outline-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    </li>
+    </ul>
+</main>
 
-            <ul class="box-info">
-                <li>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Photo</th>
-                                <th>Price</th>
-                                <th>Detail</th>
-                                <th>Category</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <div>
-                        <tbody>
-                            @foreach ($products as $item)
-                            <tr>
-                                <td>{{$item -> id }}</td>
-                                <td>{{$item -> name}}</td>
-                                <td>
-                                    <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
-                                </td>
-                                <td>₱ {{$item -> price}}</td>
-                                <td>{{ Str::limit($item -> details,'30','...')}}</td>
-                                <td>{{$item -> category}}</td>
-                                <td>
-                                    <a href="{{url('productmanagements/'.$item -> id.'/edit')}}"
-                                        class="btn btn-outline-secondary">Edit</a>
-                                    <a href="{{url('productmanagements/'.$item -> id.'/delete')}}" class="btn btn-outline-danger"
-                                        onclick="return confirm('Are you sure?')">
-                                        Delete</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                        </div>
-                    </table>
-                </li>
-            </ul>
-        </main>
 
     </section>
 </body>

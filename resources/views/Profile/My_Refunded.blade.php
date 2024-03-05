@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -24,10 +25,16 @@
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.ttf")format("truetype"),
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
     }
+
     a {
         text-decoration: none;
     }
+
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+
         font-family: "Spoof Trial Thin";
         margin: 0;
         padding: 0;
@@ -39,15 +46,13 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        margin-top: auto;
     }
 
     table {
         border-collapse: collapse;
         width: 80%;
+        border: 1px solid black;
     }
 
     td {
@@ -65,15 +70,6 @@
     .img {
         max-width: 10%;
         margin-right: 10px;
-    }
-    .custom-btn-highlight {
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        /* Remove default link underline */
-        padding: 10.5px;
-        /* Adjust padding as needed */
     }
 
     .clicked {
@@ -112,14 +108,11 @@
     .contents table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid black;
         margin-bottom: 20px;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .highlight-black {
-        background-color: black;
-        color: white;
-    }
 
     .table_1 {
         margin-bottom: 10px;
@@ -137,6 +130,28 @@
         transform: scale(1.1);
         /* Increase the scale on hover */
     }
+
+    .custom-btn-highlight {
+        background-color: #4d9584;
+        color: white;
+        text-decoration: none;
+        /* Remove default link underline */
+    }
+
+    .custom-btn-highlight:hover {
+        color: white;
+        background-color: #4d9584;
+    }
+
+    .custom-btn{
+        border-color: #937952;
+        color: #937952;
+    }
+
+    .custom-btn:hover{
+        color: white;
+        background-color: #4d9584;
+    }
     </style>
 </head>
 
@@ -152,7 +167,7 @@
     <br>
     <div class="container">
         <div class="user_profile" style="margin-right: 60px;">
-            <table>
+            <table style="border: none;">
                 <tr>
                     <td style="margin-top: 90px;">
                         <br>
@@ -169,23 +184,23 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">My Account</a></td>
+                    <td><a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0); font-size: 20px;">My
+                            Account</a></td>
                 </tr>
                 <tr>
-                    <td><a href="/my_purchase" style="text-decoration: none;">My Purchase</a></td>
+                    <td><a href="/my_purchase" style="text-decoration: none; font-size: 20px;">My Purchase</a></td>
                 </tr>
             </table>
-            
         </div>
         <!-- Table Section --> 
         <div class="contents">
         <table class="table_1">
-                <tr style="border-bottom: 1px solid">
-                    <td class="products"><a href="my_purchase" class="btn btn-outline-dark">All</a></td>
-                    <td class="units"><a href="my_bought" class="btn btn-outline-dark">Bought</a></td>
-                    <td class="actions"><a href="my_cancelled" class="btn btn-outline-dark">Cancelled</a></td>
+                <tr>
+                    <td class="products"><a href="my_purchase" class="btn btn custom-btn">All</a></td>
+                    <td class="units"><a href="my_bought" class="btn btn custom-btn">Bought <i class='bx bx-purchase-tag-alt' ></i></a></td>
+                    <td class="actions"><a href="my_cancelled" class="btn btn custom-btn">Cancelled <i class='bx bx-message-square-x'></i></a></td>
                     <td class="actions">
-                        <a href="my_refunded" class="btn btn-dark">Refunded</a>
+                        <a href="my_refunded" class="btn btn custom-btn-highlight">Refunded <i class='bx bx-credit-card-front' ></i></a>
                     </td>
                 </tr>
             </table>
@@ -247,29 +262,17 @@
                 </tr>
             </table>
             @endforeach
-        </div>
-    </div>
     <br>
-    @else
+        @else
         <table class="table_2">
             <td>No Products Found</td>
         </table>
         @endif
+</div>
+</div>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2 fixed-bottom">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; Cyber Cartel 2024</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+    @include('Layouts.footer3')
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>

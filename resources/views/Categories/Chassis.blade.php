@@ -148,7 +148,7 @@
                         <img src="{{ asset($item->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
                             style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
                         <div class="card-body text-center"
-                            style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
                             <!-- Removed border-radius from the img element -->
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$item->name}}</p>
@@ -165,24 +165,7 @@
 
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2 fixed-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md text-left pl-md-2">
-                    <p style="margin-top: 15px; margin-left: -550px;"><a href="/terms" class="text-light"
-                            style="text-decoration: none;">Terms and Conditions</a></p>
-                </div>
-                <div class="col-md text-center">
-                    <p style="margin-top: 15px;">&copy;Cyber Cartel 2024</p>
-                </div>
-                <div class="col-md text-right pr-md-2">
-                    <p style="margin-top: 15px; margin-right: -500px;"><a
-                            href="https://www.facebook.com/cybercartelpage" class="text-light"
-                            style="text-decoration: none;">Follow us on Facebook</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('Layouts.footer')
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

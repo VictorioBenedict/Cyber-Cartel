@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Models\BoughtProducts;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Address;
@@ -18,9 +19,8 @@ class UserController extends Controller
     //DELETES USER INFORMATION
     public function destroy($id){
         $user = User::find($id);
-        $user -> adresses()->delete();
         $user->delete();
-        return response()->json(['message' => 'successfully deleted']);
+        return redirect()->back();
     }
 
 

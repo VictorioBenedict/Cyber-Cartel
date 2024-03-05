@@ -54,7 +54,7 @@
             <br>
             <br>
             <li>
-                <a class="dropdown-item text-center" href="login" style="color: red;">
+                <a class="dropdown-item text-center" href="{{route('logout')}}"  style="color: red;">
                     <i class="bx bxs-log-out"></i> Log out
                 </a>
             </li>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-
+            <div>
             <ul class="box-info">
                 <li>
                     <table class="table table-hover">
@@ -96,7 +96,7 @@
                                 <td>{{$item -> name}}</td>
                                 <td>{{$item -> email}}</td>
                                 <td>
-                                    <a href="{{url('productmanagements/'.$item -> id.'/delete')}}" class="btn btn-outline-danger"
+                                    <a href="{{url('admincustomers/'.$item -> id.'/delete')}}" class="btn btn-outline-danger"
                                         onclick="return confirm('Are you sure?')">
                                         Delete</a>
                                 </td>
@@ -107,6 +107,7 @@
                     </table>
                 </li>
             </ul>
+            </div>
         </main>
     </section>
 </body>

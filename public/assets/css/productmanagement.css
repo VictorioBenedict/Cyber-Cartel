@@ -444,7 +444,8 @@ body {
     border-radius: 20px;
     background: var(--light);
     padding: 24px;
-    overflow-x: auto;
+    overflow-y: scroll;
+    display: block;
 }
 
 #content main .table-data .head {

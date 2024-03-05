@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AddressController;
+use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\Authentication_Controller;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ForgetPasswordManager;
@@ -96,12 +97,17 @@ Route::get('/conPass/{token}',  [ForgetPasswordManager::class, 'resetPassword'])
 Route::post('/conPass',  [ForgetPasswordManager::class, 'resetPasswordPost'])->name("resetPassword")->name("reset.password.post");
 
 
+Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
+Route::post('/adminlogin', [DashboardController::class,'adminAuth'])->name('adminpost');
 //Admin panel
+Route::group(['middleware'=>'auth'], function(){
 Route::get('/adminmanagements',[DashboardController::class,'adminmanagement']);
-Route::get('/admindashboards',[DashboardController::class,'admindashboard']);
+Route::get('/admindashboards',[DashboardController::class,'admindashboard'])->name('admindashboards');
 Route::get('/adminanalytics',[DashboardController::class,'adminanalytics']);
 Route::get('/admincustomers',[DashboardController::class,'admincustomers']);
-Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
+Route::get('/admincustomers/{id}/delete',[UserController::class,'destroy']);
+
+});
 //productmanagement
 Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
 Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Cyber Cartel | Sign up</title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -46,21 +46,20 @@
     }
 
     #signupForm {
-        border: 1px solid #ccc;
         border-radius: 50px;
         padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         /* Adjust as needed */
     }
 
     .btn-primary.black-button {
-        background-color: black;
+        background-color: #4d9584;
         color: white;
-        border: 1px solid black;
+
     }
 
     .btn-primary.black-button:hover {
-        background-color: #333;
-        border: 1px solid #333;
+        background-color: #937952;
         color: white;
     }
 
@@ -70,7 +69,18 @@
     }
 
     .btn-black-active {
-        background-color: black;
+        background-color: #4d9584;
+        color: white;
+    }
+
+    .btn-custom {
+        background-color: white;
+        color: #fff;
+        /* Add any additional styles you want for the button */
+    }
+
+    .btn-csutom-active {
+        background-color: #4d9584;
         color: white;
     }
 
@@ -79,10 +89,6 @@
         /* Adjust the transition properties as needed */
     }
 
-    .position-fixed:hover {
-        transform: scale(1.2);
-        /* Adjust the scale factor as needed */
-    }
 
     footer {
         background-color: black;
@@ -105,31 +111,31 @@
 </head>
 
 <body>
-        <!-- Navigation Bar  -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: black; position: fixed; width: 100%;">
-        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
-    </nav>
+    <!-- Navigation Bar 
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
+        <a class="navbar-brand" href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
+         Add your navigation links if needed 
+    </nav> -->
 
     <!-- Content Section -->
-    <section style="margin-top: 55px; margin-bottom: 20px;">
+    <section style="margin-top: -25px; margin-bottom: 20px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row">
                 <div class="col-lg-7 col-md-9 col-sm-12">
                     <!-- Login Content -->
-                    <div class
-                    @if(session()->has('error'))
-                        <div class ="alert alert-danger">{{session('error')}}</div>
+                    <div class @if(session()->has('error'))
+                        <div class="alert alert-danger">{{session('error')}}</div>
                         @endif
 
                         @if(session()->has('success'))
-                        <div class ="alert alert-success">{{session('success')}}</div>
-                    @endif
+                        <div class="alert alert-success">{{session('success')}}</div>
+                        @endif
                     </div>
 
                     <form id="signupForm" action="{{route('Signup.post')}}" method="POST"
-                        style="border: 1px solid #ccc; border-radius: 50px; padding: 44px;">
+                        style="border-radius: 50px; padding: 44px;">
                         @csrf
                         <header class="py-5 text-center">
                             <h1>Sign Up</h1>
@@ -157,9 +163,9 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
+                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
-                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <!-- Confirm Password Section -->
@@ -173,7 +179,6 @@
                                         onclick="toggleConfirmPassword()">Show</button>
                                 </div>
                             </div>
-                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <button type="submit" class="btn btn-primary btn-block black-button">Sign-Up</button>
                     </form>
@@ -181,7 +186,7 @@
                 <!-- Image on the left side (as a clickable button) -->
                 <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left" style="left: 0; top: -40px;">
                     <a href="/">
-                        <img src="images/black 2.png" alt="Left Image" style="width: 100%;">
+                        <img src="images/logo white4.png" alt="Left Image" style="width: 100%;">
                     </a>
                 </div>
             </div>
@@ -189,16 +194,18 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+    <footer class="bg-black text-light text-center py-2 fixed-bottom"
+        style="background-image: linear-gradient(to right, #937952, #4d9584);">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
+            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
+                <p><a href="/terms" class="text-light" style="text-decoration: none;">Terms and Conditions</a></p>
             </div>
-            <div class="col-md text-center">
-            <p>&copy; Cyber Cartel 2024</p>
+            <div class="col-md text-center" style="margin-top: 15px;">
+                <p>&copy; Cyber Cartel 2024</p>
             </div>
-            <div class="col-md text-right mr-md-5">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
+                <p><a href="https://www.facebook.com/yourpage" class="text-light" style="text-decoration: none;">Follow
+                        us on Facebook</a></p>
             </div>
         </div>
     </footer>

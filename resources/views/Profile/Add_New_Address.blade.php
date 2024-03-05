@@ -80,13 +80,30 @@
             transform: scale(1.1);
             /* Increase the scale on hover */
         }
+        
+    .custom-btn-highlight {
+        background-color: #4d9584;
+        color: white;
+        text-decoration: none;
+        /* Remove default link underline */
+    }
+
+    .custom-btn-highlight:hover {
+        color: white;
+        background-color: #4d9584;
+    }
+
+    .custom-btn{
+        border-color: #937952;
+        color: #937952;
+    }
+
+    .custom-btn:hover{
+        color: white;
+        background-color: #4d9584;
+    }
     </style>
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
-        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
-    </nav>
-<body>
 
     <!-- Login Content -->
     <section style="margin-top: 55px; margin-bottom: 20px;">
@@ -94,6 +111,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
                 <table style="border: 1px solid #ccc; border-radius: 10px; width:100%;">
+                @if (session('status'))
+                    <div class="alert alert-success">{{session('status')}}</div>
+                @endif
                             <tr>
                                 <td style=" padding: 2%;">
                                     <p style="font-size: 15px; margin-bottom:-2.5px;">Your address details are
@@ -107,9 +127,6 @@
                             </tr>
                         </table>
                         <h5 style="margin-top:2.5%; margin-bottom:2.5%">Address</h5>
-                        @if (session('status'))
-                    <div class="alert alert-success">{{session('status')}}</div>
-                @endif
                         
                         <form action="{{url ('add_new_address')}}" method = "POST"  enctype="multipart/form-data">
                             @csrf
@@ -135,11 +152,9 @@
                                 @error('postal_code') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
 
-                            <button type="button" class="btn btn-light" style="width: 48%; border: 1px solid #000000;">
                                 <a href="/address"
-                                    style="text-decoration: none; color: #000000; width: 100%; display: block;">Back</a>
-                            </button>
-                            <button type="submit" class="btn btn-secondary primary black-button" style="width: 48%;">Submit
+                                class="btn btn custom-btn-highlight"  style="width: 49%;">Back</a>
+                            <button type="submit" class="btn btn custom-btn-highlight" style="width: 50%;">Submit
                             </button>
                             </button>
                             </div>
@@ -152,7 +167,7 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2 fixed-bottom">
+    <footer class="bg-black text-light text-center py-1 fixed-bottom" style="background-image: linear-gradient(to right, #937952, #4d9584);">
         <div class="row">
             <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>

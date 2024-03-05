@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel | Product Info</title>
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -48,8 +49,6 @@
         color: #fff;
         text-align: center;
         padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
     }
 
     .navbar-brand img {
@@ -63,7 +62,7 @@
     }
 
     .main-wrapper {
-        min-height: 30vh;
+        min-height: 65vh;
         background-color: #eeeeee;
         display: flex;
         align-items: center;
@@ -74,9 +73,6 @@
         max-width: 1200px;
         padding: 0 1rem;
         margin: 0 auto;
-        overflow: auto;
-        height:auto;
-        word-wrap: break-word;
     }
 
     .product-div {
@@ -149,16 +145,16 @@
     }
 
     .product-name {
-        font-size: 50px;
+        font-size: 26px;
         margin-bottom: 22px;
-        font-weight: 70;
+        font-weight: 700;
         letter-spacing: 1px;
         opacity: 0.9;
     }
 
     .product-price {
         font-weight: 700;
-        font-size: 30px;
+        font-size: 24px;
         opacity: 0.9;
         font-weight: 500;
     }
@@ -178,7 +174,6 @@
         line-height: 1.6;
         font-weight: 300;
         opacity: 0.9;
-        margin-top: 22px;
     }
 
     .product-description-one {
@@ -186,19 +181,15 @@
         line-height: 1.6;
         font-weight: 300;
         opacity: 0.9;
-        margin-top: 22px;
     }
 
-    .btn-groups {
-        margin-top: 22px;
-    }
 
     .btn-groups button {
         display: inline-block;
         font-size: 16px;
         font-family: inherit;
         text-transform: uppercase;
-        padding: 15px 16px;
+        padding: 15px 20px;
         color: #fff;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -210,7 +201,7 @@
 
     .add-cart-btn {
         border-radius: 50px;
-        background-color: #4a4a4a;
+        background-color: #937952;
         border: 2px solid #4a4a4a;
         margin-right: 8px;
     }
@@ -222,14 +213,15 @@
 
     .buy-now-btn {
         border-radius: 50px;
-        background-color: #000;
-        border: 2px solid #000;
+        background-color: #4d9584;
+        border: 2px solid #4a4a4a;
     }
 
     .buy-now-btn:hover {
         background-color: #fff;
         color: #000;
     }
+
 
     .product-details-box {
         text-align: center;
@@ -263,11 +255,10 @@
 
     /* Reviews Section */
     .reviews-section {
-        margin-top: 0px;
-        padding: 20px;
+        padding: 100px;
         background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 70px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .reviews-section h2 {
@@ -326,9 +317,12 @@
 
     @include('Layouts.navbar')
 
-    
-    <div  style="margin-top: 120px; background-color: white;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px;">
+    @if(session()->has('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+    @endif
+
+    <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
+    <div class="container" style="border: none; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             <div class="product-div">
                 <div class="product-div-left">
                     <div class="img-container">
@@ -346,10 +340,10 @@
                     @csrf
                     <div class="btn-groups">
                             <button class="add-cart-btn" formaction="{{url('addcart',$product->id)}}">
-                                <i class="fas fa-shopping-cart"></i>add to cart
+                                <i class="bx bxs-cart-add"></i>  add to cart
                             </button>
                             <button class="buy-now-btn" formaction="{{url('buynow',$product->id)}}">
-                                <i class="fas fa-wallet"></i>buy now
+                                <i class="bx bxs-wallet"></i>  buy now
                             </button>
                     </form>
                     </div>
@@ -357,9 +351,10 @@
             </div>
 
             <!-- Additional box for details -->
-        </div>
+            </div>
+    </div>
 
-    <div class="main-wrapper" style="margin-top: 20px; background-color: white;">
+    <div class="main-wrapper" style=" background-color: white;">
     <div class="container" style="border: 1px solid black; border-radius: 50px;">
         <div class="product-div-two" style="text-align: left;">
             <div class="product-div-left">
@@ -373,56 +368,44 @@
 </div>
 
 
-
-    <div class="main-wrapper" style="background-color: white; margin-top: 10px;">
-        <div class="container" style="border: 1px solid black; border-radius: 50px; padding: 90px;">
+    <div class="main-wrapper"
+        style="background-color: white; margin-top: -150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <div class="container" style="border-radius: 50px; padding: -100px;">
             <!-- ... (existing content) ... -->
 
             <!-- Reviews Section -->
-            <div>
-            <h2>Product Reviews</h2>
+            <div class=" reviews-section">
+                <h2>Product Reviews</h2>
 
-            <!-- Individual Review Comments -->
-            <div class="review-comment">
-                <div class="user-info">
-                    <img src="meowww.jpg" alt="User Avatar" />
-                    <span>RRs Shia</span>
+                <!-- Individual Review Comments -->
+                <div class="review-comment">
+                    <div class="user-info">
+                        <img src="images/meoww.jpg" alt="User Avatar" />
+                        <span>Boss R2x</span>
+                    </div>
+                    <p class="review-text">
+                        This product is amazing! I love the performance and speed.
+                        Definitely recommended.
+                    </p>
                 </div>
-                <p class="review-text">
-                    This product is amazing! I love the performance and speed.
-                    Definitely recommended.
-                </p>
-            </div>
 
-            <div class="review-comment">
-                <div class="user-info">
-                    <img src="meoww.jpg" alt="User Avatar" />
-                    <span>Boss Ranhod</span>
+                <div class="review-comment">
+                    <div class="user-info">
+                        <img src="images/meoww.jpg" alt="User Avatar" />
+                        <span>Boss H2x</span>
+                    </div>
+                    <p class="review-text">
+                        Excellent processor! It exceeded my expectations. Great value for
+                        the money.
+                    </p>
                 </div>
-                <p class="review-text">
-                    Excellent processor! It exceeded my expectations. Great value for
-                    the money.
-                </p>
-            </div>
 
+            </div>
         </div>
-    </div>
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2">
-        <div class="row">
-            <div class="col-md text-left ml-md-2">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center">
-                <p>&copy; 2024 Cyber Cartel</p>
-            </div>
-            <div class="col-md text-right mr-md-2">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+@include('Layouts.footer2')
 
     <script>
     const allHoverImages = document.querySelectorAll(".hover-container div img");
