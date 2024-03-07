@@ -194,28 +194,28 @@
     <div class="slider-frame">
         <div class="slide-images">
             <div class="img-container">
-                <a href="product_demo/5">
-                    <img src="images/slide 1.png" alt="Slide 1">
+                <a href="https://www.facebook.com/cybercartelpage">
+                    <img src="images/banner1.png" alt="Slide 1">
                 </a>
             </div>
             <div class="img-container">
-                <a href="product_demo/5">
-                    <img src="{{ URL('images/slide 2.png') }}" alt="Slide 2">
+                <a href="gpu_category">
+                    <img src="{{ URL('images/banner2.png') }}" alt="Slide 2">
                 </a>
             </div>
             <div class="img-container">
-                <a href="product_demo/5">
-                    <img src="{{ URL('images/slide 3.png') }}" alt="Slide 3">
+                <a href="processor_category">
+                    <img src="{{ URL('images/banner3.png') }}" alt="Slide 3">
                 </a>
             </div>
             <div class="img-container">
-                <a href="product_demo/5">
-                    <img src="{{ URL('images/slide 4.png') }}" alt="Slide 4">
+                <a href="storage_category">
+                    <img src="{{ URL('images/banner4.png') }}" alt="Slide 4">
                 </a>
             </div>
             <div class="img-container">
-                <a href="product_demo/5">
-                    <img src="{{ URL('images/slide 5.png') }}" alt="Slide 5">
+                <a href="motherboard_category">
+                    <img src="{{ URL('images/banner5.png') }}" alt="Slide 5">
                 </a>
             </div>
         </div>

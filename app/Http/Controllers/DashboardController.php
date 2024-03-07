@@ -32,6 +32,10 @@ class DashboardController extends Controller
         return view('Signup');
     }
 
+    public function terms(){
+        return view('terms');
+    }
+
     public function details($id){
         $product = Products::find($id);
         return view('Product_demo',compact('product'));

@@ -118,8 +118,7 @@ Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productControl
 
 //products
 Route::get('/product_demo/{id}',[DashboardController::class,'details']);
-
-
+Route::get('/terms',[DashboardController::class,'terms']);
 
 //CATEGORIES
 Route::get('/processor_category', [Category_Controller::class, 'Cpu_Category_Route']);

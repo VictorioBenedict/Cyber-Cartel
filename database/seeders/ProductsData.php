@@ -2051,7 +2051,7 @@ class ProductsData extends Seeder
                 'category' => 'CPU',
             ],
             [
-                'name'=>'Intel Pentium Gold G6500 Processor',
+                'name'=>'Intel Core i5-11400',
                 'photo' => 'images/CPU images/cpu/cpu_img7.png',
                 'price' => '9497',
                 'details' => "Physical-
