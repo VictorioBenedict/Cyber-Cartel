@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Cyber Cartel | Profile</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
@@ -225,10 +225,6 @@
                             </a>
                             <a href="/address" style="text-decoration: none; " class="address">
                                 <p>Address</p>
-                            </a>
-                            <a href="/change_passwordV" style="text-decoration: none; color:rgb(0, 0, 0));"
-                                class="change_pass">
-                                <p>Change Password</p>
                             </a>
                         </div>
                     </td>

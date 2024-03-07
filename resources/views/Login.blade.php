@@ -179,9 +179,6 @@
                         <button type="submit" class="btn btn-block black-button grey-hover">Login</button>
                         <br>
 
-                        <a href="/enterEmail" class="black-link" style="text-decoration: none;">
-                            <p>Forgot Password?</p>
-                        </a>
                         <a href="/signup" class="black-link" style="text-decoration: none;">
                             <p>Create an Account</p>
                         </a>

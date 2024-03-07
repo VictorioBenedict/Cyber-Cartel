@@ -186,7 +186,7 @@
     <!-- Header Section -->
     <header style="margin-top: 70px">
         <div class="container" id="contents">
-            <h1>Top Products</h1>
+            <h1>Featured</h1>
         </div>
     </header>
 
@@ -375,7 +375,7 @@
             <div class="container" id="contents">
                 <header class="d-flex justify-content-between" style="margin-top: 50px;">
                     <h4>
-                        <p>Ram</p>
+                        <p>RAM</p>
                     </h4>
                     <br>
                     <a href="ram_category">
