@@ -249,7 +249,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$item->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$item->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($item->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -286,7 +286,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$cpuitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$cpuitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($cpuitem->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -323,7 +323,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$mbitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$mbitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($mbitem->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -359,7 +359,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$gpuitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$gpuitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($gpuitem->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -396,7 +396,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$ramitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$ramitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($ramitem->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -433,7 +433,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$psuitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$psuitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($psuitem->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -471,7 +471,7 @@
                             <h5 class="card-subtitle mb-0 mt-0">
                                 <p>{{$storageitem->name}}</p>
                             </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$storageitem->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($storageitem->price)}}</h6>
                         </div>
                     </div>
                 </a>

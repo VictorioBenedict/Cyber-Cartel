@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" />
     <link rel="stylesheet" href="{{ asset ('assests/css/bootstrap.css') }}">
     <link rel="stylesheet" href="assets/css/analytics.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('assests/js/jquery.js') }}"></script>    
 
     <title>Analytics</title>
@@ -83,9 +84,9 @@
                     color: var(--blue);"></i>
                     <span class="text">
                         <h3>Products</h3>
-                        <p>Total For Sale: {{$products}}</p>
+                        <p>Total For Sale: {{number_format($products)}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($boughtTotal)}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
@@ -96,7 +97,7 @@
                     style="background: var(--light-yellow);"></i>
                     <span class="text">
                         <h3>Users</h3>
-                        <p>Total Users: {{$user}}</p>
+                        <p>Total Users: {{number_format($user)}}</p>
                     </span>
                 </li>
                 <li>
@@ -104,11 +105,15 @@
                     style ="background: var(--light-orange);"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
-                        <p>Total Units Bought: {{$boughtquant}}</p>
-                        <p>Total Units Refunded: {{$refunded}}</p>
-                        <p>Total Units Cancelled: {{$cancelled}}</p>
+                        <p>Total Units Bought: {{number_format($boughtquant)}}</p>
+                        <p>Total Units Refunded: {{number_format($refunded)}}</p>
+                        <p>Total Units Cancelled: {{number_format($cancelled)}}</p>
                     </span>
                 </li>
+            </ul>
+            <ul class="box-info">
+                <li><canvas id="myChart" style="width:200; height:200;"></canvas></li>
+                <li><canvas id="chart2" style="width:200; height:200;"></canvas></li>
             </ul>
             <ul class="box-info">
                 <li>
@@ -116,11 +121,11 @@
                     <span class="text">
                         <h3>Processor</h3>
                         @if($CPUCount != 0)
-                        <p>Total Sales: ₱{{$CPUTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($CPUTotal)}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$CPUquant}}</p>
+                        <p>Total Units Sold: {{number_format($CPUquant)}}</p>
                     </span>
                 </li>
                 <li>
@@ -128,11 +133,11 @@
                     <span class="text">
                         <h3>Motherboard</h3>
                         @if($MotherboardCount != 0)
-                        <p>Total Sales: ₱{{$MotherboardTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($MotherboardTotal)}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Motherboardquant}}</p>
+                        <p>Total Units Sold: {{number_format($Motherboardquant)}}</p>
                         
                     </span>
                 </li>
@@ -141,11 +146,11 @@
                     <span class="text">
                         <h3>RAM</h3>
                         @if($RAMCount != 0)
-                        <p>Total Sales: ₱{{$RAMTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($RAMTotal)}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$RAMquant}}</p>
+                        <p>Total Units Sold: {{number_format($RAMquant)}}</p>
                     </span>
                 </li>
             </ul>
@@ -155,11 +160,11 @@
                     <span class="text">
                         <h3>GPU</h3>
                         @if($GPUCount != 0)
-                        <p>Total Sales: ₱{{$GPUTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($GPUTotal)}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$GPUquant}}</p>
+                        <p>Total Units Sold: {{number_format($GPUquant)}}</p>
                     </span>
                 </li>
                 <li>
@@ -167,11 +172,11 @@
                     <span class="text">
                         <h3>PSU</h3>
                         @if($PSUCount != 0)
-                        <p>Total Sales: ₱{{$PSUTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($PSUTotal)}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$PSUquant}}</p>
+                        <p>Total Units Sold: {{number_format($PSUquant)}}</p>
                     </span>
                 </li>
                 <li>
@@ -179,11 +184,11 @@
                     <span class="text">
                         <h3>Storage</h3>
                         @if($StorageCount != 0)
-                        <p>Total Sales: ₱{{$StorageTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($StorageTotal)}}</p>
                         @else
                             <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Storagequant}}</p>
+                        <p>Total Units Sold: {{number_format($Storagequant)}}</p>
                     </span>
                 </li>
                 
@@ -196,20 +201,84 @@
                     <span class="text">
                         <h3>Chassis</h3>
                         @if($CaseCount != 0)
-                        <p>Total Sales: ₱{{$CaseTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($CaseTotal)}}</p>
                         @else
                         <p>Total Sales: ₱0</p>
                         @endif
-                        <p>Total Units Sold: {{$Casequant}}</p>
+                        <p>Total Units Sold: {{number_format($Casequant)}}</p>
                     </span>
                 </li>
 
                 <li style="visibility: hidden;"></li>
             </ul>
-             
     </section>
     
 
 </body>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['GPU', 'Motherboard', 'RAM','CPU','PSU','Storage','Chassis'],
+            datasets: [{
+                label: 'Total Units Sold',
+                data: [{{$GPUCount}}, {{$MotherboardCount}}, {{$RAMCount}},{{$CPUCount}},{{$PSUCount}},{{$StorageCount}},{{$CaseCount}}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    var ctx = document.getElementById('chart2').getContext('2d');
+    var chart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['GPU', 'Motherboard', 'RAM','CPU','PSU','Storage','Chassis'],
+            datasets: [{
+                label: 'Total Sales',
+                data: [{{$GPUTotal}}, {{$MotherboardTotal}}, {{$RAMTotal}},{{$CPUTotal}},{{$PSUTotal}},{{$StorageTotal}},{{$CaseTotal}}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
 
 </html>

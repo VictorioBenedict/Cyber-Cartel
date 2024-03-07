@@ -109,7 +109,7 @@
                     <td>
                         <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
                     </td>
-                    <td>₱ {{$item -> price}}</td>
+                    <td>₱ {{number_format($item -> price)}}</td>
                     <td>{{ Str::limit($item -> details,'30','...')}}</td>
                     <td>{{$item -> category}}</td>
                     <td>

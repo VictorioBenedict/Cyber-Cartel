@@ -37,6 +37,8 @@
     body {
         font-family: "Spoof Trial Thin";
         overflow-x: hidden;
+        flex-direction: column;
+        display:flex;
     }
 
     .img {
@@ -44,12 +46,6 @@
         display: block;
     }
 
-    footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
-    }
 
     .navbar-brand img {
         transition: transform 0.3s ease-in-out;
@@ -62,7 +58,7 @@
     }
 
     .main-wrapper {
-        min-height: 65vh;
+        min-height: 100vh;
         background-color: #eeeeee;
         display: flex;
         align-items: center;
@@ -70,9 +66,13 @@
     }
 
     .container {
-        max-width: 1200px;
-        padding: 0 1rem;
-        margin: 0 auto;
+        flex: 1;
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    footer {
+        flex-shrink: 0;
+        margin-top:auto;
     }
 
     .product-div {
@@ -320,8 +320,8 @@
     @if(session()->has('success'))
     <div class="alert alert-success">{{session('success')}}</div>
     @endif
-
-    <div class="main-wrapper" style="margin-top: 120px; background-color: white;">
+    <div class="container">
+    <div class="main-wrapper" style=" background-color: white; margin-top:70px">
     <div class="container" style="border: none; border-radius: 50px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             <div class="product-div">
                 <div class="product-div-left">
@@ -334,7 +334,7 @@
                         <div class ="alert alert-success">{{session('success')}}</div>
                         @endif
                     <span class="product-name">{{$product-> name}}</span>
-                    <span class="product-price">₱{{$product-> price}}</span>
+                    <span class="product-price">₱{{number_format($product-> price)}}</span>
                     <p class="product-description"></p>
                     <form method ="POST">
                     @csrf
@@ -351,58 +351,25 @@
             </div>
 
             <!-- Additional box for details -->
-            </div>
-    </div>
-
-    <div class="main-wrapper" style=" background-color: white;">
-    <div class="container" style="border: 1px solid black; border-radius: 50px;">
+            <div  style=" background-color: white; margin-bottom: 20px">
+    <div class="container" style="border-top: 1px solid #ccc;">
         <div class="product-div-two" style="text-align: left;">
             <div class="product-div-left">
-                <h4>General Specifications</h4>
-                <p class="product-description-one">
+                <h4 style ="font-weight;bold">Product Details</h4>
+                <p class="product-description-one" style="white-space:pre-line;">
                     {{$product->details}}
                 </p>
             </div>
         </div>
     </div>
 </div>
-
-
-    <div class="main-wrapper"
-        style="background-color: white; margin-top: -150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-        <div class="container" style="border-radius: 50px; padding: -100px;">
-            <!-- ... (existing content) ... -->
-
-            <!-- Reviews Section -->
-            <div class=" reviews-section">
-                <h2>Product Reviews</h2>
-
-                <!-- Individual Review Comments -->
-                <div class="review-comment">
-                    <div class="user-info">
-                        <img src="images/meoww.jpg" alt="User Avatar" />
-                        <span>Boss R2x</span>
-                    </div>
-                    <p class="review-text">
-                        This product is amazing! I love the performance and speed.
-                        Definitely recommended.
-                    </p>
-                </div>
-
-                <div class="review-comment">
-                    <div class="user-info">
-                        <img src="images/meoww.jpg" alt="User Avatar" />
-                        <span>Boss H2x</span>
-                    </div>
-                    <p class="review-text">
-                        Excellent processor! It exceeded my expectations. Great value for
-                        the money.
-                    </p>
-                </div>
-
             </div>
-        </div>
     </div>
+</div>
+
+
+
+
 
     <!-- Footer Section -->
 @include('Layouts.footer2')

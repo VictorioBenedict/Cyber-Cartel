@@ -40,10 +40,8 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        flex-shrink: 0;
+        margin-top:auto;
     }
 
     .slider-frame {
@@ -157,7 +155,7 @@
                                 <p>{{$item->name}}</p>
                             </h5>
                             <p class="card-text">{{$item->category}}</p>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{$item->price}}</h6>
+                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($item->price)}}</h6>
                         </div>
                     </div>
                 </a>
@@ -169,7 +167,7 @@
 
 
     <!-- Footer Section -->
-    @include('Layouts.footer')
+    @include('Layouts.footer2')
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

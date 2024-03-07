@@ -26,13 +26,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="categoriesDropdown" style="margin-left: -2vw;">
                         <!-- Dropdown content goes here -->
+                        <a class="dropdown-item text-center" href="/chassis_category">Chassis</a>
                         <a class="dropdown-item text-center" href="/processor_category">Processor</a>
                         <a class="dropdown-item text-center" href="/motherboard_category">Motherboard</a>
                         <a class="dropdown-item text-center" href="/ram_category">Ram</a>
                         <a class="dropdown-item text-center" href="/gpu_category">Graphics Card</a>
                         <a class="dropdown-item text-center" href="/psu_category">Power Supply Unit</a>
                         <a class="dropdown-item text-center" href="/storage_category">Storage</a>
-                        <a class="dropdown-item text-center" href="/hdd_category">Hard Drive</a>
                     </div>
                 </div>
             </li>
@@ -78,9 +78,10 @@
         </div>
         @endauth
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler ms-auto mb-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
         </button>
-    </div>
+        </div>
 </nav>

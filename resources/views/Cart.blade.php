@@ -245,11 +245,11 @@
                 <img src=" {{$item -> photo}}" class="img">
                 <h6>{{$item -> name}}</h6>
             </td>
-            <td class="unit">₱ {{$item -> price}}</td>
+            <td class="unit">₱ {{number_format($item -> price)}}</td>
             <td class="quantity">
                 <button formaction="{{url('increasecart/'.$item -> id.'')}}" class="btn btn-outline-dark">+</button>
             </form>
-            {{$item -> quantity}}
+            {{number_format($item -> quantity)}}
             @if ($item->quantity > 1)
             <a href="{{url('decreasecart/'.$item -> id.'')}}" class="btn btn-outline-secondary">- </a>
             </td>
@@ -280,8 +280,8 @@
         <tr class="checout_Content">
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
-            <td class="total_Items">Total Items: {{$quantity}}</td>
-            <td class="total_Price">₱{{$totalPrice}}</td>
+            <td class="total_Items">Total Items: {{number_format($quantity)}}</td>
+            <td class="total_Price">₱{{number_format($totalPrice)}}</td>
             <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT  <i class='bx bx-check-circle'></i></button></a></td>
         </tr>
     </table>

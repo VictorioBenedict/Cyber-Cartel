@@ -79,9 +79,9 @@
                     <i class="bx bxs-calendar-check" ></i>
                     <span class="text">
                         <h3>Products</h3>
-                        <p>Total For Sale: {{$products}}</p>
+                        <p>Total For Sale: {{number_format($products)}}</p>
                         @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{$boughtTotal}}</p>
+                        <p>Total Sales: ₱{{number_format($boughtTotal)}}</p>
                         @else
                             <p>Total Sales:₱0</p>
                         @endif
@@ -91,16 +91,16 @@
                     <i class="bx bxs-group"></i>
                     <span class="text">
                         <h3>Users</h3>
-                        <p>Total Users: {{$usercount}}</p>
+                        <p>Total Users: {{number_format($usercount)}}</p>
                     </span>
                 </li>
                 <li>
                     <i class="bx bxs-cart-add"></i>
                     <span class="text">
                         <h3>Purchased Products</h3>
-                        <p>Total Units Bought: {{$boughtquant}}</p>
-                        <p>Total Units Refunded: {{$refunded}}</p>
-                        <p>Total Units Cancelled: {{$cancelled}}</p>
+                        <p>Total Units Bought: {{number_format($boughtquant)}}</p>
+                        <p>Total Units Refunded: {{number_format($refunded)}}</p>
+                        <p>Total Units Cancelled: {{number_format($cancelled)}}</p>
                     </span>
                 </li>
             </ul>

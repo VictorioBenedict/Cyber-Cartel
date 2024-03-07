@@ -141,6 +141,7 @@ class CartController extends Controller
     public function checkout(Request $request){
         $addresses = Address::all()->where('user_id',Auth::user()->id);
         $bought = Cart::get();
+        if(count($addresses)>='1'){
         foreach($bought as $key => $value){
             BoughtProducts::create([
                 'name' => $value->name,
@@ -152,7 +153,6 @@ class CartController extends Controller
                 'user_id' => $user_id = $request->user()->id,
             ]);
         }
-        if(count($addresses)>='1'){
         Cart::where('user_id', $user_id)->delete();
         return redirect('my_purchase')->with(['bought' => 'Bought successfully'], 200);
         }

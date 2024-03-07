@@ -163,9 +163,9 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
-                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
+                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <!-- Confirm Password Section -->
@@ -194,21 +194,7 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-2 fixed-bottom"
-        style="background-image: linear-gradient(to right, #937952, #4d9584);">
-        <div class="row">
-            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
-                <p><a href="/terms" class="text-light" style="text-decoration: none;">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center" style="margin-top: 15px;">
-                <p>&copy; Cyber Cartel 2024</p>
-            </div>
-            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light" style="text-decoration: none;">Follow
-                        us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+    @include('Layouts.footer')
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -235,11 +235,11 @@
                         <div>
                             <h5 style="margin: 0;">{{$item -> name}} </h5>
                             <p style="margin: 0; display: flex; align-items: center;">
-                                Quantity: {{$item -> quantity}}
+                                Quantity: {{number_format($item -> quantity)}}
                             </p>
                         </div>
                         <div style="margin-left: auto;">
-                            <p style="margin: 0;">₱ {{$item -> price}}</p>
+                            <p style="margin: 0;">₱ {{number_format($item -> price)}}</p>
                         </div>
                     </td>
                 </tr>
@@ -252,7 +252,7 @@
                 <tr>
                     <td style="display: flex; align-items: center; justify-content: flex-end;">
                         <h3 style="margin: 0;">Price: </h3>
-                        <h4 style="margin: 0;">₱ {{$item -> price * $item -> quantity}}</h4>
+                        <h4 style="margin: 0;">₱ {{number_format($item -> price * $item -> quantity)}}</h4>
                     </td>
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
@@ -289,11 +289,11 @@
                         <div>
                             <h5 style="margin: 0;">{{$item -> name}} </h5>
                             <p style="margin: 0; display: flex; align-items: center;">
-                                Quantity: {{$item -> quantity}}
+                                Quantity: {{number_format($item -> quantity)}}
                             </p>
                         </div>
                         <div style="margin-left: auto;">
-                            <p style="margin: 0;">₱ {{$item -> price}}</p>
+                            <p style="margin: 0;">₱ {{number_format($item -> price)}}</p>
                         </div>
                     </td>
                 </tr>
@@ -306,7 +306,7 @@
                 <tr>
                     <td style="display: flex; align-items: center; justify-content: flex-end;">
                         <h3 style="margin: 0;">Price: </h3>
-                        <h4 style="margin: 0;">₱ {{$item -> price * $item -> quantity}}</h4>
+                        <h4 style="margin: 0;">₱ {{number_format($item -> price * $item -> quantity)}}</h4>
                     </td>
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">
@@ -334,11 +334,11 @@
                         <div>
                             <h5 style="margin: 0;">{{$item -> name}} </h5>
                             <p style="margin: 0; display: flex; align-items: center;">
-                                Quantity: {{$item -> quantity}}
+                                Quantity: {{number_format($item -> quantity)}}
                             </p>
                         </div>
                         <div style="margin-left: auto;">
-                            <p style="margin: 0;">₱ {{$item -> price}}</p>
+                            <p style="margin: 0;">₱ {{number_format($item -> price)}}</p>
                         </div>
                     </td>
                 </tr>
@@ -351,7 +351,7 @@
                 <tr>
                     <td style="display: flex; align-items: center; justify-content: flex-end;">
                         <h3 style="margin: 0;">Price: </h3>
-                        <h4 style="margin: 0;">₱ {{$item -> price * $item -> quantity}}</h4>
+                        <h4 style="margin: 0;">₱ {{number_format($item -> price * $item -> quantity)}}</h4>
                     </td>
                 </tr>
                 <tr style="display: flex; align-items: center; justify-content: flex-end;">

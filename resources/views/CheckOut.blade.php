@@ -206,10 +206,10 @@
                 <img src="{{$cartitem -> photo}}" class="img">
                 <h6>{{$cartitem -> name}}</h6>
             </td>
-            <td class="unit">₱{{$cartitem -> price}}</td>
+            <td class="unit">₱{{number_format($cartitem -> price)}}</td>
             <td class="quantity">{{$cartitem -> category}}</td>
-            <td>{{$cartitem -> quantity}}</td>
-            <td class="total">₱{{$cartitem -> price * $cartitem ->quantity}}</td>
+            <td>{{number_format($cartitem -> quantity)}}</td>
+            <td class="total">₱{{number_format($cartitem -> price * $cartitem ->quantity)}}</td>
         </tr>
         @endforeach
     </table>
@@ -218,9 +218,9 @@
         <td></td>
         <td></td>
         <td></td>
-        <td class="right-align">Total Items: {{$totalitems}}</td>
+        <td class="right-align">Total Items: {{number_format($totalitems)}}</td>
         <td class="right-align">Total Payment: </td>
-        <td class="right-align">₱{{$totalPrice}}</td>
+        <td class="right-align">₱{{number_format($totalPrice)}}</td>
         <tr>
             <td></td>
             <td></td>
