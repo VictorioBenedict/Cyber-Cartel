@@ -206,7 +206,7 @@
                 <tr>
                     <td style="margin-top: 90px;">
                         <br>
-                        <a href="/my_account" style="margin-top: -220px;"><img src="images/Pre-Built/sysu 1.jpg"
+                        <a href="/my_account" style="margin-top: -220px;"><img src="images/default_profile.png"
                                 class="profile_img"></a>
                         <h2 style="margin-right: 5px; margin-bottom: -100px; margin-top: 20px">
                             {{auth()->user()->name}}</h2>

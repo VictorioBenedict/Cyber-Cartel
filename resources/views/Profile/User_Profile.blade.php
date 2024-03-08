@@ -195,7 +195,7 @@
             <tr>
                 <td>
                     <a href="/my_account">
-                        <img src="images/Pre-Built/sysu 1.jpg" class="profile_img"
+                        <img src="images/default_profile.png" class="profile_img"
                             style="float: left; margin-left: -120px; margin-top: -60px;">
                     </a>
                     <h2 style="margin-bottom: 20px; margin-top: -41px;">{{auth()->user()->name}}</h2>
@@ -257,7 +257,7 @@
                 <div class="profile_picture">
                     <tr>
                         <td style="display: flex; align-items: center; justify-content: flex-start;">
-                            <img src="images/Pre-Built/sysu 1.jpg" class="profile_images">
+                            <img src="images/default_profile.png" class="profile_images">
                         </td>
                     </tr>
                     <tr>

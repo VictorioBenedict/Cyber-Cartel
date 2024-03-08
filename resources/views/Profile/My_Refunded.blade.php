@@ -171,7 +171,7 @@
                 <tr>
                     <td style="margin-top: 90px;">
                         <br>
-                        <a href="/my_account"><img src="images/Pre-Built/sysu 1.jpg" class="profile_img"></a>
+                        <a href="/my_account"><img src="images/default_profile.png" class="profile_img"></a>
                         <h4 style="margin-top: 30px;">{{auth()->user()->name}}</h4>
                         <a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">
                             <br>
