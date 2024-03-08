@@ -114,7 +114,7 @@ class DashboardController extends Controller
         $Storage = BoughtProducts::all()->where("category","Storage");
         $StorageTotal=0;
         foreach($Storage as $Storages){
-            $StorageTotal += $GPUs -> quantity * $Storages -> price;
+            $StorageTotal += $Storages -> quantity * $Storages -> price;
         }
         //case
         $Casequant = BoughtProducts::where("category","Case")->sum('quantity');
