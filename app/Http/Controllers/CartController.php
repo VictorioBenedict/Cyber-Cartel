@@ -52,7 +52,7 @@ class CartController extends Controller
         $cart -> update([
             'quantity' => $cart->quantity+1
         ]);
-            return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
+            return redirect()->back()->with(['success' => 'Product added to cart'], 200);
     }
 
     public function decrease($id){
@@ -60,7 +60,7 @@ class CartController extends Controller
         $cart -> update([
             'quantity' => $cart->quantity-1
         ]);
-            return redirect()->back()->with(['success' => 'Product added to cart successfully'], 200);
+            return redirect()->back()->with(['success' => 'Product added to cart'], 200);
     }
 
     //ADDS TO CART

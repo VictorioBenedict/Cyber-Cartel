@@ -100,21 +100,19 @@ Route::post('/conPass',  [ForgetPasswordManager::class, 'resetPasswordPost'])->n
 Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
 Route::post('/adminlogin', [DashboardController::class,'adminAuth'])->name('adminpost');
 //Admin panel
-Route::group(['middleware'=>'auth'], function(){
-Route::get('/adminmanagements',[DashboardController::class,'adminmanagement']);
+Route::group(['middleware'=>'userid'], function(){
 Route::get('/admindashboards',[DashboardController::class,'admindashboard'])->name('admindashboards');
 Route::get('/adminanalytics',[DashboardController::class,'adminanalytics']);
 Route::get('/admincustomers',[DashboardController::class,'admincustomers']);
 Route::get('/admincustomers/{id}/delete',[UserController::class,'destroy']);
-
-});
-//productmanagement
 Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
 Route::get('productmanagements/create',[App\Http\Controllers\productController::class,'create']);
 Route::post('productmanagements/create',[App\Http\Controllers\productController::class,'store']);
 Route::get('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'edit']);
 Route::put('productmanagements/{id}/edit',[App\Http\Controllers\productController::class,'update']);
 Route::get('productmanagements/{id}/delete',[App\Http\Controllers\productController::class,'destroy']);
+});
+
 
 //products
 Route::get('/product_demo/{id}',[DashboardController::class,'details']);

@@ -39,7 +39,8 @@
     }
 
     footer {
-        margin-top: auto;
+        flex-shrink: 0;
+        margin-top:auto;
     }
 
     table {

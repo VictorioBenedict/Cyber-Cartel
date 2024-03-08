@@ -154,7 +154,7 @@ class DashboardController extends Controller
                 return redirect()->back()->with('error', 'Unauthorized ');
             }
         }
-        return redirect()->back()->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect()->back()->with('error', 'Unauthorized');
     } 
 }
 

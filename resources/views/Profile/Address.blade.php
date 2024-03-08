@@ -232,7 +232,6 @@
                         </a>
                         <a href="/change_passwordV" style="text-decoration: none; color:rgb(0, 0, 0));"
                             class="change_pass">
-                            <p>Change Password</p>
                         </a>
                     </div>
                 </td>

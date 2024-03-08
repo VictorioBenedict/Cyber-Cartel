@@ -85,7 +85,6 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <div>
@@ -95,11 +94,6 @@
                                 <td>{{$item -> id }}</td>
                                 <td>{{$item -> name}}</td>
                                 <td>{{$item -> email}}</td>
-                                <td>
-                                    <a href="{{url('admincustomers/'.$item -> id.'/delete')}}" class="btn btn-outline-danger"
-                                        onclick="return confirm('Are you sure?')">
-                                        Delete</a>
-                                </td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -119,7 +119,7 @@
     </nav> -->
 
     <!-- Content Section -->
-    <section style="margin-top: -25px; margin-bottom: 20px;">
+    <section style="margin-top: 30px; margin-bottom: 20px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row">

@@ -187,6 +187,9 @@
     <header style="margin-top: 70px">
         <div class="container" id="contents">
             <h1>Featured</h1>
+            @if(session()->has('error'))
+                        <div class ="alert alert-danger">{{session('error')}}</div>
+                        @endif
         </div>
     </header>
 

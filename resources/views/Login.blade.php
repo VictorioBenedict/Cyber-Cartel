@@ -115,10 +115,8 @@
 
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        flex-shrink: 0;
+        margin-top:auto;
     }
     </style>
 </head>
@@ -134,7 +132,7 @@
 
 
     <!-- Content Section -->
-    <section style="margin-top: -25px; margin-bottom: 20px;">
+    <section style="margin-top: 30px; margin-bottom: 20px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row" style="border: none;">
@@ -171,9 +169,9 @@
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
-                                    @error('password') <span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                             </div>
+                            @error('password') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <button type="submit" class="btn btn-block black-button grey-hover">Login</button>
