@@ -6,7 +6,7 @@
     <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Product Info</title>
+    <title> Product Info</title>
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
@@ -39,10 +39,13 @@
         overflow-x: hidden;
         flex-direction: column;
         display:flex;
+        overflow-y: auto;
+        height: 100%;
+        scrollbar-width: none;
     }
 
     .img {
-        width: 100%;
+        width: 0%;
         display: block;
     }
 
@@ -67,8 +70,10 @@
 
     .container {
         flex: 1;
-        padding-top:20px;
+        padding-top:5px;
         padding-bottom:20px;
+
+        max-width: 1000px;
     }
     footer {
         flex-shrink: 0;
@@ -105,7 +110,7 @@
     }
 
     .img-container img {
-        width: 100%;
+        width: 50%;
         margin: 0 auto;
     }
 
@@ -119,7 +124,7 @@
 
     .hover-container div {
         border: 2px solid rgba(252, 160, 175, 0.7);
-        padding: 1rem;
+        padding: 
         border-radius: 3px;
         margin: 0 4px 8px 4px;
         display: flex;
@@ -226,7 +231,7 @@
     .product-details-box {
         text-align: center;
         margin: auto;
-        max-width: 1000px;
+        max-width: 6030px;
         padding: 50px;
         background-color: #ff0000d6;
         border-radius: 50px;
@@ -235,7 +240,7 @@
 
     @media screen and (max-width: 992px) {
         .product-div {
-            grid-template-columns: 100%;
+            grid-template-columns: 70%;
         }
 
         .product-div-right {
@@ -247,7 +252,7 @@
         }
 
         .product-description {
-            max-width: 400px;
+            max-width: 200px;
             margin-right: auto;
             margin-left: auto;
         }
@@ -372,7 +377,7 @@
 
 
     <!-- Footer Section -->
-@include('Layouts.footer2')
+
 
     <script>
     const allHoverImages = document.querySelectorAll(".hover-container div img");

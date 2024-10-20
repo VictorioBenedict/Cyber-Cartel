@@ -80,8 +80,8 @@
                             </div>
                         </header>
 
-                        <h5 style="padding: 5px; margin-top:vh; margin-bottom:4vh">A Verification email has been sent.
-                            Please verify it.
+                        <h5 style="padding: 5px; margin-top:vh; margin-bottom:4vh">A Verification Email has been sent.
+                            Please Verify it.
                         </h5>
 
                         <button type="submit" class="btn btn-primary btn-block black-button">Proceed</button>
@@ -99,7 +99,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p>&copy; 2024 Login Page. All rights reserved.</p>
             </div>
             <div class="col-md text-right mr-md-5">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>

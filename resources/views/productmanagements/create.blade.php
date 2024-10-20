@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Add Product</title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
 
         body {
             font-family: "Spoof Trial Thin";
-            padding-top: 60px;
+   
             overflow-x: hidden;
             /* Add padding to body for the fixed navbar */
         }
@@ -54,7 +54,7 @@
         }
 
         #selectedLocation {
-            width: 100%;
+            width: 10%;
             padding: 10px;
             box-sizing: border-box;
         }
@@ -62,11 +62,11 @@
         #dropdowns {
             display: none;
             text-align: left;
-            width: 100%;
+            width: 10%;
         }
 
         select {
-            width: 100%;
+            width: 10%;
             padding: 10px;
             box-sizing: border-box;
             margin-bottom: 10px;
@@ -81,21 +81,26 @@
             transform: scale(1.1);
             /* Increase the scale on hover */
         }
+        h5{
+            background-color:#181214
+            ;
+            box-sizing: border-box;
+            padding: 3%;
+            color: white;
+
+        }
     </style>
 </head>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: black; position: fixed; width: 100%; border-radius: 0 0 15px 15px;">
-        <a  href="/"><img src="images/cyber_-removebg-preview.png" style="width:200px;"></a>
-    </nav>
+
 <body>
 
     <!-- Login Content -->
-    <section style="margin-top: 10px; margin-bottom: 20px;">
+    <section style=" margin-bottom: 20px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
-                
-                        <h5 style="margin-top:2.5%; margin-bottom:2.5%">Add a new product</h5>
+                <br>
+                        <h5 style="margin-top:2.5%; margin-bottom:2.5% "><b>Add a new product</b></h5>
                         @if (session('status'))
                     <div class="alert alert-success">{{session('status')}}</div>
                 @endif
@@ -120,7 +125,7 @@
                             </div>
                             <div class="mb-3">
                                 <label>details</label>
-                                <textarea type="text" name="details" cols="30" rows="10" class="form-control" value="{{old('details')}}"></textarea>
+                                <textarea type="text" name="details"  class="form-control" value="{{old('details')}}"></textarea>
                                 @error('details') <span class="text-danger">{{$message}}</span> @enderror
                             </div>
                             <div class="mb-3">

@@ -46,7 +46,7 @@ class AddressController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString()
         
         ]);
-        return redirect('add_new_address')->with('status', 'success');
+        return redirect('add_new_address')->with('status', 'Success!');
     }
     public function edit(int $id){
         $address = Address::findorfail($id);
@@ -71,7 +71,7 @@ class AddressController extends Controller
             'user_id' => $user_id,
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
-        return redirect()->back()->with('status','success');
+        return redirect()->back()->with('status','Success!');
     }
 
     // DESTROYS ADDRESS

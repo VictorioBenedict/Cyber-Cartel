@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Cartel | Sign up</title>
+    <title>Sign up</title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -23,65 +23,73 @@
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
     }
 
+    
+
     body {
         font-family: "Spoof Trial Thin";
-        padding-top: 60px;
+        padding-top: 30px;
         overflow: hidden;
+        color:black;
+    background-color:#f2e9d3;
         /* Add padding to body for the fixed navbar */
     }
 
     .black-button {
-        background-color: black;
+        background-color: #E3AABE
+        ;
         color: white;
     }
 
     .black-link {
         text-decoration: none;
-        color: black;
+        color: white;
     }
 
     .custom-container {
         margin-right: -350px;
+        position: relative;
         /* Adjust as needed */
     }
 
     #signupForm {
         border-radius: 50px;
         padding: 30px;
+        border: none;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
         /* Adjust as needed */
     }
 
     .btn-primary.black-button {
-        background-color: #4d9584;
+        background-color:   ;
         color: white;
 
     }
 
-    .btn-primary.black-button:hover {
-        background-color: #937952;
+    .black-button:hover {
+        background-color:#F1BFD1;
         color: white;
     }
 
     .btn-black {
-        background-color: white;
+        background-color:#F1BFD1;
         color: black;
     }
 
     .btn-black-active {
-        background-color: #4d9584;
+        background-color: #F1BFD1 ;
         color: white;
     }
 
     .btn-custom {
-        background-color: white;
-        color: #fff;
+        background-color:black;
+        color:black;
         /* Add any additional styles you want for the button */
     }
 
     .btn-csutom-active {
-        background-color: #4d9584;
-        color: white;
+        background-color:#F1BFD1 ;
+        color: black;
     }
 
     .position-fixed {
@@ -92,20 +100,28 @@
 
     footer {
         background-color: black;
-        color: #fff;
+        color:#3e4444;
         text-align: center;
-        padding: 10px;
+        padding: 15px;
     }
 
     /* Media queries for responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 680px) {
         .custom-container {
             margin-right: 0;
         }
 
         #signupForm {
-            padding: 20px;
+            border-radius: 50px;
+        padding: 105px;
+        border: none;
+        
         }
+    
+    }
+
+    div.class {
+  background-color: white;
     }
     </style>
 </head>
@@ -119,47 +135,47 @@
     </nav> -->
 
     <!-- Content Section -->
-    <section style="margin-top: 30px; margin-bottom: 20px;">
-        <div class="container custom-container text-center">
+    <section style=" ">
+        <div class="container custom-container text-center" >
             <!-- Login Form Row -->
-            <div class="row">
-                <div class="col-lg-7 col-md-9 col-sm-12">
+            <div class="row"  >
+                <div class="col-lg-7 col-md-9 col-sm-12" >
                     <!-- Login Content -->
                     <div class @if(session()->has('error'))
                         <div class="alert alert-danger">{{session('error')}}</div>
                         @endif
 
                         @if(session()->has('success'))
-                        <div class="alert alert-success">{{session('success')}}</div>
+                        <div class="alert alert-success">{{session('Success!')}}</div>
                         @endif
                     </div>
 
                     <form id="signupForm" action="{{route('Signup.post')}}" method="POST"
-                        style="border-radius: 50px; padding: 44px;">
+                        style=" background-color: white; padding: 75px">
                         @csrf
                         <header class="py-5 text-center">
-                            <h1>Sign Up</h1>
+                            <h1><b>SIGN UP<b></h1>
                         </header>
                         <div class="form-group password-container" style="margin-bottom: 30px;">
-                            <label for="name">Username</label>
+                           
                             <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Enter your username">
+                                placeholder="Username">
                             @error('name') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
                         <div class="form-group password-container" style="margin-bottom: 30px;">
-                            <label for="email">Email</label>
+                            
                             <input type="email" class="form-control" id="email" name="email"
-                                placeholder="Enter your Email">
+                                placeholder="Email">
                             @error('email') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
 
                         <!-- Password Section -->
                         <div class="form-group password-container" style="margin-bottom: 30px;">
-                            <label for="password">Password</label>
+                       
                             <div class="input-group">
                                 <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Enter your password">
+                                    placeholder="Password">
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-black btn-sm" id="showPasswordBtn"
                                         onclick="togglePassword()">Show</button>
@@ -170,7 +186,7 @@
 
                         <!-- Confirm Password Section -->
                         <div class="form-group password-container" style="margin-bottom: 40px;">
-                            <label for="confirmPassword">Confirm Password</label>
+                         
                             <div class="input-group">
                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
                                     placeholder="Confirm Password">
@@ -180,21 +196,20 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block black-button">Sign-Up</button>
+                        <button type="submit" class="btn btn-block black-button">Sign Up</button>
                     </form>
                 </div>
                 <!-- Image on the left side (as a clickable button) -->
-                <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left" style="left: 0; top: -40px;">
+                <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left" style="left: 30px; top: 70px;">
                     <a href="/">
-                        <img src="images/logo white4.png" alt="Left Image" style="width: 100%;">
+                        <img src="images/logo.png" alt="Left Image" style="width: 80%;">
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    @include('Layouts.footer')
+    
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

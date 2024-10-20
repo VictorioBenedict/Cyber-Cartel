@@ -425,7 +425,7 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; Cyber Cartel 2024</p>
+                <p>&copy; Flavors & Co 2024</p>
             </div>
             <div class="col-md text-right mr-md-2">
                 <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>

@@ -139,6 +139,7 @@ class CartController extends Controller
     }
     //ADDS TO bought products
     public function checkout(Request $request){
+        $user = Auth::user();
         $addresses = Address::all()->where('user_id',Auth::user()->id);
         $bought = Cart::get();
         if(count($addresses)>='1'){
@@ -151,6 +152,7 @@ class CartController extends Controller
                 'quantity' => $value->quantity,
                 'category' => $value->category,
                 'user_id' => $user_id = $request->user()->id,
+                'user_name' => $user->name
             ]);
         }
         Cart::where('user_id', $user_id)->delete();
@@ -212,7 +214,8 @@ class CartController extends Controller
     }
     public function bought(){
         $bought = BoughtProducts::all()->where('user_id',Auth::user()->id);
-        return view('Profile.My_Bought',compact('bought'));
+        $status = BoughtProducts::where('status', 'pending')->get();
+        return view('Profile.My_Bought',compact('bought','status'));
     }
     public function refunded(){
         $refunded = RefundedProducts::all()->where('user_id',Auth::user()->id);
@@ -222,5 +225,17 @@ class CartController extends Controller
         $cancelled = CancelledProducts::all()->where('user_id',Auth::user()->id);
         return view('Profile.My_Cancelled',compact('cancelled'));
     }
+
+    public function updatestatus(Request $request,$id){
+        $item = BoughtProducts::findOrFail($id);
+        $item->status = $request->input('status');
+        $item->save();
+        return redirect()->back()->with('success', 'Status updated successfully.');
+    }
     
+    public function delete($id){
+        $item = BoughtProducts::findOrFail($id);
+        $item->delete();
+        return redirect()->back()->with('success', 'Item deleted successfully.');
+    }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Check Out</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -163,7 +163,7 @@
     <header style="margin-top: 65px">
         <div class="container" id="contents">
             <header class="d-flex justify-content-between" style="margin-top: 40px;">
-                <h2>Cyber Cartel | Checkout</h2>
+                <h2></h2>
                 @if(session()->has('error'))
                         <div class ="alert alert-danger">{{session('error')}}</div>
                         @endif
@@ -197,7 +197,7 @@
         <tr style="font-weight:bold;">
             <td class="product_Container">Product Ordered</td>
             <td class="unitPrice_Container">Unit Price</td>
-            <td class="amount_Container">Category</td>
+            <td class="amount_Container">Product</td>
             <td class="actions">Quantity</td>
             <td class="totals">Full Price</td>
         </tr>
@@ -210,7 +210,7 @@
             <td class="unit">₱{{number_format($cartitem -> price)}}</td>
             <td class="quantity">{{$cartitem -> category}}</td>
             <td>{{number_format($cartitem -> quantity)}}</td>
-            <td class="total">₱{{number_format($cartitem -> price * $cartitem ->quantity)}}</td>
+            <td class="total"><nobr>₱{{number_format($cartitem -> price * $cartitem ->quantity)}}</td>
         </tr>
         @endforeach
     </table>
@@ -236,8 +236,7 @@
     <br>
 
     <!-- Footer Section -->
-    @include("Layouts.footer2")
-
+ 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

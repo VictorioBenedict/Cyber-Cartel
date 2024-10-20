@@ -77,7 +77,7 @@
                             </tr>
                             <tr>
                                 <td style=" padding-left: 2%;">
-                                    <p style="font-size: 12px">Cyber Cartel will not have access to your card info.</p>
+                                    <p style="font-size: 12px">Flavors & Co will not have access to your card info.</p>
                                 </td>
                             </tr>
                         </table>

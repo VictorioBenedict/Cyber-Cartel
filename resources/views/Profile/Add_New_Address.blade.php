@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Cartel</title>
+    <title></title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -82,25 +82,25 @@
         }
         
     .custom-btn-highlight {
-        background-color: #4d9584;
-        color: white;
+        background-color: #A3DEE8;
+        color: black;
         text-decoration: none;
         /* Remove default link underline */
     }
 
     .custom-btn-highlight:hover {
         color: white;
-        background-color: #4d9584;
+        background-color: #A3DEE8;
     }
 
     .custom-btn{
-        border-color: #937952;
-        color: #937952;
+        border-color: #A3DEE8;
+        color: black;
     }
 
     .custom-btn:hover{
-        color: white;
-        background-color: #4d9584;
+        color: black;
+        background-color: #A3DEE8;
     }
     </style>
 </head>
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-8 col-sm-10">
-                <table style="border: 1px solid #ccc; border-radius: 10px; width:100%;">
+                <table style="border: 2px solid #F2E9D3; border-radius: 10px; width:100%; background-color:#F2E9D3;">
                 @if (session('status'))
                     <div class="alert alert-success">{{session('status')}}</div>
                 @endif
@@ -122,7 +122,7 @@
                             </tr>
                             <tr>
                                 <td style=" padding-left: 2%;">
-                                    <p style="font-size: 12px">Cyber Cartel will be secure with your personal information.</p>
+                                    <p style="font-size: 12px">Flavors & Co will be secure with your personal information.</p>
                                 </td>
                             </tr>
                         </table>
@@ -167,19 +167,7 @@
     <br>
 
     <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-1 fixed-bottom" style="background-image: linear-gradient(to right, #937952, #4d9584);">
-        <div class="row">
-            <div class="col-md text-left ml-md-4" style="margin-top: 15px;">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
-            </div>
-            <div class="col-md text-center" style="margin-top: 15px;">
-                <p>&copy; Cyber Cartel 2024</p>
-            </div>
-            <div class="col-md text-right mr-md-4" style="margin-top: 15px;">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
-        </div>
-    </footer>
+
 
     <script>
         function showDropdown() {

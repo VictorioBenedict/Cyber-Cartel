@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Profile</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
@@ -132,25 +132,25 @@
     }
 
     .custom-btn-highlight {
-        background-color: #4d9584;
-        color: white;
+        background-color: #EEAFC5;
+        color: black;
         text-decoration: none;
         /* Remove default link underline */
     }
 
     .custom-btn-highlight:hover {
-        color: white;
-        background-color: #4d9584;
+        color: black;
+        background-color: #EEAFC5;
     }
 
     .custom-btn{
-        border-color: #937952;
-        color: #937952;
+        border-color: #EEAFC5;
+        color: black;
     }
 
     .custom-btn:hover{
-        color: white;
-        background-color: #4d9584;
+        color: black;
+        background-color: #EEAFC5;
     }
     
 
@@ -173,7 +173,7 @@
                 <tr>
                     <td style="margin-top: 90px;">
                         <br>
-                        <a href="/my_account"><img src="images/default_profile.png" class="profile_img"></a>
+                        <a href="/my_account"><img src="images/user.png" class="profile_img"></a>
                         <h4 style="margin-top: 30px;">{{auth()->user()->name}}</h4>
                         <a href="/my_account" style="text-decoration: none; color: rgb(0, 0, 0);">
                             <br>
@@ -224,7 +224,7 @@
                 <tr>
                     <td style="text-align: right; display: flex; flex-direction: column; align-items: flex-end;">
                         <h6 style="margin: 0; margin-left: auto; padding:10px">
-                            <a  style="text-decoration: none;">Order Status</a> | Bought
+                            <a  style="text-decoration: none;">Order Status</a> | {{$item->status}}
                         </h6>
                         <hr style="margin: 0 auto; width: 100%;">
                     </td>
@@ -276,14 +276,14 @@
     <br>
         @else
         <table class="table_2">
-            <td>No Products Found</td>
+            <td>No Product Found</td>
         </table>
         @endif
 </div>
 </div>
 
     <!-- Footer Section -->
-@include('Layouts.footer3')
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>

@@ -16,6 +16,8 @@ class BoughtProducts extends Model
         'quantity',
         'category',
         'user_id',
+        'status',
+        'user_name'
     ];
 
     //RELATION TO USERS

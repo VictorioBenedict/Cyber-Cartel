@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class Category_Controller extends Controller
 {
     public function Cpu_Category_Route(){
-        $CPU = Products::where("category","CPU")->get();
+        $CPU = Products::where("category","Dessert")->get();
         return view('Categories.Processor',compact('CPU'));
     }
 
     public function Ram_Category_Route(){
-        $RAM = Products::where("category","RAM")->get();
+        $RAM = Products::where("category","Ice Cream")->get();
         return view('Categories.Ram',compact('RAM'));
     }
 
@@ -22,7 +22,7 @@ class Category_Controller extends Controller
     }
 
     public function Gpu_Category_Route(){
-        $GPU = Products::where("category","GPU")->get();
+        $GPU = Products::where("category","Iced Drinks")->get();
         return view('Categories.Gpu',compact('GPU'));
     }
 
@@ -45,7 +45,7 @@ class Category_Controller extends Controller
     }
 
     public function Motherboard_Category_Route(){
-        $Motherboard = Products::where("category","Motherboard")->get();
+        $Motherboard = Products::where("category","Hot Drinks")->get();
         return view('Categories.Motherboard',compact('Motherboard'));
     }
 

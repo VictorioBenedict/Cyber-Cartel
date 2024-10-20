@@ -43,7 +43,7 @@
 
     /* Hover effect for the "Login" button */
     .grey-hover:hover {
-        background-color: #333;
+        background-color: #6ACBDE;
         color: white;
         /* You may adjust the text color as needed */
     }
@@ -58,7 +58,7 @@
     /*ajust para sa login form*/
     #loginForm {
         border: 1px solid #ccc;
-        border-radius: 50px;
+        border-radius: 10px;
         padding: 105px;
         /* Adjust as needed */
     }
@@ -84,12 +84,12 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
+    
+        color: black;
         text-align: center;
-        padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        padding: 5px;
+       
+     
     }
     </style>
 </head>
@@ -105,7 +105,7 @@
 
 
     <!-- Content Section -->
-    <section style="margin-top: 15px; margin-bottom: 20px;">
+    <section style="margin-bottom:50px;">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row">
@@ -154,20 +154,25 @@
     </section>
 
 
-    <!-- Footer Section -->
-    <footer class="bg-black text-light text-center py-3 fixed-bottom">
+
+    <footer class="bg-whitetext-light text-center py-1  fixed-bottom"
+style="background-color:#f2e9d3">
+    <div class=" container-fluid">
         <div class="row">
-            <div class="col-md text-left ml-md-5">
-                <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
+            <div class="col-md text-left pl-md-2">
+                <p class="mb-0"><a href="/terms" 
+                       >Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p class="mb-0">&copy; 2023 Login Page. All rights reserved.</p>
             </div>
-            <div class="col-md text-right mr-md-5">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
+            <div class="col-md text-right pr-md-2">
+                <p class="mb-0"><a href="#"
+                         style="text-decoration: none;">Follow us on Facebook</a></p>
             </div>
         </div>
-    </footer>
+        </div>
+</footer>
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

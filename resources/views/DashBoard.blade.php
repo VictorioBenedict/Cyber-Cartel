@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel</title>
+    <title>Flavors & Co</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
+    <
     <style>
     @import url(https://db.onlinewebfonts.com/c/215107c04d97667966f3b627c9e79860?family=Spoof+Trial+Thin);
 
@@ -26,16 +29,17 @@
             url("https://db.onlinewebfonts.com/t/215107c04d97667966f3b627c9e79860.svg#Spoof Trial Thin")format("svg");
     }
 
-    body {
-        font-family: "Spoof Trial Thin", sans-serif;
-        /* Specify a fallback font in case "Spoof Trial Thin" is not available */
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        flex-direction: column;
-        overflow-x: hidden;
+    html, body {
+    font-family: "Spoof Trial Thin", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100%;
+    scrollbar-width: none;
 
-    }
+}
 
     h4 {
         font-weight: bold;
@@ -174,6 +178,13 @@
         color: white;
         background-color: #4d9584;
     }
+   
+.bgimg-1 {
+  background-image: url('images/bg.jpg');
+  min-height: 50%;
+  background-attachment: fixed;
+  min-width:100px;
+}
     </style>
 </head>
 
@@ -182,310 +193,79 @@
     @include('Layouts.navbar')
     <br>
 
+<br>
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-white w3-xlarge w3-wide w3-animate-opacity">FLAVORS <span class="w3-hide-small">&</span> CO</span>
+  </div>
+</div>
 
-    <!-- Header Section -->
-    <header style="margin-top: 70px">
-        <div class="container" id="contents">
-            <h1>Featured</h1>
-            @if(session()->has('error'))
-                        <div class ="alert alert-danger">{{session('error')}}</div>
-                        @endif
-        </div>
-    </header>
 
-    <!-- Dashboard Content -->
-    <div class="slider-frame">
-        <div class="slide-images">
-            <div class="img-container">
-                <a href="https://www.facebook.com/cybercartelpage">
-                    <img src="images/banner1.png" alt="Slide 1">
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="gpu_category">
-                    <img src="{{ URL('images/banner2.png') }}" alt="Slide 2">
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="processor_category">
-                    <img src="{{ URL('images/banner3.png') }}" alt="Slide 3">
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="storage_category">
-                    <img src="{{ URL('images/banner4.png') }}" alt="Slide 4">
-                </a>
-            </div>
-            <div class="img-container">
-                <a href="motherboard_category">
-                    <img src="{{ URL('images/banner5.png') }}" alt="Slide 5">
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT FLAVORS & CO</h3>
+  <p class="w3-center"><em>Ice Cream and Dessert Shop</em></p>
+  <p>Flavors & Co is a charming ice cream shop that delights customers with an extensive array of dessert options. Alongside their rich and creamy ice cream, they offer a variety of delectable cupcake desserts that are perfect for satisfying any sweet tooth. To complement these treats, customers can choose from a selection of refreshing iced drinks and cozy hot beverages, each infused with unique and enticing flavors. Whether you're in the mood for a classic scoop of ice cream, a fancy cupcake, or a delicious drink, Flavors & Co has something to fulfill every craving!</p>
 
     <br>
+<br>
+    
+<div class="w3-row-padding w3-center w3-magin-top" style="background-color:#F7CCD;">
+<div class="w3-fourth">
+  <a href="/Ice_cream_category" class="w3-card w3-container" style="background-color:#F7CCD; min-height:230px; display: block; text-decoration: none; color: inherit;">
+    <h3>Ice Cream</h3><br>
+    <i><img src="images/iceicon.png" width="125px" height="125px" style="font-size:75px;"></i><br>
+    <p></p>
+  </a>
+</div>
 
-    <!--case-->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Chassis</p>
-                    </h4>
-                    <a href="/chassis_category">
-                        <p class="btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($Case->slice(0,6) as $item)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $item->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-radius: 30px 30px 30px 30px;">
-                        <img src="{{ asset($item->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px; ">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$item->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($item->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-    <!-- CPU -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Processor</p>
-                    </h4>
-                    <br>
-                    <a href="/processor_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($CPU->slice(0,6) as $cpuitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $cpuitem->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($cpuitem->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);;">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$cpuitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($cpuitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-    <!-- Motherboard -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Motherboard</p>
-                    </h4>
-                    <br>
-                    <a href="motherboard_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($Motherboard->slice(0,6) as $mbitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $mbitem->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($mbitem->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$mbitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($mbitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-    <!-- GPU -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Graphics Card</p>
-                    </h4>
-                    <br>
-                    <a href="gpu_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($GPU->slice(0,6) as $gpuitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $gpuitem->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($gpuitem->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$gpuitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($gpuitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
+<br>
+<div class="w3-fourth">
+  <a href="/Dessert_category" class="w3-card w3-container" style="min-height:230px; display: block; text-decoration: none; color: inherit;">
+    <h3>Dessert</h3><br>
+    <i><img src="images/cupicon.png" width="125px" height="125px" style="font-size:75px;"></i><br>
+    <p></p>
+  </a>
+</div>
+<br>
+<div class="w3-fourth">
+  <a href="/Hot_Drinks_category" class="w3-card w3-container" style="min-height:230px; display: block; text-decoration: none; color: inherit;">
+    <h3>Hot Drinks</h3><br>
+    <i><img src="images/coffee.png" width="125px" height="125px" style="font-size:75px;"></i><br>
+    <p></p>
+  </a>
+</div>
+<br>
+<div class="w3-fourth">
+  <a href="/Iced_Drinks_category" class="w3-card w3-container" style="min-height:230px; display: block; text-decoration: none; color: inherit;">
+    <h3>Iced Drinks</h3><br>
+    <i><img src="images/drinkicon.png" width="125px" height="125px" style="font-size:75px;"></i><br>
+    <p></p>
+  </a>
+</div>
+</div>
 
     <!-- RAM -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>RAM</p>
-                    </h4>
-                    <br>
-                    <a href="ram_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($RAM->slice(0,6) as $ramitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $ramitem->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($ramitem->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                            <!-- Removed border-radius from the img element -->
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$ramitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($ramitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-
-    <!-- Power Supply (PSU) -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Power Supply</p>
-                    </h4>
-                    <br>
-                    <a href="psu_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($PSU->slice(0,6) as $psuitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $psuitem->id . '')}}" style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($psuitem->photo) }}" class="card-img-top border-2 img-fluid" alt="Card Image"
-                            style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$psuitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($psuitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
-
-
-
-    <!-- Storage -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="container" id="contents">
-                <header class="d-flex justify-content-between" style="margin-top: 50px;">
-                    <h4>
-                        <p>Storage</p>
-                    </h4>
-                    <br>
-                    <a href="storage_category">
-                        <p class="btn btn custom-btn">See all</p>
-                    </a>
-                </header>
-            </div>
-
-            @foreach($Storage->slice(0,6) as $storageitem)
-            <div class="col-lg-2 col-md-4 col-sm-6 col-12 mb-4">
-                <a href="{{url('product_demo/' . $storageitem->id . '')}}"
-                    style="text-decoration: none; color: inherit;">
-                    <div class="card" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <img src="{{ asset($storageitem->photo) }}" class="card-img-top border-2 img-fluid"
-                            alt="Card Image" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
-                        <div class="card-body text-center"
-                            style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
-                            <h5 class="card-subtitle mb-0 mt-0">
-                                <p>{{$storageitem->name}}</p>
-                            </h5>
-                            <h6 class="card-subtitle mb-0 mt-0">₱{{number_format($storageitem->price)}}</h6>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
+    
 
 
     <!-- Footer Section -->
-@include('Layouts.footer2')
+    <footer class="bg-whitetext-light text-center py-3 fixed-bottom"
+style="background-color:#FCEFF3"  >
+    <div class=" container-fluid">
+        <div class="row">
+            <div class="col-md text-left ">
+                <p class="mb-0"><a href="/terms" class="bx bxs-cart"
+                
+                        style="text-decoration: none;">Terms and Conditions</a></p>
+            </div>
+           
+            <div class="col-md text-right p1-md-">
+                <p class="mb-0"><a href="#"class="text-dark"
+                         style="text-decoration: none;">Follow us on Facebook</a></p>
+            </div>
+        </div>
+        </div>
+</footer>
 
 
     <script>

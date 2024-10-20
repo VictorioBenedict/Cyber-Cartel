@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Storage</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -39,10 +39,8 @@
     }
 
     footer {
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 10px;
+        flex-shrink: 0;
+        margin-top:auto;
     }
 
     .slider-frame {
@@ -134,7 +132,7 @@
             <div class="container" id="contents">
                 <header class="d-flex justify-content-between" style="margin-top: 30px;">
                     <h2>
-                        <p>Storage</p>
+                        <p>Vegetable Sides and Snacks</p>
                     </h2>
                     <br>
                     <br>
@@ -163,7 +161,6 @@
     </div>
 
     <!-- Footer Section -->
-    @include('Layouts.footer2')
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

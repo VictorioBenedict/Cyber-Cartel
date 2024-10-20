@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Motherboard</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -131,7 +131,7 @@
             <div class="container" id="contents">
                 <header class="d-flex justify-content-between" style="margin-top: 30px;">
                     <h2>
-                        <p>Motherboard</p>
+                        <p>Hot Drinks</p>
                     </h2>
                     <br>
                     <br>

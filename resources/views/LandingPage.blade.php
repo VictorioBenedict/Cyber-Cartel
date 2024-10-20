@@ -135,19 +135,19 @@
     <div class="slider-frame">
         <div class="slide-images">
             <div class="img-container">
-                <img src="images/image 1.jpg" alt="Slide 1">
+                <img src="" alt="Slide 1">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/intel 1.jpg') }}" alt="Slide 2">
+                <img src="{{ URL('') }}" alt="Slide 2">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/gpu 1.jpg') }}" alt="Slide 3">
+                <img src="{{ URL('') }}" alt="Slide 3">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/ram.jpg') }}" alt="Slide 4">
+                <img src="{{ URL('') }}" alt="Slide 4">
             </div>
             <div class="img-container">
-                <img src="{{ URL('images/motherboard.png') }}" alt="Slide 5">
+                <img src="{{ URL('') }}" alt="Slide 5">
             </div>
         </div>
         <br>
@@ -158,7 +158,7 @@
                 <div class="container" id="contents">
                     <header class="d-flex justify-content-between" style="margin-top: 50px;">
                         <h4>
-                            <p>Pre-Built Units</p>
+                            <p>Food</p>
                         </h4>
                         <br>
                         <a href="#">
@@ -177,7 +177,7 @@
                                 style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
                                 <!-- Removed border-radius from the img element -->
                                 <h5 class="card-subtitle mb-0 mt-0">
-                                    <p>Gaming Pc</p>
+                                    <p></p>
                                 </h5>
                                 <p class="card-text">System Unit</p>
                                 <h6 class="card-subtitle mb-0 mt-0">₱12,5OO</h6>

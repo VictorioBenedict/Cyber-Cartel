@@ -14,34 +14,35 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('assests/js/jquery.js') }}"></script>    
 
-    <title>Analytics</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
-    <a href="/" class="brand">
-            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+    <a href="" class="brand">
+            <img src="images/logo.png" alt=""
                 style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
-            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
+            <span class="text" style="margin-top: 20px;margin-left: 20px;">Flavors & Co</span>
         </a>
         <ul class="side-menu top">
-            <li>
-                <a href="{{ url('/admindashboards') }}">
-                    <i class="bx bxs-dashboard"></i>
-                    <span class="text">Dashboards</span>
-                </a>
-            </li>
+         
             <li class="active">
                 <a href="{{ url('/adminanalytics') }}">
                     <i class="bx bxs-analyse"></i>
-                    <span class="text">Analytics</span>
+                    <span class="text">Dashboard</span>
                 </a>
             </li>
             <li>
                 <a href="{{ url('/admincustomers') }}">
                     <i class="bx bxs-group"></i>
                     <span class="text">Customers</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/admindashboards') }}">
+                    <i class="bx bxs-cart"></i>
+                    <span class="text">Orders</span>
                 </a>
             </li>
             <li>
@@ -72,7 +73,7 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Analytics</h1>
+                    <h1>Dashboard</h1>
                     <ul class="breadcrumb"></ul>
                 </div>
             </div>
@@ -115,36 +116,11 @@
                 <li><canvas id="myChart" style="width:200; height:200;"></canvas></li>
                 <li><canvas id="chart2" style="width:200; height:200;"></canvas></li>
             </ul>
-            <ul class="box-info">
+            <ul class="box-info" style="width: auto; height: auto;">
                 <li>
-                    <i class="bx bxs-chip" class='bx-fw'></i>
+                    <i class=""></i>
                     <span class="text">
-                        <h3>Processor</h3>
-                        @if($CPUCount != 0)
-                        <p>Total Sales: ₱{{number_format($CPUTotal)}}</p>
-                        @else
-                            <p>Total Sales:₱0</p>
-                        @endif
-                        <p>Total Units Sold: {{number_format($CPUquant)}}</p>
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-microchip"></i>
-                    <span class="text">
-                        <h3>Motherboard</h3>
-                        @if($MotherboardCount != 0)
-                        <p>Total Sales: ₱{{number_format($MotherboardTotal)}}</p>
-                        @else
-                            <p>Total Sales: ₱0</p>
-                        @endif
-                        <p>Total Units Sold: {{number_format($Motherboardquant)}}</p>
-                        
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-ruler"></i>
-                    <span class="text">
-                        <h3>RAM</h3>
+                        <h3>Ice Cream</h3>
                         @if($RAMCount != 0)
                         <p>Total Sales: ₱{{number_format($RAMTotal)}}</p>
                         @else
@@ -153,12 +129,42 @@
                         <p>Total Units Sold: {{number_format($RAMquant)}}</p>
                     </span>
                 </li>
-            </ul>
-            <ul class="box-info">
-            <li>
-                    <i class="bx bxs-buoy"></i>
+
+                <li>
+                    <i class="" class='bx-fw'></i>
                     <span class="text">
-                        <h3>GPU</h3>
+                        <h3>Dessert</h3>
+                        @if($CPUCount != 0)
+                        <p>Total Sales: ₱{{number_format($CPUTotal)}}</p>
+                        @else
+                            <p>Total Sales:₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{number_format($CPUquant)}}</p>
+                    </span>
+                </li>
+                
+               
+            </ul>
+
+            <ul class="box-info" style="width: auto; height: auto;">
+                <li>
+                <i class=""></i>
+                    <span class="text">
+                        <h3>Hot Drinks</h3>
+                        @if($MotherboardCount != 0)
+                        <p>Total Sales: ₱{{number_format($MotherboardTotal)}}</p>
+                        @else
+                            <p>Total Sales: ₱0</p>
+                        @endif
+                        <p>Total Units Sold: {{number_format($Motherboardquant)}}</p>
+
+                    </span>
+                </li>
+
+                <li>
+                <i class=""></i>
+                    <span class="text">
+                        <h3>Iced Drinks</h3>
                         @if($GPUCount != 0)
                         <p>Total Sales: ₱{{number_format($GPUTotal)}}</p>
                         @else
@@ -167,50 +173,11 @@
                         <p>Total Units Sold: {{number_format($GPUquant)}}</p>
                     </span>
                 </li>
-                <li>
-                    <i class="bx bxs-checkbox"></i>
-                    <span class="text">
-                        <h3>PSU</h3>
-                        @if($PSUCount != 0)
-                        <p>Total Sales: ₱{{number_format($PSUTotal)}}</p>
-                        @else
-                            <p>Total Sales: ₱0</p>
-                        @endif
-                        <p>Total Units Sold: {{number_format($PSUquant)}}</p>
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-rectangle"></i>
-                    <span class="text">
-                        <h3>Storage</h3>
-                        @if($StorageCount != 0)
-                        <p>Total Sales: ₱{{number_format($StorageTotal)}}</p>
-                        @else
-                            <p>Total Sales: ₱0</p>
-                        @endif
-                        <p>Total Units Sold: {{number_format($Storagequant)}}</p>
-                    </span>
-                </li>
                 
+               
             </ul>
-            <ul class="box-info-end">
-                <li style="visibility: hidden;"></li>
 
-                <li>
-                    <i class="bx bxs-disc"></i>
-                    <span class="text">
-                        <h3>Chassis</h3>
-                        @if($CaseCount != 0)
-                        <p>Total Sales: ₱{{number_format($CaseTotal)}}</p>
-                        @else
-                        <p>Total Sales: ₱0</p>
-                        @endif
-                        <p>Total Units Sold: {{number_format($Casequant)}}</p>
-                    </span>
-                </li>
-
-                <li style="visibility: hidden;"></li>
-            </ul>
+          
     </section>
     
 
@@ -220,10 +187,10 @@
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['GPU', 'Motherboard', 'RAM','CPU','PSU','Storage','Chassis'],
+            labels: ['Ice Cream','Dessert','Hot Drinks','Ice Drinks'],
             datasets: [{
                 label: 'Total Units Sold',
-                data: [{{$GPUCount}}, {{$MotherboardCount}}, {{$RAMCount}},{{$CPUCount}},{{$PSUCount}},{{$StorageCount}},{{$CaseCount}}],
+                data: [{{$RAMCount}}, {{$CPUCount}}, {{$MotherboardCount}}, {{$GPUCount}}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -252,10 +219,10 @@
     var chart2 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['GPU', 'Motherboard', 'RAM','CPU','PSU','Storage','Chassis'],
+            labels: ['Ice Cream','Dessert','Hot Drinks','Ice Drinks'],
             datasets: [{
                 label: 'Total Sales',
-                data: [{{$GPUTotal}}, {{$MotherboardTotal}}, {{$RAMTotal}},{{$CPUTotal}},{{$PSUTotal}},{{$StorageTotal}},{{$CaseTotal}}],
+                data: [{{$RAMTotal}}, {{$CPUTotal}}, {{$MotherboardTotal}}, {{$GPUTotal}}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

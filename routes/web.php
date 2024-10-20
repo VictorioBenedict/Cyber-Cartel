@@ -13,6 +13,7 @@ use App\Http\Controllers\SignupController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profile_Controller;
+use App\Models\BoughtProducts;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
@@ -101,8 +102,8 @@ Route::get('/adminlogin',[DashboardController::class,'adminlogin']);
 Route::post('/adminlogin', [DashboardController::class,'adminAuth'])->name('adminpost');
 //Admin panel
 Route::group(['middleware'=>'userid'], function(){
-Route::get('/admindashboards',[DashboardController::class,'admindashboard'])->name('admindashboards');
-Route::get('/adminanalytics',[DashboardController::class,'adminanalytics']);
+Route::get('/admindashboards',[DashboardController::class,'admindashboard']);
+Route::get('/adminanalytics',[DashboardController::class,'adminanalytics'])->name('admindashboards');
 Route::get('/admincustomers',[DashboardController::class,'admincustomers']);
 Route::get('/admincustomers/{id}/delete',[UserController::class,'destroy']);
 Route::get('/adminmanagements',[App\Http\Controllers\productController::class,'index']);
@@ -119,13 +120,18 @@ Route::get('/product_demo/{id}',[DashboardController::class,'details']);
 Route::get('/terms',[DashboardController::class,'terms']);
 
 //CATEGORIES
-Route::get('/processor_category', [Category_Controller::class, 'Cpu_Category_Route']);
-Route::get('/gpu_category', [Category_Controller::class, 'Gpu_Category_Route']);
-Route::get('/ram_category', [Category_Controller::class, 'Ram_Category_Route']);
+Route::get('/Dessert_category', [Category_Controller::class, 'Cpu_Category_Route']);
+Route::get('/Iced_Drinks_category', [Category_Controller::class, 'Gpu_Category_Route']);
+Route::get('/Ice_cream_category', [Category_Controller::class, 'Ram_Category_Route']);
 Route::get('/hdd_category', [Category_Controller::class, 'HDD_Category_Route']);
 Route::get('/storage_category', [Category_Controller::class, 'SSD_Category_Route']);
-Route::get('/motherboard_category', [Category_Controller::class, 'Motherboard_Category_Route']);
+Route::get('/Hot_Drinks_category', [Category_Controller::class, 'Motherboard_Category_Route']);
 Route::get('/chassis_category', [Category_Controller::class, 'Chassis_Category_Route']);
 Route::get('/monitor_category', [Category_Controller::class, 'Monitor_Category_Route']);
 Route::get('/pre_built_units', [Category_Controller::class, 'PreBuilt_Category_Route']);
-Route::get('/psu_category', [Category_Controller::class, 'PSU_Category_Route']);
+Route::get('/Soups_and_Stews_category', [Category_Controller::class, 'PSU_Category_Route']);
+
+
+
+Route::post('/bought_products/{id}/update_status', [CartController::class, 'updatestatus'])->name('updatestatus');
+Route::delete('/bought_products/{id}', [CartController::class, 'delete'])->name('delete');

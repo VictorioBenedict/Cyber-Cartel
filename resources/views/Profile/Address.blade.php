@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Profile</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="dashboard.css">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -178,13 +178,13 @@
     }
 
     .custom-btn {
-        border-color: #937952;
-        color: #937952;
+        border-color: #D6ECA4;
+        color: #black;
     }
 
     .custom-btn:hover {
-        color: white;
-        background-color: #4d9584;
+        color: black;
+        background-color:#D6ECA4;
     }
     </style>
 </head>
@@ -201,21 +201,21 @@
     <br>
     <br>
     <div class="container">
-        <div class="user_profile" style="margin-right: 60px;'">
+        <div class="user_profile" style="margin-left:50px;">
             <table>
                 <tr>
-                    <td style="margin-top: 90px;">
+                    <td>
                         <br>
-                        <a href="/my_account" style="margin-top: -220px;"><img src="images/default_profile.png"
+                        <a href="/my_account"  style="float: left;  margin-top: 15px;margin-left: 40px; margin-bottom: 20px;"><img src="images/user.png"
                                 class="profile_img"></a>
-                        <h2 style="margin-right: 5px; margin-bottom: -100px; margin-top: 20px">
+                        <h2 style="margin-right: 78px;margin-top: 20px; margin-left: 45px;">
                             {{auth()->user()->name}}</h2>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <hr style="margin: 0 auto; width: 100%;  margin-top: 78px;">
+                        <hr style="margin: 0 auto; width: 100%;  ">
                     </td>
                 </tr>
                 <td>
@@ -227,6 +227,9 @@
                         <a href="/my_account" style="text-decoration: none;" class="myPurchase_header">
                             <p>Profile</p>
                         </a>
+                        <a href="/my_purchase" style="text-decoration: none;" class="myPurchase_header">
+                            <p>Purchase</p>
+                        </a>
                         <a href="/address" style="text-decoration: none;" class="address">
                             <p>Address</p>
                         </a>
@@ -236,15 +239,7 @@
                     </div>
                 </td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="myPurchase_header">
-                            <a href="/my_purchase"
-                                style="text-decoration: none; color: rgb(0, 0, 0); font-size: 30px;">My
-                                Purchase</a>
-                        </div>
-                    </td>
-                </tr>
+                
             </table>
         </div>
 
@@ -307,7 +302,7 @@
     <br>
 
     <!-- Footer Section -->
-    @include('Layouts.footer3')
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>

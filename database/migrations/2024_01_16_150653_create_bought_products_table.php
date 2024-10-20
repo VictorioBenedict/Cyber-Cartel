@@ -19,8 +19,10 @@ return new class extends Migration
             $table->text('details');
             $table->string('category');
             $table->integer('quantity')->nullable();
+            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('user_name');
             $table->timestamps();
         });
     }

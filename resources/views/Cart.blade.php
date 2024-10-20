@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Cart</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
@@ -165,11 +165,13 @@
 
     .total_Items {
         text-align: right;
-        width: 10%;
+        width: 20%;
+        margin-left: 30px;
     }
 
     .checkout_Content button {
         float: right;
+        background-color: #76CCA4;
     }
 
     .selectAll {
@@ -210,7 +212,7 @@
     <header style="margin-top: 65px">
         <div class="container" id="contents">
             <header class="d-flex justify-content-between" style="margin-top: 40px;">
-                <h2>Cyber Cartel | Shopping Cart</h2>
+                <h2>Flavors & Co | Cart</h2>
                 <br>
                 @if(session()->has('error'))
                         <div class ="alert alert-danger">{{session('error')}}</div>
@@ -232,7 +234,7 @@
             <td class="products" style="font-weight:bold;">Product</td>
             <td class="units" style="font-weight:bold;">Unit Price</td>
             <td class="quantitys" style="font-weight:bold;">Quantity</td>
-            <td class="totals" style="font-weight:bold;">Category</td>
+          
             <td class="actions" style="font-weight:bold;">Action</td>
         </tr>
         <tr>
@@ -254,7 +256,7 @@
             @if ($item->quantity > 1)
             <a href="{{url('decreasecart/'.$item -> id.'')}}" class="btn btn-outline-secondary">- </a>
             </td>
-            <td class="total">{{$item -> category}}</td>
+            <td class="total"><nobr>{{$item -> category}}</td>
             <td class="action">
             <a href="{{url('addcart/'.$item -> id.'/delete')}}"
             onclick ="return confirm('Are you sure?')" class="btn btn-outline-danger">
@@ -281,16 +283,16 @@
         <tr class="checout_Content">
             <td class="selectAll"></td>
             <td class="deleteAll"></td>
-            <td class="total_Items">Total Items: {{number_format($quantity)}}</td>
+            <td class="total_Items">Total Items: <nobr>{{number_format($quantity)}}<nobr></td>
             <td class="total_Price">₱{{number_format($totalPrice)}}</td>
-            <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark">CHECKOUT  <i class='bx bx-check-circle'></i></button></a></td>
+            <td class="checkss"><a href="/checkOut"><button class="btn btn-outline-dark" style= "background-color: #76CCA4;">CHECKOUT  <i></i></button></a></td>
         </tr>
     </table>
     <br>
     </div>
 
     <!-- Footer Section -->
-    @include("Layouts.footer2")
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {

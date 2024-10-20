@@ -11,54 +11,56 @@
     <link rel="stylesheet" href="{{ asset ('assests/css/bootstrap.css') }}">
     <link rel="stylesheet" href="assets/css/analytics.css" />
     <script src="{{ asset('assests/js/jquery.js') }}"></script>
-    <title>Dashboard</title>
+    <title>Orders</title>
 </head>
 
 <body>
     <!-- SIDEBAR -->
     <section id="sidebar">
     <a href="/" class="brand">
-            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+            <img src="images/logo.png" alt=""
                 style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
-            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
+            <span class="text" style="margin-top: 20px; margin-left: 20px;">Flavors & Co</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
+         
+         <li >
+             <a href="{{ url('/adminanalytics') }}">
+                 <i class="bx bxs-analyse"></i>
+                 <span class="text">Dashboard</span>
+             </a>
+         </li>
+         <li>
+             <a href="{{ url('/admincustomers') }}">
+                 <i class="bx bxs-group"></i>
+                 <span class="text">Customers</span>
+             </a>
+         </li>
+         <li class="active">
                 <a href="{{ url('/admindashboards') }}">
-                    <i class="bx bxs-dashboard"></i>
-                    <span class="text">Dashboards</span>
+                    <i class="bx bxs-cart"></i>
+                    <span class="text">Orders</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ url('/adminanalytics') }}">
-                    <i class="bx bxs-analyse"></i>
-                    <span class="text">Analytics</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/admincustomers') }}">
-                    <i class="bx bxs-group"></i>
-                    <span class="text">Customers</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/adminmanagements') }}">
-                    <i class="bx bxs-data"></i>
-                    <span class="text">Product Management</span>
-                </a>
-            </li>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <li>
-                <a class="dropdown-item text-center" href="{{route('logout')}}"  style="color: red;">
-                    <i class="bx bxs-log-out"></i> Log out
-                </a>
-            </li>
-        </ul>
+         <li>
+             <a href="{{ url('/adminmanagements') }}">
+                 <i class="bx bxs-data"></i>
+                 <span class="text">Product Management</span>
+             </a>
+         </li>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <li>
+             <a class="dropdown-item text-center" href="{{route('logout')}}"  style="color: red;">
+                 <i class="bx bxs-log-out"></i> Log out
+             </a>
+         </li>
+     </ul>
+        
     </section>
     <!-- SIDEBAR -->
 
@@ -69,60 +71,48 @@
         <main>
             <div class="head-title">
                 <div class="left">
-                    <h1>Dashboard</h1>
+                    <h1>Orders</h1>
                     <ul class="breadcrumb"></ul>
                 </div>
             </div>
-
-            <ul class="box-info">
-            <li>
-                    <i class="bx bxs-calendar-check" ></i>
-                    <span class="text">
-                        <h3>Products</h3>
-                        <p>Total For Sale: {{number_format($products)}}</p>
-                        @if($boughtcount != 0)
-                        <p>Total Sales: ₱{{number_format($boughtTotal)}}</p>
-                        @else
-                            <p>Total Sales:₱0</p>
-                        @endif
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-group"></i>
-                    <span class="text">
-                        <h3>Users</h3>
-                        <p>Total Users: {{number_format($usercount)}}</p>
-                    </span>
-                </li>
-                <li>
-                    <i class="bx bxs-cart-add"></i>
-                    <span class="text">
-                        <h3>Purchased Products</h3>
-                        <p>Total Units Bought: {{number_format($boughtquant)}}</p>
-                        <p>Total Units Refunded: {{number_format($refunded)}}</p>
-                        <p>Total Units Cancelled: {{number_format($cancelled)}}</p>
-                    </span>
-                </li>
-            </ul>
-            
             <ul class="box-info">
                 <li>
-                <span><h3>New Customers</h3></span>
-                    <table class="table table-borderless">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
+                                <th>User Name</th>
+                                <th>Name of product</th>
+                                <th>price</th>
+                                <th>Status</th>
+                                <th>Update Status</th>
+                                <th>action</th>
                             </tr>
                         </thead>
                         <div>
                         <tbody>
-                            @foreach ($user->slice(0,5) as $item)
+                            @foreach ($bought as $item)
                             <tr>
-                                <td>{{$item -> id }}</td>
+                                <td>{{$item -> user_name }}</td>
                                 <td>{{$item -> name}}</td>
-                                <td>{{$item -> email}}</td>
+                                <td>{{$item -> price}}</td>
+                                <td>{{$item -> status}}</td>
+                                <td>
+                                    <form action="{{ route('updatestatus', $item->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
+                                            <option value="" disabled selected>Select Status</option>
+                                            <option value="pending" {{ $item->status == 'pending' ? 'selected' : '' }}>Pending</option>
+                                            <option value="accepted" {{ $item->status == 'accepted' ? 'selected' : '' }}>Accepted</option>
+                                            <option value="rejected" {{ $item->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
+                                        </select>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="{{ route('delete', $item->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
@@ -130,6 +120,8 @@
                         </div>
                     </table>
                 </li>
+            </ul>
+            
             </ul>
         </main>
     </section>

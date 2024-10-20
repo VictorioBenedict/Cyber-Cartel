@@ -8,19 +8,25 @@ use App\Models\RefundedProducts;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use App\Models\Cart;
+
+
 
 class DashboardController extends Controller
 {
+    
+
     public function dashboard(){
         return view('DashBoard');
     }
 
     public function index(){
         $products = Products::get();
-        $CPU = Products::where("category","CPU")->get();
-        $Motherboard = Products::where("category","Motherboard")->get();
-        $RAM = Products::where("category","RAM")->get();
-        $GPU = Products::where("category","GPU")->get();
+        $CPU = Products::where("category","Dessert")->get();
+        $Motherboard = Products::where("category","Hot Drinks")->get();
+        $RAM = Products::where("category","Ice Cream")->get();
+        $GPU = Products::where("category","Ice Drinks")->get();
         $PSU = Products::where("category","PSU")->get();
         $Case = Products::where("category","Case")->get();
         $Storage = Products::where("category","Storage")->get();
@@ -41,19 +47,20 @@ class DashboardController extends Controller
         return view('Product_demo',compact('product'));
     }
     public function admindashboard(){
+        $all = BoughtProducts::all();
         $user = User::orderBy('id','desc')->get();
         $usercount = User::count();
         $products = Products::count();
         $boughtquant = BoughtProducts::sum('quantity');
         $boughtcount = BoughtProducts::count();
-        $bought = BoughtProducts::all();
+        $bought = BoughtProducts::with('users')->get(['id', 'name', 'price', 'status', 'user_id','user_name']);
         $boughtTotal=0;
         foreach($bought as $boughts){
             $boughtTotal += $boughts -> quantity * $boughts -> price;
         }
         $refunded = RefundedProducts::sum('quantity');
         $cancelled = CancelledProducts::sum('quantity');
-        return view('Admindashboards', compact('user','products','refunded','cancelled','boughtquant','usercount','boughtcount','boughtTotal'));
+        return view('Admindashboards', compact('user','products','refunded','cancelled','boughtquant','usercount','boughtcount','boughtTotal','all','bought'));
     }
     public function adminanalytics(){
         $user = User::count();
@@ -69,33 +76,33 @@ class DashboardController extends Controller
         $refunded = RefundedProducts::sum('quantity');
         $cancelled = CancelledProducts::sum('quantity');
         //gpu
-        $GPUquant = BoughtProducts::where("category","GPU")->sum('quantity');
-        $GPUCount = BoughtProducts::where("category","GPU",)->count();
-        $GPU = BoughtProducts::all()->where("category","GPU");
+        $GPUquant = BoughtProducts::where("category","Iced Drinks")->sum('quantity');
+        $GPUCount = BoughtProducts::where("category","Iced Drinks",)->count();
+        $GPU = BoughtProducts::all()->where("category","Iced Drinks");
         $GPUTotal=0;
         foreach($GPU as $GPUs){
             $GPUTotal += $GPUs -> quantity * $GPUs -> price;
         }
         //mobo
-        $Motherboardquant = BoughtProducts::where("category","Motherboard")->sum('quantity');
-        $MotherboardCount = BoughtProducts::where("category","Motherboard",)->count();
-        $Motherboard = BoughtProducts::all()->where("category","Motherboard");
+        $Motherboardquant = BoughtProducts::where("category","Hot Drinks")->sum('quantity');
+        $MotherboardCount = BoughtProducts::where("category","Hot Drinks",)->count();
+        $Motherboard = BoughtProducts::all()->where("category","Hot Drinks");
         $MotherboardTotal=0;
         foreach($Motherboard as $Motherboards){
             $MotherboardTotal += $Motherboards -> quantity * $Motherboards -> price;
         }
         //ram
-        $RAMquant = BoughtProducts::where("category","RAM")->sum('quantity');
-        $RAMCount = BoughtProducts::where("category","RAM",)->count();
-        $RAM = BoughtProducts::all()->where("category","RAM");
+        $RAMquant = BoughtProducts::where("category","Ice Cream")->sum('quantity');
+        $RAMCount = BoughtProducts::where("category","Ice Cream",)->count();
+        $RAM = BoughtProducts::all()->where("category","Ice Cream");
         $RAMTotal=0;
         foreach($RAM as $RAMs){
             $RAMTotal += $RAMs -> quantity * $RAMs -> price;
         }
         //cpu
-        $CPUquant = BoughtProducts::where("category","CPU")->sum('quantity');
-        $CPUCount = BoughtProducts::where("category","CPU",)->count();
-        $CPU = BoughtProducts::all()->where("category","CPU");
+        $CPUquant = BoughtProducts::where("category","Dessert")->sum('quantity');
+        $CPUCount = BoughtProducts::where("category","Dessert",)->count();
+        $CPU = BoughtProducts::all()->where("category","Dessert");
         $CPUTotal=0;
         foreach($CPU as $CPUs){
             $CPUTotal += $CPUs -> quantity * $CPUs -> price;
@@ -151,11 +158,12 @@ class DashboardController extends Controller
             if ($user->id == '1') {
                 return redirect()->route('admindashboards');
             } else {
-                return redirect()->back()->with('error', 'Unauthorized ');
+                return redirect()->back()->with('error', ' Email or Passowrd Invalid!');
             }
         }
-        return redirect()->back()->with('error', 'Unauthorized');
+        return redirect()->back()->with('error', 'Email or Passowrd Invalid!');
     } 
+    
 }
 
     

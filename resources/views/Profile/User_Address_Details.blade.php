@@ -357,7 +357,7 @@
     <br>
 
     <!-- Footer Section -->
-    @include("Layouts.footer")
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
     <script>

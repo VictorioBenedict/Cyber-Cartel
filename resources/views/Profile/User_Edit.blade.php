@@ -6,7 +6,7 @@
     <base href="/public">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Profile</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
@@ -203,7 +203,7 @@
             <tr>
                 <td>
                     <a href="/my_account">
-                        <img src="images/default_profile.png" class="profile_img"
+                        <img src="images/user.png" class="profile_img"
                             style="float: left; margin-left: -120px; margin-top: -60px;">
                     </a>
                     <h2 style="margin-bottom: 20px; margin-top: -41px;">{{auth()->user()->name}}</h2>
@@ -266,7 +266,7 @@
                     <div class="profile_picture">
                         <tr>
                             <td style="display: flex; align-items: center; justify-content: flex-start;">
-                                <img src="images/default_profile.png" class="profile_images">
+                                <img src="images/user.png" class="profile_images">
                             </td>
                         </tr>
                         <tr>
@@ -305,7 +305,7 @@
     <br>
 
     <!-- Footer Section -->
-    @include('Layouts.footer3')
+
 
     <!-- Bootstrap JS and Popper.js scripts -->
 

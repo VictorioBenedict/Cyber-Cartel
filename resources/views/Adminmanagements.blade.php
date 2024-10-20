@@ -16,9 +16,7 @@
         a{
             color:blue;
         }
-        .table-responsive {
-        max-height:670px;
-        }
+      
     </style>
 </head>
 
@@ -26,47 +24,48 @@
     <!-- SIDEBAR -->
     <section id="sidebar">
     <a href="/" class="brand">
-            <img src="images/black 2.png" alt="Cyber Cartel Icon"
+            <img src="images/logo.png" alt=""
                 style="width: 50px; height: 50px; margin-left: 30px; margin-top: 20px;">
-            <span class="text" style="margin-top: 20px;">Cyber Cartel</span>
+            <span class="text" style="margin-top: 20px; margin-left: 20px;">Flavors & Co</span>
         </a>
         <ul class="side-menu top">
-            <li>
+         
+         <li>
+             <a href="{{ url('/adminanalytics') }}">
+                 <i class="bx bxs-analyse"></i>
+                 <span class="text">Dashboard</span>
+             </a>
+         </li>
+         <li>
+             <a href="{{ url('/admincustomers') }}">
+                 <i class="bx bxs-group"></i>
+                 <span class="text">Customers</span>
+             </a>
+         </li>
+         <li>
                 <a href="{{ url('/admindashboards') }}">
-                    <i class="bx bxs-dashboard"></i>
-                    <span class="text">Dashboards</span>
+                    <i class="bx bxs-cart"></i>
+                    <span class="text">Orders</span>
                 </a>
             </li>
-            <li>
-                <a href="{{ url('/adminanalytics') }}">
-                    <i class="bx bxs-analyse"></i>
-                    <span class="text">Analytics</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/admincustomers') }}">
-                    <i class="bx bxs-group"></i>
-                    <span class="text">Customers</span>
-                </a>
-            </li>
-            <li class="active">
-                <a href="{{ url('/adminmanagements') }}">
-                    <i class="bx bxs-data"></i>
-                    <span class="text">Product Management</span>
-                </a>
-            </li>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <li>
-                <a class="dropdown-item text-center" href="{{route('logout')}}" style="color: red;">
-                    <i class="bx bxs-log-out"></i> Log out
-                </a>
-            </li>
-        </ul>
+         <li class="active">
+             <a href="{{ url('/adminmanagements') }}">
+                 <i class="bx bxs-data"></i>
+                 <span class="text">Product Management</span>
+             </a>
+         </li>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <li>
+             <a class="dropdown-item text-center" href="{{route('logout')}}"  style="color: red;">
+                 <i class="bx bxs-log-out"></i> Log out
+             </a>
+         </li>
+     </ul>
     </section>
     <!-- SIDEBAR -->
 
@@ -88,7 +87,7 @@
     </div>
     <ul class="box-info">
     <li>
-    <div class="table-responsive">
+    <div class="table-responsive" style="overflow-x:auto; height: 100%;">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -110,7 +109,7 @@
                         <img src="{{ asset($item->photo) }}" style="width: 70px; height:70px;" alt="Img" />
                     </td>
                     <td>₱ {{number_format($item -> price)}}</td>
-                    <td>{{ Str::limit($item -> details,'30','...')}}</td>
+                    <td>{{ Str::limit($item -> details,'10','...')}}</td>
                     <td>{{$item -> category}}</td>
                     <td>
                         <a href="{{url('productmanagements/'.$item -> id.'/edit')}}" class="btn btn-outline-secondary">Edit</a>
@@ -118,15 +117,17 @@
                     </td>
                 </tr>
                 @endforeach
-            </tbody>
-        </table>
+                </tbody>
+       
+       
     </div>
     </li>
     </ul>
+    </table>
 </main>
 
 
-    </section>
+ 
 </body>
-
+</section> 
 </html>

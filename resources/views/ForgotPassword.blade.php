@@ -118,11 +118,9 @@
                 <p><a href="/terms" class="text-light">Terms and Conditions</a></p>
             </div>
             <div class="col-md text-center">
-                <p>&copy; 2023 Login Page. All rights reserved.</p>
+                <p>&copy; 2024 Login Page. All rights reserved.</p>
             </div>
-            <div class="col-md text-right mr-md-5">
-                <p><a href="https://www.facebook.com/yourpage" class="text-light">Follow us on Facebook</a></p>
-            </div>
+            
         </div>
     </footer>
 

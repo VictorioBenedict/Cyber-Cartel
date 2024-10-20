@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cyber Cartel | Profile</title>
+    <title> Profile</title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS link -->
@@ -195,12 +195,12 @@
             <tr>
                 <td>
                     <a href="/my_account">
-                        <img src="images/default_profile.png" class="profile_img"
-                            style="float: left; margin-left: -120px; margin-top: -60px;">
+                        <img src="images/user.png" class="profile_img"
+                            style="float: left;  margin-top: -60px;">
                     </a>
                     <h2 style="margin-bottom: 20px; margin-top: -41px;">{{auth()->user()->name}}</h2>
-                    <a href="my_account/edit" style="text-decoration: none; color: rgb(0, 0, 0);">
-                        <p>Edit Profile <i class='bx bx-edit'></i></p>
+                    <a href="my_account/edit" style="text-decoration: none; color: rgb(0, 0, 0); margin-right:">
+                        <p style="margin-right: 80px;">Edit Profile <i class='bx bx-edit'></i></p>
                     </a>
                 </td>
             </tr>
@@ -223,6 +223,9 @@
                             <a href="/my_account" style="text-decoration: none; " class="myPurchase_header">
                                 <p>Profile</p>
                             </a>
+                            <a href="/my_purchase" style="text-decoration: none; " class="address">
+                                <p>Purchase</p>
+                            </a>
                             <a href="/address" style="text-decoration: none; " class="address">
                                 <p>Address</p>
                             </a>
@@ -230,14 +233,7 @@
                     </td>
                 </div>
             </tr>
-            <tr>
-                <td style="text-align: center;">
-                    <div class="myPurchase_header">
-                        <a href="/my_purchase" style="font-size: 30px; text-decoration: none; color: rgb(0, 0, 0);">My
-                            Purchase</a>
-                    </div>
-                </td>
-            </tr>
+            
         </table>
 
         <!-- Table Section -->
@@ -257,7 +253,7 @@
                 <div class="profile_picture">
                     <tr>
                         <td style="display: flex; align-items: center; justify-content: flex-start;">
-                            <img src="images/default_profile.png" class="profile_images">
+                            <img src="images/user.png" class="profile_images">
                         </td>
                     </tr>
                     <tr>
@@ -294,7 +290,7 @@
     <br>
 
     <!-- Footer Section -->
-@include('Layouts.footer3')
+
 
 
 

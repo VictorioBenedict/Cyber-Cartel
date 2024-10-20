@@ -33,9 +33,26 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)){
             return redirect()->intended(route('home'));
         }
-        return redirect(route('Login'))->with('error', 'email or password invalid');
+        return redirect(route('Login'))->with('error', 'Email or Passowrd Invalid!');
     }
+    public function adminAuth(Request $request) {
 
+        $request->validate([
+            'email'    => 'required',
+            'password' => 'required',
+        ]);
+        $credentials = $request->only('email', 'password');
+          if (Auth::attempt($credentials)) {
+            ($user->email === 'admin@gmail.com');
+            if ($user->id == '1') {
+                return redirect()->route('adminanalytics');
+            } else {
+                return redirect()->intended(route('home'));
+            }
+        }
+        return redirect()->back()->with('error', 'Email or Passowrd Invalid!');
+        
+    } 
     public function Signuppost(Request $request){
         $request ->validate([
             'name' => 'required',
@@ -50,13 +67,13 @@ class LoginController extends Controller
         if(!$user){
             return redirect(route('Signup'))->with('error', 'Sign up failed, please try again');
         }
-        return redirect(route('Login'))->with('success', 'Registration successful');
+        return redirect(route('Login'))->with('Success!', 'Registration Successful');
     }
 
     public function logout(){
         Session::flush();
         Auth::logout();
-        return redirect(route('Login'));
+        return redirect(route('home'));
     }
     public function Profile_Route(){
         return view('Profile.User_Profile');

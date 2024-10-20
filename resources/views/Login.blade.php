@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Cartel | Login</title>
+    <title></title>
     <link rel="stylesheet" href="login.css">
     <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,13 +26,17 @@
     /* Additional styles for responsiveness */
     body {
         font-family: "Spoof Trial Thin";
-        padding-top: 60px;
+        padding-top: 30px;
         overflow: hidden;
+        color:black;
+        background-color:#E7DFCB
+        ;
         /* Add padding to body for the fixed navbar */
     }
 
     .black-button {
-        background-color: #4d9584;
+        background-color: #D69EB1
+        ;
         color: white;
     }
 
@@ -43,7 +47,7 @@
 
     /* Hover effect for the "Login" button */
     .grey-hover:hover {
-        background-color: #937952;
+        background-color: #eeafc5;
         color: white;
         /* You may adjust the text color as needed */
     }
@@ -98,12 +102,12 @@
     }
 
     .btn-black {
-        background-color: white;
+        background-color: #eeafc5;
         color: black;
     }
 
     .btn-black-active {
-        background-color: #4d9584;
+        background-color: #eeafc5;
         color: white;
     }
 
@@ -132,7 +136,7 @@
 
 
     <!-- Content Section -->
-    <section style="margin-top: 30px; margin-bottom: 20px;">
+    <section style=" ">
         <div class="container custom-container text-center">
             <!-- Login Form Row -->
             <div class="row" style="border: none;">
@@ -148,21 +152,21 @@
                         <div class="alert alert-success">{{session('success')}}</div>
                         @endif
                     </div>
-                    <form id="loginForm" action="{{route('Login.post')}}" method="post">
+                    <form id="loginForm" action="{{route('adminpost')}}" method="post" style= "background-color: white;">
                         @csrf
                         <header class="py-5 text-center">
-                            <h1>Login</h1>
+                            <h1><b>LOGIN</b></h1>
                         </header>
 
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="email">Email</label>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                          
                             <input type="text" class="form-control" id="email" name="email"
                                 placeholder="Enter your email">
                             @error('email') <span class="text-danger">{{$message}}</span> @enderror
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <label for="password">Password</label>
+                         
                             <div class="input-group">
                                 <input type="password" class="form-control" id="password" name="password"
                                     placeholder="Enter your password">
@@ -177,26 +181,25 @@
                         <button type="submit" class="btn btn-block black-button grey-hover">Login</button>
                         <br>
 
-                        <a href="/signup" class="black-link" style="text-decoration: none;">
-                            <p>Create an Account</p>
-                        </a>
+                        
+                        <p>Don't have an account?</p><nobr><a href="/signup" class="black-link" style="text-decoration: none;"><nobr><p>Create one</p></a>
+                            
                     </form>
                 </div>
 
                 <!-- Image on the left side (as a clickable button) -->
-                <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left hide-on-small"
-                    style="left: 0; top: -40px;">
+                <div class="col-lg-6 col-md-3 col-sm-9 position-fixed text-left" style="left: 30px; top: 70px;">
                     <a href="/">
-                        <img src="images/logo white4.png" alt="Left Image" style="width: 100%;">
+                        <img src="images/logo.png" alt="Left Image" style="width: 80%;">
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
+    
+ 
 
-    <!-- Footer Section -->
-@include('Layouts.footer')
 
 
     <!-- Bootstrap JS and Popper.js scripts -->
